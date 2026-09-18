@@ -1,0 +1,6 @@
+*.key
+.aistudio.key
+__pycache__/
+.DS_Store
+venv/
+.venv*/

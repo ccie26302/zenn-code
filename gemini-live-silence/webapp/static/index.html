@@ -1,0 +1,71 @@
+<meta charset="utf-8">
+<title>Gemini Live 実機テスト</title>
+<style>
+ :root{--bg:#0f1115;--fg:#e8eaed;--mut:#9aa0a6;--acc:#8ab4f8;--warn:#f28b82;--ok:#81c995;--card:#1a1d23;}
+ *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--fg);
+   font:14px/1.6 -apple-system,BlinkMacSystemFont,"Hiragino Sans",sans-serif}
+ .wrap{max-width:980px;margin:0 auto;padding:20px}
+ h1{font-size:18px;margin:0 0 4px} .sub{color:var(--mut);margin:0 0 18px}
+ .card{background:var(--card);border-radius:10px;padding:14px 16px;margin-bottom:14px}
+ .row{display:flex;gap:14px;flex-wrap:wrap;align-items:flex-end}
+ label{display:block;font-size:12px;color:var(--mut);margin-bottom:4px}
+ select,input,button{background:#23262d;color:var(--fg);border:1px solid #33373f;
+   border-radius:7px;padding:8px 10px;font:inherit}
+ button{cursor:pointer} button.primary{background:var(--acc);color:#0b0c0f;border:0;font-weight:600}
+ button:disabled{opacity:.45;cursor:default}
+ #meter{height:8px;background:#23262d;border-radius:4px;overflow:hidden;margin-top:6px}
+ #meterBar{height:100%;width:0;background:var(--ok);transition:width .08s}
+ .stats{display:flex;gap:22px;flex-wrap:wrap;margin-top:8px}
+ .stat b{display:block;font-size:22px;font-variant-numeric:tabular-nums}
+ .stat span{color:var(--mut);font-size:12px}
+ #log{height:300px;overflow:auto;font:12px/1.6 ui-monospace,SFMono-Regular,Menlo,monospace}
+ .l{display:flex;gap:10px} .l i{color:var(--mut);font-style:normal;min-width:62px;text-align:right}
+ .k-say{color:var(--ok)} .k-heard{color:var(--acc)} .k-tool_call,.k-progress,.k-tool_result{color:#fdd663}
+ .k-error{color:var(--warn)} .k-interrupted{color:#f28b82} .k-silence{color:var(--warn);font-weight:600}
+ .hint{color:var(--mut);font-size:12px;margin-top:8px}
+</style>
+<div class="wrap">
+<h1>Gemini Live 実機テスト</h1>
+<p class="sub">マイクで話しかけて、ツール実行中の沈黙を耳で確かめる。blocking と nb_progress を切り替えて比較できます。</p>
+
+<div class="card">
+ <div class="row">
+  <div><label>モデル</label><select id="model">
+    <option value="gemini-3.8-live">gemini-3.8-live</option>
+    <option value="gemini-3.8-live-extended-thinking">3.8-live-extended-thinking</option>
+    <option value="gemini-3.1-flash-live-preview">gemini-3.1-flash-live-preview</option>
+    <option value="gemini-2.5-flash-native-audio-latest">gemini-2.5-flash-native-audio</option>
+  </select></div>
+  <div><label>思考レベル(ETのみ)</label><select id="think">
+    <option value="">なし</option><option value="LOW">LOW</option>
+    <option value="MEDIUM">MEDIUM</option><option value="HIGH" selected>HIGH</option>
+  </select></div>
+  <div><label>ツールの返し方</label><select id="toolMode">
+    <option value="blocking">blocking（完了時に1回）</option>
+    <option value="nb_silent">nb_silent（NON_BLOCKING・進捗なし）</option>
+    <option value="nb_progress" selected>nb_progress（NON_BLOCKING・進捗あり）</option>
+  </select></div>
+  <div><label>ツール所要(秒)</label><input id="delay" type="number" value="6" min="0" max="30" step="1" style="width:80px"></div>
+  <div><button id="start" class="primary">接続して話す</button></div>
+  <div><button id="stop" disabled>切断</button></div>
+ </div>
+ <div class="hint">例:「本番サーバ web-01 の状況を確認して」と話しかけるとツールが呼ばれます。</div>
+ <div id="meter"><div id="meterBar"></div></div>
+ <div class="stats">
+   <div class="stat"><b id="sNow">–</b><span>いまの無音 (ms)</span></div>
+   <div class="stat"><b id="sMax">–</b><span>最大無音 (ms)</span></div>
+   <div class="stat"><b id="sTtfa">–</b><span>最初の応答まで (ms)</span></div>
+   <div class="stat"><b id="sPlay">–</b><span>総発話 (s)</span></div>
+ </div>
+</div>
+
+<div class="card">
+ <div class="row" style="margin-bottom:10px">
+   <div style="flex:1"><label>テキストで送る（マイクなしで試す用）</label>
+     <input id="txt" style="width:100%" placeholder="本番サーバ web-01 の状況を確認して" ></div>
+   <div><button id="send">送信</button></div>
+ </div>
+ <div id="log"></div>
+</div>
+</div>
+<script src="/static/app.js?v=1789694524"></script>

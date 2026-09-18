@@ -1,0 +1,9 @@
+err,max_silence_ms,mode,model,n_follow,n_interrupted,n_progress,play_sec,prog_err,said
+,2648,NB,gemini-3.8-live,3,1,3,10.21,,サーバへの接続を確認しています。続いて、メトリクスの取得を行っています。ログの確認も完了しました。サーバは正常に稼働しています。
+,2436,NB,gemini-3.1-flash-live-preview,3,1,3,11.92,,"web-01の接続を確認中です。メトリクスをログを確認しています。
+
+web-01は正常に稼働中です。CPU使用率は32%、アップタイムは14日です。"
+,1603,NB,gemini-2.5-flash-native-audio-latest,3,1,3,11.2,,確認中です。接続を確認しています。メトリクスを取得中です。ログを確認しています。web-01の状況は正常です。稼働時間は14日、CPU使用率は32%
+,3180,既定(BLOCKING),gemini-3.8-live,3,1,3,9.37,,サーバへの接続を確認しています。メトリクスを取得中です。ログを確認しています。 web-01は正常に稼働中です。
+,2428,既定(BLOCKING),gemini-3.1-flash-live-preview,1,0,3,2.82,,本番サーバ web-01 に接続確認中です。
+APIError: 1007 None. The audio content type (CONTENT_TYPE_AUDIO) is not supported for this model con,4294,既定(BLOCKING),gemini-2.5-flash-native-audio-latest,1,0,3,1.6,received 1007 (invalid frame payload data) The audio content type (CON,接続を確認しています。

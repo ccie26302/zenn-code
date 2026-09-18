@@ -1,0 +1,11 @@
+plane,model,registry_http,launch_stage,live_session,ttfa_ms,note
+vertex-us-central1,gemini-3.8-live,200,GA,1008_rejected,,"v1beta1/v1/default 全て同結果"
+vertex-europe-west4,gemini-3.8-live,200,GA,1008_rejected,,
+vertex-global,gemini-3.8-live,404,,1008_rejected,,
+vertex-us-central1,gemini-3.8-live-preview,200,PRIVATE_PREVIEW,1008_rejected,,
+vertex-us-central1,gemini-3.8-live-extended-thinking,404,,1008_rejected,,
+vertex-us-central1,gemini-live-2.5-flash-native-audio,200,GA,ok,739,"2回とも739ms"
+aistudio,gemini-3.8-live,listed,bidiGenerateContent,ok,1022,
+aistudio,gemini-3.8-live-extended-thinking,listed,bidiGenerateContent,ok,1006,"thinking_level必須 MINIMAL不可"
+aistudio,gemini-3.1-flash-live-preview,listed,bidiGenerateContent,ok,538,
+aistudio,gemini-2.5-flash-native-audio-latest,listed,bidiGenerateContent,ok,2142,
