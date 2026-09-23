@@ -1,0 +1,18 @@
+{
+ "B1": {
+  "model": "text-multilingual-embedding-002",
+  "params": {
+   "lr__C": "0.1",
+   "sc": "StandardScaler()"
+  },
+  "cv_logloss": 0.40891502712821126
+ },
+ "B2": {
+  "model": "gemini-embedding-001",
+  "params": {
+   "lr__C": "0.1",
+   "sc": "StandardScaler()"
+  },
+  "cv_logloss": 0.24992395090035843
+ }
+}
