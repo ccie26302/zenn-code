@@ -50,7 +50,8 @@ def _meta(r):
 def run_logprob(cl, model, text, policy, think=0):
     cfg = _think(types.GenerateContentConfig(
         response_mime_type="text/x.enum", response_schema={"type":"STRING","enum":LABELS},
-        response_logprobs=True, logprobs=19, temperature=0, seed=42, max_output_tokens=4), think)
+        response_logprobs=True, logprobs=19, temperature=0, seed=42,
+        max_output_tokens=4 if not think else 2048), think)   # 思考ありは思考分の枠が要る
     t = time.perf_counter()
     r = cl.models.generate_content(model=model, contents=prompt(text, policy), config=cfg)
     ms = (time.perf_counter()-t)*1000

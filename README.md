@@ -25,12 +25,13 @@ Gemini Live API で音声エージェントを組み、ツール実行中に生�
 
 ### `system-one-on-google-cloud/` — 文章を書かない Jev を Google Cloud で作れるか
 
-選択肢から判定と確率だけを返す「System One」型の判定を、Vertex AI の3方式（enum 制約＋logprobs / 埋め込み＋分類器 / 言語化確信度）で作り、6,378試行で測った一式。
+選択肢から判定と確率だけを返す「System One」型の判定を、Vertex AI の3方式（enum 制約＋logprobs / 埋め込み＋分類器 / 言語化確信度）で作り、8,453試行で測った一式。
 
 - `corpus.py` — 経費申請コーパス（テスト400 / 学習200、言い回しは学習とテストで分離）
-- `harness.py` / `run.py` — 各方式の呼び出しと測定（精度・再試行・規程変更・再現性・速度・長い規程）
-- `analyze.py` / `analyze_extra.py` — 自動化率・対数損失・ECE・ブートストラップ・McNemar・カスケード
-- `PLAN.md` — 測定前にコミットした事前登録
+- `harness.py` / `run.py` — 各方式の呼び出しと測定（精度・再試行・規程変更・再現性・速度・長い規程・思考の追加測定）
+- `analyze.py` / `analyze_extra.py` — 事前登録どおりの主分析（自動化率・対数損失・ECE・ブートストラップ・McNemar）
+- `report.py` — 記事の表をすべて出す集計（出力例は `data/report_final.txt`）
+- `PLAN.md` — 測定前にコミットした事前登録と、追加測定の予測
 - `data/` — 生データ（`acc.jsonl` 4,400行 ほか）
 - `REPRODUCE.md` — 再現手順
 

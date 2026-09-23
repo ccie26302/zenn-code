@@ -32,7 +32,12 @@ GEN = {  # 条件名: (呼び出し, モデル, 思考)
  "C1d":(H.run_verbal_dist,"gemini-3.8-flash",      "LOW"),
  "C2t":(H.run_verbal_top, "gemini-2.5-flash",      0),
  "C2d":(H.run_verbal_dist,"gemini-2.5-flash",      0),
+ # 追加測定(事後・探索的): 同じ 2.5 Flash に思考を与える
+ "A1k128":(H.run_logprob,   "gemini-2.5-flash",      128),
+ "A1k512":(H.run_logprob,   "gemini-2.5-flash",      512),
+ "C2k512":(H.run_verbal_top,"gemini-2.5-flash",      512),
 }
+THINK = ("A1k128","A1k512","C2k512")
 EMB = {"B1":"text-multilingual-embedding-002", "B2":"gemini-embedding-001"}
 
 def client_retry():
@@ -194,5 +199,40 @@ def cmd_retry(max_try=4):
         write(out, rec)
     print("retry done")
 
+def cmd_embtrain():
+    """B の学習用埋め込みを保存する(集計で学習データ上の正答率と交差検証を再現するため)。"""
+    cl = client_retry()
+    for name, model in EMB.items():
+        out = os.path.join(HERE,"data","Xtr_%s.npy" % name)
+        if os.path.exists(out): continue
+        np.save(out, np.array([H.embed_one(cl, model, r["text"])[0] for r in TRAIN]))
+        print("  saved", out)
+
+def cmd_think(n_lat=50, warm=5):
+    """追加測定: 思考とモデル世代の切り分け。精度(並列)を先に、速度(逐次)を後に。"""
+    out = os.path.join(HERE,"data","think.jsonl"); outl = os.path.join(HERE,"data","think_lat.jsonl")
+    if os.path.exists(out) or os.path.exists(outl): sys.exit("既に think*.jsonl があります")
+    cl = client_retry()
+    jobs = [(c, r) for c in THINK for r in TEST + TRAIN]
+    random.Random(20260923).shuffle(jobs)
+    with cf.ThreadPoolExecutor(max_workers=8) as ex:
+        for i, rec in enumerate(ex.map(lambda j: one_gen(cl, j[0], j[1], POL, "think"), jobs)):
+            write(out, rec)
+            if (i+1) % 300 == 0: print("  %d/%d" % (i+1, len(jobs)))
+    cl = H.client(); rnd = random.Random(7)
+    for i, r in enumerate(TEST[:n_lat+warm]):
+        conds = list(THINK) + ["A1", "FLOOR"]; rnd.shuffle(conds)
+        for c in conds:
+            rec = base(c, r, "think_lat"); rec["warmup"] = int(i < warm); rec["seq"] = i
+            try:
+                if c == "FLOOR":
+                    rec.update(model="gemini-2.5-flash", ms=H.floor_ms(cl, "gemini-2.5-flash", H.prompt(r["text"], POL)))
+                else:
+                    rec.update(one_gen(cl, c, r, POL, "think_lat"))
+            except Exception as e:
+                rec["err"] = "%s: %s" % (type(e).__name__, str(e)[:200])
+            write(outl, rec)
+    print("think done")
+
 if __name__ == "__main__":
-    {"retry":cmd_retry, "acc":cmd_acc, "lat":cmd_lat, "policy":cmd_policy, "repeat":cmd_repeat, "long":cmd_long}[sys.argv[1]]()
+    {"embtrain":cmd_embtrain, "think":cmd_think, "retry":cmd_retry, "acc":cmd_acc, "lat":cmd_lat, "policy":cmd_policy, "repeat":cmd_repeat, "long":cmd_long}[sys.argv[1]]()
