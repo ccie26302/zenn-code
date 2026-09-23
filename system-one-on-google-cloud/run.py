@@ -41,6 +41,9 @@ THINK = ("A1k128","A1k512","C2k512")
 EMB = {"B1":"text-multilingual-embedding-002", "B2":"gemini-embedding-001"}
 
 def client_retry():
+    # 注意: PLAN.md では「精度側は SDK のリトライ有効」としたが、retry_options を渡していないため
+    # google-genai 2.24.0 ではリトライしない(既定は1回で打ち切り)。記事の主分析はこの状態の値。
+    # エラー項目は後から cmd_retry で再試行し、再試行込みの値として別に集計している。
     return genai.Client(vertexai=True, project=H.PROJECT, location=H.LOC)
 
 def write(path, rec):

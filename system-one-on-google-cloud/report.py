@@ -108,6 +108,15 @@ def cost():
             extra = "  (導入価格終了後 $%.6f = Jev の %.0f 倍)" % (later, later / jev)
         print("  %-7s 入力 %4.0f 出力 %4.1f 思考 %5.1f  $%.7f  Jev の %6.1f 倍  100万件 $%.0f%s" % (
               c, i, o, th, usd, usd / jev, usd * 1e6, extra))
+    # 埋め込み: Vertex AI の料金表は「1,000単位あたり」。gemini-embedding は $0.00015(トークン単位と読む)、
+    # それ以外の text embedding は $0.000025(文字単位と読む)。申請文のトークン数は A1 の入力トークンと文字数の回帰で推定
+    C = {r["id"]: r for r in ROWS}
+    x = [len(C[r["id"]]["text"]) for r in ACC if r["cond"] == "A1" and not r.get("err")]
+    y = [r["in_tok"] for r in ACC if r["cond"] == "A1" and not r.get("err")]
+    b = np.polyfit(x, y, 1)[0]; chars = np.mean(x); toks = b * chars
+    for name, usd, note in (("B1", chars * 0.000025 / 1000, "1,000文字あたり$0.000025 と読んだ場合"),
+                            ("B2", toks * 0.00015 / 1000, "1,000トークンあたり$0.00015、申請文 約%.0fトークン(推定)" % toks)):
+        print("  %-7s 推定 $%.7f  Jev の %4.2f 倍  (%s)" % (name, usd, usd / jev, note))
     return out
 
 def b_train():
