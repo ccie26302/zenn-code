@@ -1,6 +1,7 @@
 """計画どおりに TTS を呼び、WAV と記録を残す（PLAN.md 4節）。
 
-使い方: python synth.py <段階>   段階 = gate / main / repeat / q2
+使い方: python synth.py <段階>   段階 = gate / main / repeat / q2 / auto
+  - auto は main → main_x → repeat → q2 の順に未完了のものを流し、1日の上限（429 の per day）に達したら終了する（翌日に持ち越し）
   - GCS_BUCKET があれば WAV を gs://<bucket>/wav/ へ、なければ data/wav/ へ
   - BQ_TABLE があれば記録を BigQuery へ、常に data/requests.jsonl にも追記
   - API キーは環境変数 GEMINI_API_KEY（Cloud Run では Secret Manager から注入）
@@ -51,10 +52,13 @@ def call(cl, voice, style, text):
                                 response_format={"type": "audio"}, generation_config={"speech_config": [{"voice": voice}]})
     return base64.b64decode(it.output_audio.data), getattr(it, "model", None)
 
+class DailyLimit(Exception): pass
+
 def main(stage):
     cl = genai.Client(api_key=os.environ["GEMINI_API_KEY"])
     done = done_reqs()
-    todo = [p for p in C.PLANNED if p["stage"] == stage and p["req"] not in done]
+    stages = ["main", "main_x", "repeat", "q2"] if stage == "auto" else [stage]
+    todo = [p for st in stages for p in C.PLANNED if p["stage"] == st and p["req"] not in done]
     print(f"{stage}: {len(todo)} 件", flush=True)
     for p in todo:
         if p["frame"] == "long": text, words = C.LONG_TEXT, None
@@ -72,7 +76,9 @@ def main(stage):
                 record(rec); print(f"  req{p['req']:03d} {p['voice']} {p['style']} OK ({k+1}回目)", flush=True)
                 break
             except Exception as e:
-                msg = str(e)[:400]; errors.append(msg); print(f"  req{p['req']:03d} 失敗: {msg[:120]}", flush=True)
+                msg = str(e)[:400]; errors.append(msg); print(f"  req{p['req']:03d} 失敗: {msg[:160]}", flush=True)
+                if "per day" in msg:
+                    print("1日の上限に達したので終了（翌日に持ち越し）", flush=True); return
                 time.sleep(60 if "429" in msg or "RESOURCE_EXHAUSTED" in msg else 20)
         else:
             record(dict(p, ok=False, attempts=MAX_TRY, errors=errors))

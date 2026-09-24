@@ -9,9 +9,12 @@ BUCKET = os.environ.get("GCS_BUCKET", os.environ.get("PROJECT_ID", "") + "-ttsdi
 
 def requests():
     out = {}
-    for l in open(os.path.join(HERE, "data", "requests.jsonl")):
-        r = json.loads(l)
-        if r.get("ok"): out[r["req"]] = r
+    for fn in ("requests.jsonl", "vertex31.jsonl"):
+        p = os.path.join(HERE, "data", fn)
+        if not os.path.exists(p): continue
+        for l in open(p):
+            r = json.loads(l)
+            if r.get("ok"): out[r["req"]] = r
     return [out[k] for k in sorted(out)]
 
 def fetch(r):

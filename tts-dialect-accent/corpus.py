@@ -53,3 +53,6 @@ for v in ("ja-jp-concierge-3", "ja-jp-csagent-11"):
 if __name__ == "__main__":
     print(len(PLANNED), "requests"); import collections; print(collections.Counter(p["stage"] for p in PLANNED))
     print(request_text("kansai", 20260926)[0][:200])
+
+# v6 追記（探索的）：東京3声 × 指示なし × 関西の枠（リクエスト番号は既存の後ろに追加し、既存の番号・シードは変えない）
+_add("main_x", VOICES["tokyo"], "N", "kansai")
