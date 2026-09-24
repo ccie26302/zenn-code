@@ -1,0 +1,15 @@
+{
+ "osaka": [
+  "ja-jp-concierge-3",
+  "ja-jp-assistant-8",
+  "ja-jp-podcaster-3",
+  "ja-jp-advisor-6",
+  "ja-jp-storyteller-9",
+  "ja-jp-storyteller-2"
+ ],
+ "tokyo": [
+  "ja-jp-csagent-11",
+  "ja-jp-tutor-10",
+  "ja-jp-podcaster-1"
+ ]
+}

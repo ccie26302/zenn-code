@@ -1,0 +1,438 @@
+{
+ "飴": {
+  "cls": "1",
+  "pron": [
+   "あめ|acc=0"
+  ],
+  "keihan": []
+ },
+ "鼻": {
+  "cls": "1",
+  "pron": [
+   "はな|acc=0|acc_ref=NHK"
+  ],
+  "keihan": []
+ },
+ "水": {
+  "cls": "1",
+  "pron": [
+   "みず|acc=0|acc_ref=DJR",
+   "すい|acc=1|acc_ref=DJR",
+   "もい"
+  ],
+  "keihan": []
+ },
+ "鳥": {
+  "cls": "1",
+  "pron": [
+   "とり|acc=0|acc_ref=NHK,DJR|a=Ja-WaniKaniTofuguMale-tori.oga",
+   "と|a=Ja-WaniKaniTofuguFemale-to-ladle.oga"
+  ],
+  "keihan": []
+ },
+ "庭": {
+  "cls": "1",
+  "pron": [
+   "にわ|acc=0|acc_ref=DJR"
+  ],
+  "keihan": []
+ },
+ "顔": {
+  "cls": "1",
+  "pron": [
+   "かお|acc=0|acc_ref=SMK2,NHK|a=Ja-WaniKaniTofuguMale-kao.oga",
+   "がん"
+  ],
+  "keihan": []
+ },
+ "枝": {
+  "cls": "1",
+  "pron": [
+   "えだ|acc=0|a=Ja-WaniKaniTofuguFemale-eda.oga"
+  ],
+  "keihan": []
+ },
+ "酒": {
+  "cls": "1",
+  "pron": [
+   "さけ|acc=0|acc_ref=DJR,NHK|a=ja-Sake.oga",
+   "さか",
+   "ささ|acc=0|acc_ref=DJR"
+  ],
+  "keihan": []
+ },
+ "羽": {
+  "cls": "1",
+  "pron": [
+   "はね|acc=0|acc_ref=DJR",
+   "は|acc=0|acc_ref=DJR,NHK,SMK5|a=Ja-WaniKaniTofuguMale-ha.ogg",
+   "う|acc=1|acc_ref=DJR|a=Ja-U.oga"
+  ],
+  "keihan": []
+ },
+ "姉": {
+  "cls": "1",
+  "pron": [
+   "あね|acc=0|acc_ref=NHK"
+  ],
+  "keihan": []
+ },
+ "桐": {
+  "cls": "1",
+  "pron": [
+   "きり|acc=0|acc_ref=DJR,NHK,SMK5"
+  ],
+  "keihan": []
+ },
+ "宮": {
+  "cls": "1",
+  "pron": [
+   "みや|acc=0|acc_ref=NHK,DJR",
+   "きゅう|acc=1|acc_ref=DJR"
+  ],
+  "keihan": []
+ },
+ "紙": {
+  "cls": "2",
+  "pron": [
+   "かみ|acc=2|acc_ref=DJR,SMK5,NHK|a=LL-Q5287 (jpn)-LaKoalita-紙 (かみ).wav",
+   "し|a=Ja-Shi.oga"
+  ],
+  "keihan": [
+   "k|か|み|kámì"
+  ]
+ },
+ "川": {
+  "cls": "2",
+  "pron": [
+   "かわ|acc=2|acc_ref=SMK2"
+  ],
+  "keihan": [
+   "k|か|わ|káꜜwà"
+  ]
+ },
+ "村": {
+  "cls": "2",
+  "pron": [
+   "むら|acc=2",
+   "そん|acc=1"
+  ],
+  "keihan": []
+ },
+ "歌": {
+  "cls": "2",
+  "pron": [
+   "うた|acc=2|acc_ref=DJR,NHK,SMK2"
+  ],
+  "keihan": []
+ },
+ "胸": {
+  "cls": "2",
+  "pron": [
+   "むな",
+   "むね|acc=2|acc_ref=DJR"
+  ],
+  "keihan": []
+ },
+ "旗": {
+  "cls": "2",
+  "pron": [
+   "はた|acc=2"
+  ],
+  "keihan": []
+ },
+ "雪": {
+  "cls": "2",
+  "pron": [
+   "ゆき",
+   "ゆき|a=LL-Q5287 (jpn)-Higa4-雪.wav|acc=2|acc_ref=DJR|acc2=1|acc2_note=as a name|only_show_acc=1"
+  ],
+  "keihan": []
+ },
+ "夢": {
+  "cls": "2",
+  "pron": [
+   "ゆめ|acc=2|acc_ref=DJR,ZAJ"
+  ],
+  "keihan": [
+   "k|ゆ|め|yúꜜmè"
+  ]
+ },
+ "石": {
+  "cls": "2",
+  "pron": [
+   "いし|acc=2|acc_ref=DJR,NHK",
+   "こく|acc=1|acc_ref=DJR",
+   "せき|acc=0"
+  ],
+  "keihan": []
+ },
+ "橋": {
+  "cls": "2",
+  "pron": [
+   "はし|acc=o|acc_ref=NHK,DJR,SMK5"
+  ],
+  "keihan": []
+ },
+ "山": {
+  "cls": "3",
+  "pron": [
+   "やま|acc=2|acc_ref=DJR,NHK|a=LL-Q5287_(jpn)-Higa4-山.wav",
+   "さん",
+   "ざん|acc_note=suffix with [[rendaku]]"
+  ],
+  "keihan": [
+   "k|や|ま|yáꜜmà"
+  ]
+ },
+ "花": {
+  "cls": "3",
+  "pron": [
+   "はな|acc=2|acc_ref=DJR|a=Ja-hana-flower or nose etc.ogg",
+   "はな|acc=1|acc_loc=Osaka",
+   "か"
+  ],
+  "keihan": []
+ },
+ "耳": {
+  "cls": "3",
+  "pron": [
+   "みみ|acc=2|acc_ref=DJR,NHK"
+  ],
+  "keihan": [
+   "k|み|み|míꜜmì"
+  ]
+ },
+ "池": {
+  "cls": "3",
+  "pron": [
+   "いけ|acc=2|acc_ref=DJR",
+   "ち"
+  ],
+  "keihan": [
+   "k|い|け|íꜜkè"
+  ]
+ },
+ "犬": {
+  "cls": "3",
+  "pron": [
+   "いぬ",
+   "いぬ|acc=2|acc_ref=DJR,NHK|only_show_acc=1"
+  ],
+  "keihan": [
+   "k|い|ぬ|ínù"
+  ]
+ },
+ "島": {
+  "cls": "3",
+  "pron": [
+   "しま|acc=2|acc_ref=NHK|a=Ja-WaniKaniTofuguFemale-shima.oga"
+  ],
+  "keihan": []
+ },
+ "髪": {
+  "cls": "3",
+  "pron": [
+   "かみ|acc=2|acc_ref=DJR,NHK"
+  ],
+  "keihan": []
+ },
+ "色": {
+  "cls": "3",
+  "pron": [
+   "いろ|acc=2|acc_ref=DJR,NHK|audio=Ja-iro-colour.ogg",
+   "いろえ",
+   "しき|acc=2|acc_ref=DJR"
+  ],
+  "keihan": [
+   "k|い|ろ|íꜜrò"
+  ]
+ },
+ "神": {
+  "cls": "3",
+  "pron": [
+   "かみ|acc=1|acc_ref=NHK,DJR",
+   "しん|acc=1|acc_ref=DJR",
+   "じん"
+  ],
+  "keihan": []
+ },
+ "波": {
+  "cls": "3",
+  "pron": [
+   "なみ|acc=2|acc_ref=DJR,NHK",
+   "は",
+   "ぽ"
+  ],
+  "keihan": []
+ },
+ "腹": {
+  "cls": "3",
+  "pron": [
+   "はら|acc=2|acc_ref=DJR,NHK"
+  ],
+  "keihan": []
+ },
+ "糸": {
+  "cls": "4",
+  "pron": [
+   "いと|acc=1"
+  ],
+  "keihan": []
+ },
+ "海": {
+  "cls": "4",
+  "pron": [
+   "うみ|acc=1|acc_ref=NHK,DJR|a=Ja-WaniKaniTofuguMale-umi.ogg",
+   "うな",
+   "わた|acc=0|acc2=2|acc_ref=<ref name=\"KDJ2O\">{{R:Nihon Kokugo Daijiten 2 Online|わた 【海】|lid=2002048123d2UxFq22CV|kotobank=海"
+  ],
+  "keihan": []
+ },
+ "綿": {
+  "cls": "4",
+  "pron": [
+   "めん|acc=1|acc_ref=DJR",
+   "わた|acc=2|acc_ref=DJR"
+  ],
+  "keihan": []
+ },
+ "船": {
+  "cls": "4",
+  "pron": [
+   "せん"
+  ],
+  "keihan": []
+ },
+ "針": {
+  "cls": "4",
+  "pron": [
+   "はり|acc=1|acc_ref=DJR,NHK"
+  ],
+  "keihan": []
+ },
+ "稲": {
+  "cls": "4",
+  "pron": [
+   "いね|acc=1|acc_ref=SMK2,NHK"
+  ],
+  "keihan": []
+ },
+ "肩": {
+  "cls": "4",
+  "pron": [
+   "かた|acc=1|acc_ref=SMK2,SMK5,DJR,NHK"
+  ],
+  "keihan": []
+ },
+ "笠": {
+  "cls": "4",
+  "pron": [
+   "かさ|acc=1|acc_ref=NKD2P,DJR,SMK8,NHK|a=Ja-WaniKaniTofuguFemale-kasa-conical hat.oga",
+   "りゅう",
+   "りつ"
+  ],
+  "keihan": []
+ },
+ "麦": {
+  "cls": "4",
+  "pron": [
+   "むぎ|acc=1|acc_ref=NKD2P,DJR,NHK"
+  ],
+  "keihan": []
+ },
+ "松": {
+  "cls": "4",
+  "pron": [
+   "まつ|acc=1|acc_ref=<ref name=\"KDJ2O\"/>,DJR,NHK,SMK7"
+  ],
+  "keihan": []
+ },
+ "雨": {
+  "cls": "5",
+  "pron": [
+   "あめ|acc=1|acc_ref=DJR,NHK16,SMK8",
+   "あま",
+   "う|a=Ja-U.oga"
+  ],
+  "keihan": [
+   "t|あ|め||àméꜜ"
+  ]
+ },
+ "声": {
+  "cls": "5",
+  "pron": [
+   "こえ|acc=1|acc_ref=DJR,NHK",
+   "せい",
+   "しょう"
+  ],
+  "keihan": []
+ },
+ "猿": {
+  "cls": "5",
+  "pron": [
+   "さる|acc=1|acc_ref=DJR,SMK5|a=Ja-WaniKaniTofuguFemale-saru.oga",
+   "まし|acc=1|acc_ref=SMK5",
+   "ましら|acc=0|acc_ref=DJR,SMK5|acc2=1|acc2_ref=DJR"
+  ],
+  "keihan": []
+ },
+ "春": {
+  "cls": "5",
+  "pron": [
+   "はる|acc=1|a=Ja-haru.ogg",
+   "しゅん"
+  ],
+  "keihan": [
+   "t|は|る||hàrúꜜ"
+  ]
+ },
+ "窓": {
+  "cls": "5",
+  "pron": [
+   "まど|acc=1|acc_ref=DJR,SMK5,NHK"
+  ],
+  "keihan": []
+ },
+ "鍋": {
+  "cls": "5",
+  "pron": [
+   "なべ|acc=1|acc_ref=DJR,SMK5,NHK"
+  ],
+  "keihan": []
+ },
+ "婿": {
+  "cls": "5",
+  "pron": [
+   "むこ|acc=1|acc_ref=DJR"
+  ],
+  "keihan": []
+ },
+ "鶴": {
+  "cls": "5",
+  "pron": [
+   "つる|acc=1|acc_ref=DJR,NHK",
+   "たず|acc=1|acc_ref=DJR",
+   "かく"
+  ],
+  "keihan": []
+ },
+ "秋": {
+  "cls": "5",
+  "pron": [
+   "あき|acc=1|acc_ref=DJR,<ref name=\"NKD2O\"/>|a=Ja-aki.ogg"
+  ],
+  "keihan": []
+ },
+ "前": {
+  "cls": "5",
+  "pron": [
+   "まえ|acc=1|acc_ref=DJR,NHK,SMK5",
+   "ぜん|acc=1|acc_ref=DJR,NHK",
+   "ぜ"
+  ],
+  "keihan": [
+   "t|ま|え||màéꜜ"
+  ]
+ }
+}
