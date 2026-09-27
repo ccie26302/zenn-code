@@ -1,0 +1,172 @@
+{
+ "a01": {
+  "answer": "お嬢様",
+  "req": 33,
+  "voice": "ja-jp-csagent-11",
+  "sent": 9
+ },
+ "a02": {
+  "answer": "関西",
+  "req": 30,
+  "voice": "ja-jp-concierge-3",
+  "sent": 2
+ },
+ "a03": {
+  "answer": "お嬢様",
+  "req": 33,
+  "voice": "ja-jp-csagent-11",
+  "sent": 10
+ },
+ "a04": {
+  "answer": "関西",
+  "req": 30,
+  "voice": "ja-jp-concierge-3",
+  "sent": 3
+ },
+ "a05": {
+  "answer": "関西",
+  "req": 36,
+  "voice": "ja-jp-csagent-11",
+  "sent": 7
+ },
+ "a06": {
+  "answer": "お嬢様",
+  "req": 27,
+  "voice": "ja-jp-concierge-3",
+  "sent": 7
+ },
+ "a07": {
+  "answer": "関西",
+  "req": 35,
+  "voice": "ja-jp-csagent-11",
+  "sent": 1
+ },
+ "a08": {
+  "answer": "関西",
+  "req": 29,
+  "voice": "ja-jp-concierge-3",
+  "sent": 7
+ },
+ "a09": {
+  "answer": "関西",
+  "req": 35,
+  "voice": "ja-jp-csagent-11",
+  "sent": 10
+ },
+ "a10": {
+  "answer": "お嬢様",
+  "req": 28,
+  "voice": "ja-jp-concierge-3",
+  "sent": 1
+ },
+ "a11": {
+  "answer": "お嬢様",
+  "req": 28,
+  "voice": "ja-jp-concierge-3",
+  "sent": 8
+ },
+ "a12": {
+  "answer": "お嬢様",
+  "req": 34,
+  "voice": "ja-jp-csagent-11",
+  "sent": 4
+ },
+ "a13": {
+  "answer": "お嬢様",
+  "req": 34,
+  "voice": "ja-jp-csagent-11",
+  "sent": 1
+ },
+ "a14": {
+  "answer": "関西",
+  "req": 29,
+  "voice": "ja-jp-concierge-3",
+  "sent": 6
+ },
+ "a15": {
+  "answer": "お嬢様",
+  "req": 28,
+  "voice": "ja-jp-concierge-3",
+  "sent": 6
+ },
+ "a16": {
+  "answer": "関西",
+  "req": 35,
+  "voice": "ja-jp-csagent-11",
+  "sent": 2
+ },
+ "a17": {
+  "answer": "関西",
+  "req": 30,
+  "voice": "ja-jp-concierge-3",
+  "sent": 5
+ },
+ "a18": {
+  "answer": "お嬢様",
+  "req": 27,
+  "voice": "ja-jp-concierge-3",
+  "sent": 4
+ },
+ "a19": {
+  "answer": "お嬢様",
+  "req": 33,
+  "voice": "ja-jp-csagent-11",
+  "sent": 6
+ },
+ "a20": {
+  "answer": "関西",
+  "req": 36,
+  "voice": "ja-jp-csagent-11",
+  "sent": 5
+ },
+ "b01": {
+  "req": 5,
+  "word": "水",
+  "note": "Chirp=ねん/MMS=半々"
+ },
+ "b02": {
+  "req": 21,
+  "word": "飴",
+  "note": "両方=ねん"
+ },
+ "b03": {
+  "req": 4,
+  "word": "鳥",
+  "note": "両方=ね"
+ },
+ "b04": {
+  "req": 19,
+  "word": "雨",
+  "note": "Chirp混在"
+ },
+ "b05": {
+  "req": 8,
+  "word": "飴",
+  "note": "Chirp=ねん/MMS=ねん多"
+ },
+ "b06": {
+  "req": 41,
+  "word": "雨",
+  "note": "Chirp=ねん/MMS=ね"
+ },
+ "b07": {
+  "req": 16,
+  "word": "鍋",
+  "note": "Chirp混在/MMS=ね"
+ },
+ "b08": {
+  "req": 9,
+  "word": "糸",
+  "note": "Chirp=ねん/MMS=ね"
+ },
+ "b09": {
+  "req": 12,
+  "word": "花",
+  "note": "両方=ね"
+ },
+ "b10": {
+  "req": 15,
+  "word": "川",
+  "note": "Chirp=ねん/MMS=ね"
+ }
+}

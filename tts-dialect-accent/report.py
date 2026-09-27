@@ -97,11 +97,31 @@ def main():
         for c in (1, 2, 3, 4, 5):
             ss = [q for q in s if q["cls"] == c and q["label"] in ("tokyo", "keihan", "not_tokyo")]
             if ss: print(f"      {c}類 東京式 {sum(q['label']=='tokyo' for q in ss)}/{len(ss)}")
+    print("\n## 探索（事後）：語ごとの京阪式か、一律の高起か")
+    print("  4・5類の低起（東京式ではありえず、一律に高く始める読みでも出ない＝語ごとの京阪式の証拠）と、2・3類の高起")
+    def lowhigh(s):
+        a = [q for q in s if q["cls"] in (4, 5) and q.get("register")]; b = [q for q in s if q["cls"] in (2, 3) and q.get("register")]
+        c = [q for q in s if q["cls"] == 1 and q.get("register")]
+        return (sum(q["register"] == "low" for q in a), len(a), sum(q["register"] == "high" for q in b), len(b),
+                sum(q["register"] == "high" for q in c), len(c))
+    conds = [("東京×指示なし×標準（ゲート）", cond("N", "tokyo", "standard")), ("大阪×関西の指示", cond("K", "osaka", "kansai")),
+             ("大阪×指示なし", cond("N", "osaka", "kansai")), ("大阪×東京の指示", cond("T", "osaka", "kansai")),
+             ("東京×関西の指示", cond("K", "tokyo", "kansai")), ("東京×指示なし×関西の枠", cond("N", "tokyo", "kansai"))]
+    for v in ("Kore", "Charon"):
+        for st in ("K", "N"):
+            conds.append((f"3.1 {v}×{st}×関西の枠", [q for q in rows if q["stage"] == "vertex31" and q["voice"] == v and q["style"] == st and q["frame"] == "kansai"]))
+    conds.append(("3.1 Kore×N×標準の枠", [q for q in rows if q["stage"] == "vertex31" and q["voice"] == "Kore" and q["frame"] == "standard"]))
+    for name, s in conds:
+        a, n, b, m, c, k = lowhigh(s)
+        print(f"  {name:24s} 4・5類の低起 {a:2d}/{n:2d} ({pct(a/n) if n else '-'})  2・3類の高起 {b:2d}/{m:2d} ({pct(b/m) if m else '-'})  1類の高起 {c:2d}/{k:2d}")
+
     print("\n## 参考：Gemini-TTS 3.1 Flash preview（Cloud Text-to-Speech）")
     for v in ("Kore", "Charon"):
         for st in ("K", "N"):
-            s = [q for q in rows if q["stage"] == "vertex31" and q["voice"] == v and q["style"] == st]
-            kh, n = rate(s, "keihan"); print(f"  {v:7s} {st} 京阪式 {pct(kh)} 東京式 {pct(rate(s,'tokyo')[0])} n={n}")
+            for fr in ("kansai", "standard"):
+                s = [q for q in rows if q["stage"] == "vertex31" and q["voice"] == v and q["style"] == st and q["frame"] == fr]
+                if not s: continue
+                kh, n = rate(s, "keihan"); print(f"  {v:7s} {st} {fr:8s} 京阪式 {pct(kh)} 東京式 {pct(rate(s,'tokyo')[0])} n={n}")
     print("\n## 大阪の声ごと（関西の指示）")
     for v in C.VOICES["osaka"]:
         s = [q for q in cond("K", "osaka", "kansai") if q["voice"] == v]
@@ -112,7 +132,7 @@ def main():
     per = [rate([q for q in K if q["voice"] == v], "keihan")[0] for v in C.VOICES["osaka"]]
     if any(p != p for p in per): print("\n（本測定が揃っていないので予測の判定は保留）"); return rows
     print("\n## 事前予測")
-    print("  P2 京阪式<70% の声: %d/6 → %s" % (sum(p < .7 for p in per), "支持" if sum(p < .7 for p in per) >= 5 else "外れ"))
+    print("  P2 京阪式<70%% の声: %d/6 → %s" % (sum(p < .7 for p in per), "支持" if sum(p < .7 for p in per) >= 5 else "外れ"))
     lo, hi = boot_voice_word(K, "tokyo"); print("  P3 エセ率 %s [%s, %s] → %s" % (pct(rate(K, "tokyo")[0]), pct(lo), pct(hi), "支持" if lo >= .2 else "外れ"))
     print("  P5 大阪×K %s vs 東京×K %s" % (pct(rate(K, "keihan")[0]), pct(rate(TK, "keihan")[0])))
     d6 = rate(Tt, "tokyo")[0] - rate(K, "tokyo")[0]; print("  P6 東京式 T−K = %+.1fpt → %s" % (100 * d6, "支持" if d6 >= .2 else "外れ"))
