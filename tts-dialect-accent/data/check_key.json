@@ -1,0 +1,26 @@
+{
+ "c1": {
+  "req": 22,
+  "expected": "前"
+ },
+ "c2": {
+  "req": 903,
+  "expected": "前"
+ },
+ "c3": {
+  "req": 903,
+  "expected": "稲"
+ },
+ "c4": {
+  "req": 903,
+  "expected": "耳"
+ },
+ "c5": {
+  "req": 905,
+  "expected": "鍋"
+ },
+ "c6": {
+  "req": 3,
+  "expected": "春"
+ }
+}

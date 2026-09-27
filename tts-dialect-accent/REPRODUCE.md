@@ -1,6 +1,6 @@
 # 再現手順：Gemini 3.8 Flash TTS の関西弁アクセント
 
-記事「Gemini 3.8 TTSの関西弁、エセかどうか測った」の測定一式です。事前登録はタグ `tts-prereg-1`（計画）、`tts-prereg-2`（陰性ゲート後の判定方法の変更）、`tts-prereg-3`（探索的な条件の追加）。
+記事「Gemini 3.8 TTSの関西弁、エセかどうか測った」の測定一式です。事前登録はタグ `tts-prereg-1`（計画）、`tts-prereg-2`（陰性ゲート後の判定方法の変更）、`tts-prereg-3`（探索的な条件の追加）、`tts-prereg-4`（3.1 の拡張測定）。
 
 ## 環境
 
@@ -32,6 +32,10 @@ python report.py          # アクセントの判定と記事の表（結果1〜
 python q2.py              # お嬢様と関西弁：各文の「わ」の測定 → data/q2_wa.csv
 python q2_report.py       # 結果5の表と聴き分けの正解数 → data/report_q2.txt
 python q2_global.py       # 結果5の探索：文章全体の長さと声の高さ
+python extra.py           # 形の内訳・感度分析・再現性・位置など（探索、キャッシュのみで動く）
+python vertex31x.py       # 3.1 の拡張測定（Cloud Text-to-Speech、6声×3条件×2回）
+python v31_report.py      # 3.1 の節の表 → data/report_v31x.txt
+python q3.py              # 原稿と書き起こしの突き合わせ（3.8）→ data/report_q3.txt
 ```
 
 - 書き起こしは Speech-to-Text v2（Chirp 3、`us`）。60秒を超える音声は `stt.py` が分割する。結果は `data/stt/` に保存済み
@@ -41,5 +45,5 @@ python q2_global.py       # 結果5の探索：文章全体の長さと声の高
 ## 注意
 
 - 音声ファイル（WAV）はリポジトリに含めていません。`data/requests.jsonl` の原稿・声・指示・シードで再生成できますが、生成は確率的なので同じ音声にはなりません
-- 聴き分けの回答（`data/listening_answers.json`）は筆者1人のものです
+- 聴き分けの回答（`data/listening_answers.json`）と、名詞の聴き取り確認（`data/check_answers.json`）は筆者1人のものです
 - 実行すると Gemini API と Google Cloud（Speech-to-Text など）の課金が発生する場合があります

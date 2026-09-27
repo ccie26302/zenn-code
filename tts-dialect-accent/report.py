@@ -10,7 +10,7 @@ TOKYO_REG = {1: "low", 2: "low", 3: "low", 4: "high", 5: "high"}
 CACHE = os.path.join(HERE, "data", "shape_measure.jsonl")
 RNG = np.random.default_rng(20260925)
 
-def measure_all(stages=("gate", "main", "main_x", "repeat", "vertex31")):
+def measure_all(stages=("gate", "main", "main_x", "repeat", "vertex31", "vertex31x")):
     done = {}
     if os.path.exists(CACHE):
         for l in open(CACHE):

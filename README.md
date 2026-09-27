@@ -35,6 +35,17 @@ Gemini Live API で音声エージェントを組み、ツール実行中に生�
 - `data/` — 生データ（`acc.jsonl` 4,400行 ほか）
 - `REPRODUCE.md` — 再現手順
 
+### `tts-dialect-accent/` — Gemini 3.8 TTSの関西弁、エセかどうか測った
+
+Gemini 3.8 Flash TTS の大阪ラベルの声に関西弁を読ませ、名詞のアクセント（高起・低起）を音の高さから判定した一式。Cloud Run ジョブ・Cloud Scheduler・Speech-to-Text（Chirp 3）・Cloud Text-to-Speech（Gemini-TTS 3.1）を使用。事前登録タグ `tts-prereg-1`〜`4`。
+
+- `PLAN.md` — 事前登録（陰性ゲート後の判定方法の変更と、探索的な追加条件を含む）
+- `synth.py` / `Dockerfile` — Cloud Run ジョブで回す合成（無料枠の1日上限で止まり翌日に続きから流す）
+- `shape.py` / `report.py` / `extra.py` / `v31_report.py` — 判定と記事の表
+- `q2.py` / `q2_report.py` / `q3.py` — お嬢様と関西弁、原稿との突き合わせ
+- `data/` — 判定結果・書き起こし・聴き取りの回答（音声ファイルは含まない）
+- `REPRODUCE.md` — 再現手順
+
 ## 使うにあたって
 
 **API キーは各自でご用意ください。** このリポジトリに鍵は含まれていません。
