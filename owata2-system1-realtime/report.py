@@ -61,26 +61,29 @@ def top1(eps, A):
     return f"{s / n:.0%}" if n else "—"
 
 
+def deathcheck(tag):
+    f = os.path.join(ROOT, "data", f"death_check_{tag}.json")
+    return json.load(open(f)) if os.path.exists(f) else None
 def recland(tag):
     f = os.path.join(ROOT, "data", f"landing_rec_{tag}.json")
     return set(json.load(open(f))["足場に乗った回"]) if os.path.exists(f) else None
 jumped = lambda e: any(t["x"] > 185 and t["y"] < 300 for t in e["traj"])
 def table(runs, title):
     print(f"\n{title}\n")
-    print("| TAG | 条件 | 回数 | 死亡 | 崖の端より先(落下含む) | 跳んで崖を離れた | 足場(判断時) | 足場(録画) | 向こう岸 | 見失い | 最高 x | 遅れ p50(コマ) | モデル p50(ms) | 目 p50(ms) | 1位採用(11択の手のみ) |")
-    print("|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|")
+    print("| TAG | 条件 | 回数 | 死亡 | 死亡(録画で生存を除く) | 崖の端より先(落下含む) | 跳んで崖を離れた | 足場(判断時) | 足場(録画) | 向こう岸 | 見失い | 最高 x | 遅れ p50(コマ) | モデル p50(ms) | 目 p50(ms) | 1位採用(11択の手のみ) |")
+    print("|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|")
     for tag, name, A in runs:
         p = os.path.join(ROOT, "data", "play", tag, "episodes.jsonl")
         if not os.path.exists(p): continue
-        eps = load(tag); ts = [t for e in eps for t in e["traj"]]; rl = recland(tag)
+        eps = load(tag); ts = [t for e in eps for t in e["traj"]]; rl = recland(tag); dc = deathcheck(tag)
         quart[tag] = ([sum(e["plat"] for e in eps[i:i + 25]) for i in range(0, len(eps), 25)],
                       [sum(e["ep"] in rl for e in eps[i:i + 25]) for i in range(0, len(eps), 25)] if rl is not None else None)
-        print(f"| {tag} | {name} | {len(eps)} | {sum(e['died'] for e in eps)} | {sum(e['maxX'] > 185 for e in eps)} | {sum(jumped(e) for e in eps)} | {sum(e['plat'] for e in eps)} | "
+        print(f"| {tag} | {name} | {len(eps)} | {sum(e['died'] for e in eps)} | {sum(e['died'] for e in eps) - len(dc['録画で生存(誤判定)']) if dc else '—'} | {sum(e['maxX'] > 185 for e in eps)} | {sum(jumped(e) for e in eps)} | {sum(e['plat'] for e in eps)} | "
               f"{len(rl) if rl is not None else '—'} | {sum(e['far'] for e in eps)} | {sum(e['lost'] for e in eps)} | {max(e['maxX'] for e in eps)} | {q([t['lagFrames'] for t in ts], .5)} | "
               f"{q([t['modelMs'] for t in ts], .5)} | {q([t['eyeMs'] for t in ts], .5)} | {top1(eps, A)} |")
 quart = {}
 print("# REPORT(report.py が生データから生成)")
-print("\n定義: 崖の端 x≈185。跳んで崖を離れた = x>185 かつ y<300 の手がある。足場(判断時) = 判断の瞬間に接地・x 200〜380・y 215〜250。足場(録画) = bench/landing_from_rec.py(全コマで足場の上に10コマ以上連続)。向こう岸 = 接地・x≥385・y≥290 または crossed。見失い = 判断間で x が100px 以上飛んだ回(そこで打ち切り)。")
+print("\n定義: 死亡(録画で生存を除く) = bench/death_check.py で、回の終了後の録画に自機が映っていた回(ポーズ中に見失った誤判定)を除いた数。崖の端 x≈185。跳んで崖を離れた = x>185 かつ y<300 の手がある。足場(判断時) = 判断の瞬間に接地・x 200〜380・y 215〜250。足場(録画) = bench/landing_from_rec.py(全コマで足場の上に10コマ以上連続)。向こう岸 = 接地・x≥385・y≥290 または crossed。見失い = 判断間で x が100px 以上飛んだ回(そこで打ち切り)。")
 table(FINAL, "## 1a. 最終比較(事前登録・全本英語・STATE_V=4・軽い罰・各100回×3本＋モデルだけ30回)")
 table(RUNS, "## 1b. 開発中の試走(日本語・条件を順に変えながら1本ずつ)")
 print("\n足場に乗った回の推移(25回ごと、判断時 / 録画):\n")

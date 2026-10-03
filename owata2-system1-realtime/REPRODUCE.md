@@ -39,7 +39,7 @@ uv run --with numpy --with pillow python perception/make_spike_template.py
 # 目(ルールの画像処理、AI なし) :8099
 uv run --with numpy --with scipy --with pillow --with fastapi --with uvicorn perception/server.py 8099
 # laya-ml(公式 PyTorch・多言語版・MPS) :8078   ※CPU で測るなら最後を cpu に
-uv run --with laya --with fastapi --with uvicorn servers/laya_py_server.py 8078 multilingual mps
+uv run --with 'laya==0.3.23' --with fastapi --with uvicorn servers/laya_py_server.py 8078 multilingual mps
 # kev-4b(MLX) :8009   https://github.com/jaredpalmer/kev の手順で導入(検証はコミット 0fe8fc9)
 python3 -m kev.serve --run jaredpalmer/kev-4b --port 8009
 ```
@@ -74,10 +74,11 @@ env ${=C} MODEL_URL=http://127.0.0.1:8009/v1/systemone TAG=fin_kev_en_1 node run
 
 ログは `data/play/<TAG>/episodes.jsonl`(1エピソード1行、各手の位置・行動・確率・遅れ・状態の文章)。このリポジトリには集計に使った21本分を入れています(録画は入れていません)。
 
-足場に乗った回を録画で数え直す(CPU を多く使うので試走が終わってから):
+足場に乗った回と死亡を録画で数え直す(CPU を多く使うので試走が終わってから)。目は S のポーズ中の自機を見失って死亡と誤判定することがあるので、死亡は death_check.py で確かめる:
 
 ```bash
 uv run --with numpy --with scipy --with pillow python bench/landing_from_rec.py fin_kev_en_1 fin_laya_en_1
+uv run --with numpy --with scipy --with pillow python bench/death_check.py fin_kev_en_1 fin_laya_en_1
 ```
 
 ## 4. 応答時間ベンチ(ゲームとは切り離す)
