@@ -6,6 +6,20 @@ Zenn に書いた検証記事の、測定コードと生データです。記事
 
 ## 収録
 
+### `owata2-system1-realtime/` — 画面だけのJev互換AIに人生オワタ2は早かった
+
+Jev と同じ `/v1/systemone` 形式で呼べる公開の判定モデル(kev-4b、laya-multilingual)に、『人生オワタの大冒険2』1面の最初の穴を、画面だけを見てゲームを止めずに遊ばせた一式と、応答時間のベンチマーク。ゲーム本体・ゲーム画面・録画は含めていません(作者の公式ページを開いて遊ぶ)。
+
+- `harness/` — Playwright で公式ページを開き、時計を止めて1コマずつ進めるハーネス(`owata.mjs`)と試走(`run_play.mjs`)、操作の実測、文章の実験(`probe_models*.py`)、最終比較の一括実行(`chain_final.sh`)
+- `perception/` — 目(ルールの画像処理、AI なし)のサーバと、お手本を自分の画面から作るスクリプト
+- `bench/` — 応答時間(`latency.py`)、目(`eye.mjs`)、ネットワーク(`net.sh`)、録画からの足場判定、足場の速さ
+- `cloud/` — kev-4b を Vertex AI のカスタム推論(L4)に置くコンテナとデプロイ・計測・撤去のスクリプト
+- `servers/` — laya-ml と Gemini(Vertex AI)を `/v1/systemone` で呼べるようにする薄いサーバ
+- `report.py` — 記事の表をすべて出す集計(出力は `data/REPORT.md`)
+- `PREREGISTRATION.md` — 最終比較の事前登録
+- `data/` — 試走ログ21本(`play/<TAG>/episodes.jsonl`、計1,820回)、ベンチの CSV、文章の実験、目の検証、操作の実測
+- `REPRODUCE.md` — 再現手順
+
 ### `gemini-live-silence/` — 音声エージェントの沈黙を288試行で測った
 
 Gemini Live API で音声エージェントを組み、ツール実行中に生じる無音を測った一式。

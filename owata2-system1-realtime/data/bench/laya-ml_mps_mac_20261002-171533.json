@@ -1,0 +1,27 @@
+{
+ "name": "laya-ml_mps_mac",
+ "url": "http://127.0.0.1:8078/v1/systemone",
+ "n": 300,
+ "warmup": 20,
+ "unique_states": 1249,
+ "stamp": "20261002-171533",
+ "client_ms": {
+  "p50": 14.57,
+  "p90": 15.0,
+  "p99": 16.0,
+  "max": 16.5,
+  "min": 13.63,
+  "mean": 14.53
+ },
+ "frames_at_60fps_p50": 0.9,
+ "machine": {
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "machine": "arm64",
+  "cpu": "Apple M4 Max"
+ },
+ "model_ms": {
+  "p50": 14.15,
+  "p90": 14.55,
+  "p99": 15.4
+ }
+}

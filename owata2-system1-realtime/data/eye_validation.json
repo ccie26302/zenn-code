@@ -1,0 +1,49 @@
+{
+ "自機": {
+  "ラベル×判定": {
+   "absent→なし": 69,
+   "alive→あり": 95,
+   "dying→なし": 22
+  },
+  "score": {
+   "alive": {
+    "min": 0.493,
+    "max": 1.0
+   },
+   "dying": {
+    "min": 0.357,
+    "max": 0.357
+   },
+   "absent": {
+    "min": 0.357,
+    "max": 0.357
+   }
+  },
+  "閾値": 0.43,
+  "注": "ラベル alive=生存 / absent=自機なし / dying=死亡演出。目視1名・1面のみ"
+ },
+ "トゲの列": {
+  "コマ数": 6556,
+  "列の本数ごとのコマ数": {
+   "1": 6542,
+   "0": 14
+  },
+  "1本以外のコマ": [
+   "data/play/rt5_layaml_gain_rec/rec/ep42/00189.png",
+   "data/play/rt5_layaml_gain_rec/rec/ep42/00196.png",
+   "data/play/rt5_layaml_gain_rec/rec/ep42/00203.png",
+   "data/play/rt5_layaml_gain_rec/rec/ep42/00210.png",
+   "data/play/rt5_layaml_gain_rec/rec/ep42/00217.png",
+   "data/play/rt5_layaml_gain_rec/rec/ep42/00224.png",
+   "data/play/rt5_layaml_gain_rec/rec/ep42/00231.png",
+   "data/play/rt5_layaml_gain_rec/rec/ep42/00238.png",
+   "data/play/rt5_layaml_gain_rec/rec/ep42/00245.png",
+   "data/play/rt5_layaml_gain_rec/rec/ep42/00252.png",
+   "data/play/rt5_layaml_gain_rec/rec/ep42/00259.png",
+   "data/play/rt5_layaml_gain_rec/rec/ep42/00266.png",
+   "data/play/rt5_layaml_gain_rec/rec/ep42/00273.png",
+   "data/play/rt5_layaml_gain_rec/rec/ep42/00280.png"
+  ],
+  "注": "1面には穴が1つ。0本のコマはすべて樹海側でトゲが画面外か目視で確認する(確認結果は記事に記載)"
+ }
+}

@@ -1,0 +1,27 @@
+{
+ "name": "gemini-2.5-flash_vertex_tokyo",
+ "url": "http://127.0.0.1:8088/v1/systemone",
+ "n": 300,
+ "warmup": 20,
+ "unique_states": 1249,
+ "stamp": "20261002-172531",
+ "client_ms": {
+  "p50": 439.7,
+  "p90": 520.19,
+  "p99": 615.13,
+  "max": 660.35,
+  "min": 269.24,
+  "mean": 442.22
+ },
+ "frames_at_60fps_p50": 26.4,
+ "machine": {
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "machine": "arm64",
+  "cpu": "Apple M4 Max"
+ },
+ "model_ms": {
+  "p50": 437.28,
+  "p90": 517.53,
+  "p99": 611.74
+ }
+}

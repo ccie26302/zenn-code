@@ -1,0 +1,27 @@
+{
+ "name": "gemini-3.8-flash_vertex_global_low",
+ "url": "http://127.0.0.1:8089/v1/systemone",
+ "n": 100,
+ "warmup": 5,
+ "unique_states": 1249,
+ "stamp": "20261002-182456",
+ "client_ms": {
+  "p50": 3685.16,
+  "p90": 19067.62,
+  "p99": 61886.64,
+  "max": 61886.64,
+  "min": 2127.78,
+  "mean": 8337.17
+ },
+ "frames_at_60fps_p50": 221.1,
+ "machine": {
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "machine": "arm64",
+  "cpu": "Apple M4 Max"
+ },
+ "model_ms": {
+  "p50": 3682.19,
+  "p90": 19065.24,
+  "p99": 61884.58
+ }
+}

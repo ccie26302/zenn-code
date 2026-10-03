@@ -1,0 +1,85 @@
+{
+ "jump": [
+  {
+   "hold": 1,
+   "peak_px": 24,
+   "air_frames": 19
+  },
+  {
+   "hold": 2,
+   "peak_px": 34,
+   "air_frames": 24
+  },
+  {
+   "hold": 4,
+   "peak_px": 53,
+   "air_frames": 30
+  },
+  {
+   "hold": 8,
+   "peak_px": 106,
+   "air_frames": 46
+  },
+  {
+   "hold": 12,
+   "peak_px": 129,
+   "air_frames": 51
+  },
+  {
+   "hold": 16,
+   "peak_px": 131,
+   "air_frames": 52
+  },
+  {
+   "hold": 24,
+   "peak_px": 131,
+   "air_frames": 52
+  }
+ ],
+ "air": [
+  {
+   "name": "空中で右を押さない",
+   "dx": 0
+  },
+  {
+   "name": "空中で右を20コマ押す",
+   "dx": 52
+  },
+  {
+   "name": "空中で右を40コマ押す",
+   "dx": 112
+  }
+ ],
+ "keys": [
+  {
+   "key": "x",
+   "changed_during": true,
+   "changed_after": true
+  },
+  {
+   "key": "ArrowUp",
+   "changed_during": true,
+   "changed_after": true
+  },
+  {
+   "key": "ArrowDown",
+   "changed_during": true,
+   "changed_after": true
+  },
+  {
+   "key": "p",
+   "changed_during": true,
+   "changed_after": true
+  },
+  {
+   "key": "Space",
+   "changed_during": true,
+   "changed_after": true
+  },
+  {
+   "key": "Enter",
+   "changed_during": true,
+   "changed_after": true
+  }
+ ]
+}

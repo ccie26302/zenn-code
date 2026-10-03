@@ -1,0 +1,53 @@
+{
+ "laya-ml/G0F0/left・right": {
+  "jump to the right の確率 平均": 0.089,
+  "1位の内訳": {
+   "attack": 16
+  },
+  "左向きの場面で1位が左系": "0/8",
+  "右向きの場面で1位が左系": "0/8"
+ },
+ "laya-ml/G1F1/left・right": {
+  "jump to the right の確率 平均": 0.047,
+  "1位の内訳": {
+   "attack": 16
+  },
+  "左向きの場面で1位が左系": "0/8",
+  "右向きの場面で1位が左系": "0/8"
+ },
+ "laya-ml/G0F0/x decreasing・increasing": {
+  "jump to the right の確率 平均": 0.061,
+  "1位の内訳": {
+   "attack": 16
+  },
+  "左向きの場面で1位が左系": "0/8",
+  "右向きの場面で1位が左系": "0/8"
+ },
+ "kev-4b/G0F0/left・right": {
+  "jump to the right の確率 平均": 0.249,
+  "1位の内訳": {
+   "rightjump_big": 13,
+   "right": 3
+  },
+  "左向きの場面で1位が左系": "0/8",
+  "右向きの場面で1位が左系": "0/8"
+ },
+ "kev-4b/G1F1/left・right": {
+  "jump to the right の確率 平均": 0.28,
+  "1位の内訳": {
+   "rightjump_big": 9,
+   "right": 7
+  },
+  "左向きの場面で1位が左系": "0/8",
+  "右向きの場面で1位が左系": "0/8"
+ },
+ "kev-4b/G0F0/x decreasing・increasing": {
+  "jump to the right の確率 平均": 0.212,
+  "1位の内訳": {
+   "rightjump_big": 8,
+   "right": 8
+  },
+  "左向きの場面で1位が左系": "0/8",
+  "右向きの場面で1位が左系": "0/8"
+ }
+}

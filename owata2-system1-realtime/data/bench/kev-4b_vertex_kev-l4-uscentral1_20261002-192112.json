@@ -1,0 +1,42 @@
+{
+ "name": "kev-4b_vertex_kev-l4-uscentral1",
+ "url": "http://127.0.0.1:8091/v1/systemone",
+ "n": 300,
+ "warmup": 20,
+ "unique_states": 1249,
+ "stamp": "20261002-192112",
+ "client_ms": {
+  "p50": 251.65,
+  "p90": 333.55,
+  "p99": 417.07,
+  "max": 474.65,
+  "min": 231.26,
+  "mean": 272.58
+ },
+ "frames_at_60fps_p50": 15.1,
+ "machine": {
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "machine": "arm64",
+  "cpu": "Apple M4 Max"
+ },
+ "model_ms": {
+  "p50": 84.4,
+  "p90": 86.0,
+  "p99": 86.3
+ },
+ "remote_ms": {
+  "p50": 250.12,
+  "p90": 331.73,
+  "p99": 414.88
+ },
+ "gpu_ms": {
+  "p50": 84.4,
+  "p90": 86.0,
+  "p99": 86.3
+ },
+ "app_ms": {
+  "p50": 88.5,
+  "p90": 90.2,
+  "p99": 91.6
+ }
+}

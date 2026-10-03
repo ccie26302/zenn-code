@@ -1,0 +1,27 @@
+{
+ "name": "kev-4b_mlx_mac",
+ "url": "http://127.0.0.1:8009/v1/systemone",
+ "n": 300,
+ "warmup": 20,
+ "unique_states": 1249,
+ "stamp": "20261002-171643",
+ "client_ms": {
+  "p50": 200.12,
+  "p90": 207.77,
+  "p99": 214.33,
+  "max": 214.75,
+  "min": 194.85,
+  "mean": 200.64
+ },
+ "frames_at_60fps_p50": 12.0,
+ "machine": {
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "machine": "arm64",
+  "cpu": "Apple M4 Max"
+ },
+ "model_ms": {
+  "p50": 198.4,
+  "p90": 205.8,
+  "p99": 212.4
+ }
+}
