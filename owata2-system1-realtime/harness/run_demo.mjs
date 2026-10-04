@@ -243,7 +243,8 @@ for (let ep = 0; ep < EPISODES; ep++) {
     if (o && !pending && frame - lastReq >= DECISION_FRAMES) {
       const tb = performance.now(); const { json } = buildState(o, T, lag, held, prevInfo, frame); const buildMs = performance.now() - tb;   // 予測と探索の時間
       const d = await decide(json);
-      const L = Math.round((eyeMs + buildMs + d.ms) / FRAME_MS);
+      // EXTRA_MS: モデルなしの対照に、比べるモデルの応答時間(実測の中央値)を足して遅れをそろえる。記録の modelMs には入れない
+      const L = Math.round((eyeMs + buildMs + d.ms + Number(process.env.EXTRA_MS || 0)) / FRAME_MS);
       decisions.push({ frame, a: d.a, probs: d.probs, noul: d.noul, score: d.score, criteria: d.criteria, modelMs: Math.round(d.ms), eyeMs: Math.round(eyeMs), buildMs: Math.round(buildMs), lagFrames: L, state: json });
       lag = L; lastReq = frame; pending = { a: d.a, readyAt: frame + L };
       if (L === 0) { held = d.a; heldSince = frame; xAtHold = o.x; decisionUpdated = true; pending = null; }

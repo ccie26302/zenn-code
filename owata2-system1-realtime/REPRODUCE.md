@@ -142,6 +142,7 @@ env POLICY=rules TAG=demo_rules_search EP=20 MAX_FRAMES=1500 GOAL_X=99999 REC=1 
 env POLICY=rules_labeled2 TAG=demo_rules_labeled2 EP=20 MAX_FRAMES=1500 GOAL_X=99999 REC=1 node run_demo.mjs                                # ルールだけ(作り直した版と同じ判定に従い、SAFE だけを選ぶ。SAFE が複数なら並び順で最初)
 env POLICY=rules_labeled2 RULES_ORDER=right TAG=demo_rules_labeled2_right EP=20 MAX_FRAMES=1500 GOAL_X=99999 REC=1 node run_demo.mjs        # 同上、SAFE を右へ進む操作から順に選ぶ
 env POLICY=labeled2 LABEL_GOAL=1 MODEL_URL=http://127.0.0.1:8009/v1/systemone TAG=demo_kev_labeled2_goal EP=20 MAX_FRAMES=1500 GOAL_X=99999 REC=1 node run_demo.mjs  # kev-4b に「右へ進む」目的を足した版
+env POLICY=rules_labeled2 RULES_ORDER=right EXTRA_MS=144 TAG=demo_rules_labeled2_right_lag EP=20 MAX_FRAMES=1500 GOAL_X=99999 REC=1 node run_demo.mjs  # 右優先ルールに kev-4b の応答時間の中央値を足して遅れをそろえる
 node sim_error.mjs demo_rules_search          # 物理の式の誤差(各判断から実際の操作列をなぞって比べる)
 node sim_error.mjs demo_kev_labeled2
 cd .. && python3 bench/demo_summary.py > data/DEMO_REPORT.md   # 第3部の表と、判定・おすすめの内訳、予測と探索の時間

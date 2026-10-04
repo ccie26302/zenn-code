@@ -5,7 +5,8 @@ RUNS = [("demo_rules_search", "ルールだけ(モデルなし・探索のおす
         ("demo_kev_labeled", "kev-4b・選択肢に判定(最初の版。目的の文が右へ引っ張った可能性)"), ("demo_laya_labeled", "laya-ml・選択肢に判定(最初の版。入力が切り捨てられた)"),
         ("demo_kev_labeled2", "kev-4b・選択肢に判定(作り直した版)"), ("demo_kev_labeled2_goal", "kev-4b・作り直した版＋「おすすめが無ければ右へ進む SAFE を優先(ゴールは右)」"), ("demo_laya_labeled2", "laya-ml・選択肢に判定(作り直した版)"),
         ("demo_rules_labeled2", "ルールだけ・選択肢の判定どおり(モデルなし。SAFE のおすすめ、なければ並び順で最初の SAFE)"),
-        ("demo_rules_labeled2_right", "同上、ただし SAFE を右へ進む操作から順に探す")]
+        ("demo_rules_labeled2_right", "同上、ただし SAFE を右へ進む操作から順に探す"),
+        ("demo_rules_labeled2_right_lag", "同上、遅れを kev-4b にそろえる(EXTRA_MS=144、kev-4b の目的あり版のモデル応答の中央値)")]
 print("# 第3部の集計(bench/demo_summary.py)\n")
 print("| TAG | 条件 | 回数 | 死亡 | 時間切れ | 足場 | 向こう岸 | 右端 | 最高 x | 遅れ p50 | モデル p50(ms) | 判断数 | 選んだ選択肢の判定が SAFE | 探索のおすすめに従った | 選択の上位 |")
 print("|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|")
