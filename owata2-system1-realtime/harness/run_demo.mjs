@@ -6,6 +6,8 @@
 //  - 地上で新しくジャンプを選んだら、1コマだけ Z を離して押し直す
 //  - 記憶なし
 // POLICY=systemone(MODEL_URL) / rules(モデルなし。同じ予測から機械的に選ぶ対照) / facts(事実だけ渡し、ルールの指示を外す対照)
+//        / labeled・labeled2(選択肢に SAFE/DEATH の判定を書く) / rules_labeled2(labeled2 と同じ判定にモデルなしで従う対照)
+//        LABEL_GOAL=1 で labeled2 の指示に「SAFE のおすすめが無ければ右へ進む SAFE を優先(ゴールは右)」を足す(右優先ルールと情報をそろえる)
 // usage: POLICY=systemone MODEL_URL=http://127.0.0.1:8009/v1/systemone TAG=demo_kev_1 EP=100 REC=1 node run_demo.mjs
 import { Owata } from "./owata.mjs";
 import fs from "node:fs";
@@ -140,9 +142,20 @@ async function decide(state) {
     }
     return { a, probs: null, noul: null, score: null, ms: 0 };
   }
+  if (POLICY === "rules_labeled2") {
+    // labeled2 と同じ判定を、モデルなしで指示どおりに機械的に選ぶ対照(査読の指摘を受けて追加)。
+    // おすすめが SAFE ならおすすめ、そうでなければ SAFE の選択肢を ACTS の並び順で最初のもの、SAFE が無ければおすすめ(無ければ何もしない)
+    const L = state.landing.if_chosen_now, rec = state.search?.recommended_first_action;
+    const SAFE_S = ["platform", "far_ground", "press_top", "near_ground", "stays_on_near_ground", "stays_on_far_ground", "stays_on_platform", "stays_on_press_top"];
+    const isSafe = (a) => SAFE_S.includes(L[a].surface) && !L[a].triggers_spike_floor;
+    // RULES_ORDER=right なら、右へ進む操作から順に SAFE を探す(並び順の効果を見る対照)
+    const ORDER = process.env.RULES_ORDER === "right" ? ["right_jump", "right", "jump", "noop", "left_jump", "left"] : ACTS;
+    const a = rec && isSafe(rec) ? rec : (ORDER.find(isSafe) || rec || "noop");
+    return { a, probs: null, noul: null, score: null, ms: 0 };
+  }
   if (POLICY === "labeled2") {
     // 入力を作り直した版(2026-10-04、ユーザー指摘「ずっと同じ行動」を受けて): 状態は短い文章1つ、選択肢の先頭に SAFE/DEATH と探索のおすすめ。
-    // 理由: laya は選択肢を48トークン・質問と選択肢を合計192トークン・全体512トークンで切り捨てる。kev は学習した状態が384トークンまで。
+    // 理由: laya は選択肢を48トークン・質問と選択肢を合計192トークン・全体512トークンで切り捨てる。kev は目的の文と「右へ進む結果を優先せよ」の指示に引っ張られていた可能性が高い(切り分けはしていない。kev の学習時の状態は最大7,552トークン)。
     const L = state.landing.if_chosen_now, rec = state.search?.recommended_first_action;
     const NAME = { noop: "do nothing", right: "walk right", right_jump: "jump right", jump: "jump in place", left: "walk left", left_jump: "jump left" };
     const SAY = { platform: ["SAFE", "lands on the moving platform"], far_ground: ["SAFE", "lands on the far ground"], press_top: ["SAFE", "lands on top of the press"], near_ground: ["SAFE", "lands back on the near ground"],
@@ -152,7 +165,9 @@ async function decide(state) {
       if (L[a].triggers_spike_floor) { tag = "DEATH"; txt = "lands on the platform and triggers the rising spikes"; }
       return [a, `${tag}${rec === a ? " (RECOMMENDED)" : ""}: ${NAME[a]}, ${txt}`]; }));
     const body = { state: "A side-scrolling game. Each option below was checked by a physics simulator that already accounts for the reaction delay, and is marked SAFE or DEATH.", model: "latest",
-      questions: { next_action: { type: "choice", instructions: "Choose an option marked SAFE. Never choose DEATH. Among SAFE options, prefer RECOMMENDED.", criteria: crit } } };
+      questions: { next_action: { type: "choice", instructions: process.env.LABEL_GOAL === "1"
+        ? "Choose an option marked SAFE. Never choose DEATH. Among SAFE options, prefer RECOMMENDED. If no SAFE option is RECOMMENDED, prefer a SAFE option that moves right, because the goal is to the right."
+        : "Choose an option marked SAFE. Never choose DEATH. Among SAFE options, prefer RECOMMENDED.", criteria: crit } } };
     const t0 = performance.now();
     const r = await (await fetch(MODEL_URL, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(body) })).json();
     const ms = performance.now() - t0;

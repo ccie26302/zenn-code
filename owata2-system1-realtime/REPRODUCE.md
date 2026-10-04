@@ -1,6 +1,6 @@
 # REPRODUCE — Jev 互換の System-1 モデルに『人生オワタの大冒険2』を画面だけで遊ばせる
 
-記事「画面だけのJev互換AIに人生オワタ2は早かった」の再現手順です。記事の数字はすべて、このフォルダで次を実行すると生データから出し直せます。
+記事「人生オワタ2を600回、Jev互換AIは穴を越えられず」の再現手順です。記事の数字はすべて、このフォルダで次を実行すると生データから出し直せます。
 
 ```bash
 python3 report.py > data/REPORT.md
@@ -137,16 +137,21 @@ env POLICY=systemone MODEL_URL=http://127.0.0.1:8009/v1/systemone TAG=demo_kev_r
 env POLICY=labeled   MODEL_URL=http://127.0.0.1:8009/v1/systemone TAG=demo_kev_labeled EP=20 MAX_FRAMES=1500 GOAL_X=99999 REC=1 node run_demo.mjs   # 選択肢に判定(最初の版)
 env POLICY=labeled2  MODEL_URL=http://127.0.0.1:8009/v1/systemone TAG=demo_kev_labeled2 EP=20 MAX_FRAMES=1500 GOAL_X=99999 REC=1 node run_demo.mjs  # 作り直した版
 env POLICY=labeled2  MODEL_URL=http://127.0.0.1:8078/v1/systemone TAG=demo_laya_labeled2 EP=20 MAX_FRAMES=1500 GOAL_X=99999 REC=1 node run_demo.mjs
-env POLICY=rules TAG=demo_rules_search EP=20 MAX_FRAMES=1500 GOAL_X=99999 REC=1 node run_demo.mjs                                            # ルールだけ
+env POLICY=labeled   MODEL_URL=http://127.0.0.1:8078/v1/systemone TAG=demo_laya_labeled EP=20 MAX_FRAMES=1500 GOAL_X=99999 REC=1 node run_demo.mjs  # laya-ml の最初の版
+env POLICY=rules TAG=demo_rules_search EP=20 MAX_FRAMES=1500 GOAL_X=99999 REC=1 node run_demo.mjs                                            # ルールだけ(探索のおすすめに従う)
+env POLICY=rules_labeled2 TAG=demo_rules_labeled2 EP=20 MAX_FRAMES=1500 GOAL_X=99999 REC=1 node run_demo.mjs                                # ルールだけ(作り直した版と同じ判定に従い、SAFE だけを選ぶ。SAFE が複数なら並び順で最初)
+env POLICY=rules_labeled2 RULES_ORDER=right TAG=demo_rules_labeled2_right EP=20 MAX_FRAMES=1500 GOAL_X=99999 REC=1 node run_demo.mjs        # 同上、SAFE を右へ進む操作から順に選ぶ
+env POLICY=labeled2 LABEL_GOAL=1 MODEL_URL=http://127.0.0.1:8009/v1/systemone TAG=demo_kev_labeled2_goal EP=20 MAX_FRAMES=1500 GOAL_X=99999 REC=1 node run_demo.mjs  # kev-4b に「右へ進む」目的を足した版
 node sim_error.mjs demo_rules_search          # 物理の式の誤差(各判断から実際の操作列をなぞって比べる)
-cd .. && python3 bench/demo_summary.py > data/DEMO_REPORT.md   # 第3部の表
+node sim_error.mjs demo_kev_labeled2
+cd .. && python3 bench/demo_summary.py > data/DEMO_REPORT.md   # 第3部の表と、判定・おすすめの内訳、予測と探索の時間
 python3 bench/label_reading.py                # モデルが SAFE/DEATH の判定を読めるか → data/label_reading.json
 node bench/kev_prompt_length.mjs              # 指示文の長さと kev-4b の応答時間 → data/bench/kev_prompt_length.json
 ```
 
+記事の `demo_rules_labeled2`(並び順で選ぶルール)は、実行時間の上限で14回で止まっています(14回とも崖際で時間切れ)。
+
 予測の不具合を直す前の値(記事の「5コマ先の高さの誤差 p90 17px→7px」)は、`harness/sim_error.mjs` の `s.zh = s0.trajectory.airborne_frames;` を `s.zh = Math.min(s0.trajectory.airborne_frames, PH.RISE_FRAMES - 1);` に戻すと出せます(記事の値は開発中のルールの試走で測ったもので、その試走のログはこのリポジトリに含めていません)。
 
-```bash
-```
 
 動画: `TAG=demo_kev_labeled TITLE="..." HL="0:説明" SPEED=3 OUT=x.mp4 python3 viz/compose_demo.py`
