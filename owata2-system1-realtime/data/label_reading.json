@@ -1,0 +1,62 @@
+{
+ "simple": [
+  {
+   "criteria": {
+    "A": "DEATH: walk right",
+    "B": "SAFE: do nothing",
+    "C": "DEATH: jump right"
+   },
+   "safe": "B",
+   "kev-4b": {
+    "p_safe": 0.821,
+    "top": "B"
+   },
+   "laya-ml": {
+    "p_safe": 0.127,
+    "top": "C"
+   }
+  },
+  {
+   "criteria": {
+    "A": "SAFE: walk right",
+    "B": "DEATH: do nothing",
+    "C": "DEATH: jump right"
+   },
+   "safe": "A",
+   "kev-4b": {
+    "p_safe": 0.606,
+    "top": "A"
+   },
+   "laya-ml": {
+    "p_safe": 0.189,
+    "top": "C"
+   }
+  },
+  {
+   "criteria": {
+    "A": "walk right",
+    "B": "do nothing",
+    "C": "jump right"
+   },
+   "safe": "B",
+   "kev-4b": {
+    "p_safe": 0.983,
+    "top": "B"
+   },
+   "laya-ml": {
+    "p_safe": 0.206,
+    "top": "A"
+   }
+  }
+ ],
+ "game": {
+  "as_is": {
+   "kev-4b": "47/47",
+   "laya-ml": "4/47"
+  },
+  "reversed": {
+   "kev-4b": "47/47",
+   "laya-ml": "15/47"
+  }
+ }
+}

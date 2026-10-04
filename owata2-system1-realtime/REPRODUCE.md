@@ -126,3 +126,27 @@ python3 bench/platform_speed.py
 TAG=fin_laya_en_1 MODEL_LABEL=laya-ml TITLE="laya-ml(英語)が人生オワタ2に挑む(100回)" \
   HL="63:初めて足場に乗った回,88:いちばん遠くまで行った回(x=312)" SPEED=10 OUT=fin_laya_en_1_montage.mp4 python3 viz/compose_montage.py
 ```
+
+## 6. 第3部: 参考デモ方式のハーネス
+
+物理の実測(`node harness/m_physics.mjs` → `data/controls/physics.json`)と、2つ目の罠の板のお手本(`perception/make_press_template.py <板が写ったコマ> 171 423`)を用意してから:
+
+```bash
+cd harness
+env POLICY=systemone MODEL_URL=http://127.0.0.1:8009/v1/systemone TAG=demo_kev_rules EP=20 MAX_FRAMES=1500 GOAL_X=99999 REC=1 node run_demo.mjs   # JSON＋ルールの指示文＋質問3つ
+env POLICY=labeled   MODEL_URL=http://127.0.0.1:8009/v1/systemone TAG=demo_kev_labeled EP=20 MAX_FRAMES=1500 GOAL_X=99999 REC=1 node run_demo.mjs   # 選択肢に判定(最初の版)
+env POLICY=labeled2  MODEL_URL=http://127.0.0.1:8009/v1/systemone TAG=demo_kev_labeled2 EP=20 MAX_FRAMES=1500 GOAL_X=99999 REC=1 node run_demo.mjs  # 作り直した版
+env POLICY=labeled2  MODEL_URL=http://127.0.0.1:8078/v1/systemone TAG=demo_laya_labeled2 EP=20 MAX_FRAMES=1500 GOAL_X=99999 REC=1 node run_demo.mjs
+env POLICY=rules TAG=demo_rules_search EP=20 MAX_FRAMES=1500 GOAL_X=99999 REC=1 node run_demo.mjs                                            # ルールだけ
+node sim_error.mjs demo_rules_search          # 物理の式の誤差(各判断から実際の操作列をなぞって比べる)
+cd .. && python3 bench/demo_summary.py > data/DEMO_REPORT.md   # 第3部の表
+python3 bench/label_reading.py                # モデルが SAFE/DEATH の判定を読めるか → data/label_reading.json
+node bench/kev_prompt_length.mjs              # 指示文の長さと kev-4b の応答時間 → data/bench/kev_prompt_length.json
+```
+
+予測の不具合を直す前の値(記事の「5コマ先の高さの誤差 p90 17px→7px」)は、`harness/sim_error.mjs` の `s.zh = s0.trajectory.airborne_frames;` を `s.zh = Math.min(s0.trajectory.airborne_frames, PH.RISE_FRAMES - 1);` に戻すと出せます(記事の値は開発中のルールの試走で測ったもので、その試走のログはこのリポジトリに含めていません)。
+
+```bash
+```
+
+動画: `TAG=demo_kev_labeled TITLE="..." HL="0:説明" SPEED=3 OUT=x.mp4 python3 viz/compose_demo.py`

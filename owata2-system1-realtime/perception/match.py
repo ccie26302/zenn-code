@@ -129,3 +129,25 @@ def detect_spikes(rgb_sum, thr=0.8, min_count=3):
         if len(xl) < min_count: continue
         out.append({"y": y + h - 1, "x0": int(min(xl)), "x1": int(max(xl)) + w - 1, "n": len(xl)})
     return sorted(out, key=lambda r: r["y"])
+
+
+# 目の追加(参考デモ方式): 2つ目の罠の板。下向きトゲ「▼」の列を探し、板の範囲と下端を返す
+_PRS_PATH = os.path.join(HERE, "press_template.npy")
+_PRS = np.load(_PRS_PATH).astype(np.float32) if os.path.exists(_PRS_PATH) else None
+
+def detect_press(rgb_sum, thr=0.8, min_count=3):
+    """戻り値: [{y: ▼の下端の行, x0, x1, n}](画面座標)。"""
+    if _PRS is None: return []
+    F = binarize(rgb_sum); h, w = _PRS.shape
+    tf = fftconvolve(F, _PRS[::-1, ::-1], mode="valid")
+    dice = 2 * tf / (_PRS.sum() + window_sum(F, h, w) + 1e-6)
+    ys, xs = np.where(dice >= thr)
+    if not len(ys): return []
+    order = np.argsort(-dice[ys, xs]); taken = []
+    for i in order:
+        y, x = int(ys[i]), int(xs[i])
+        if all(abs(y - ty) > 4 or abs(x - tx) >= w - 2 for ty, tx in taken): taken.append((y, x))
+    rows = {}
+    for y, x in taken:
+        key = next((k for k in rows if abs(k - y) <= 3), y); rows.setdefault(key, []).append(x)
+    return sorted([{"y": y + h - 1, "x0": int(min(xl)), "x1": int(max(xl)) + w - 1, "n": len(xl)} for y, xl in rows.items() if len(xl) >= min_count], key=lambda r: r["y"])
