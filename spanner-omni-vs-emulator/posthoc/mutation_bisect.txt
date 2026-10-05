@@ -1,0 +1,4 @@
+omni Big8 max rows: 15000 | cols: 8 | rows*cols: 120000 | rows*(cols-1): 105000
+omni One max rows: 120000 | cols: 1 | rows*cols: 120000 | rows*(cols-1): 0
+cloud Big8 max rows: 10000 | cols: 8 | rows*cols: 80000 | rows*(cols-1): 70000
+cloud One max rows: 80000 | cols: 1 | rows*cols: 80000 | rows*(cols-1): 0

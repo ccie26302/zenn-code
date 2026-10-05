@@ -1,0 +1,2 @@
+omni no_ddl N 20 retried 0
+cloud no_ddl N 20 retried 0

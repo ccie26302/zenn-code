@@ -1,0 +1,2 @@
+omni max accepted bytes: 10485756 | first rejected: 10485757 | 10MiB - max = 4
+cloud max accepted bytes: 10485756 | first rejected: 10485757 | 10MiB - max = 4
