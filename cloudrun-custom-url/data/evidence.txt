@@ -1,0 +1,31 @@
+## 1. B が持つ名前を A が作り直す(東京と us-central1)
+[--region=asia-northeast1] ERROR: (gcloud.beta.run.domain-mappings.create) Domain mapping to [ksh-curltest-62c4e2.cloud.run] already exists in this region.
+[--region=us-central1] ERROR: (gcloud.beta.run.domain-mappings.create) Domain mapping to [ksh-curltest-62c4e2.cloud.run] already exists in this region.
+## 2. B の ingress を all に戻した状態(既定 URL は無効のまま)
+default-url-disabled run.app 404
+default-url-disabled custom 200
+default-url-disabled run.app 404
+default-url-disabled custom 200
+default-url-disabled run.app 404
+default-url-disabled custom 200
+run.googleapis.com/default-url-disabled=true
+run.googleapis.com/ingress=all
+run.googleapis.com/ingress-status=all
+## 3. ingress を internal に
+internal custom(既存) 404
+internal custom(internal 後に作成) 404
+internal custom(既存) 404
+internal custom(internal 後に作成) 404
+internal custom(既存) 404
+internal custom(internal 後に作成) 404
+ksh-curlint-d6280c.cloud.run	svc-bravo
+ksh-curltest-1c7add.cloud.run	svc-bravo
+ksh-curltest-62c4e2.cloud.run	svc-bravo
+ksh-curltest-bdf231.cloud.run	svc-bravo
+## 4. 証明書
+        Issuer: C=US, O=Google Trust Services, CN=WR2
+        Subject: CN=cloud.run
+                DNS:cloud.run, DNS:*.cloud.run
+## 5. 監査ログ(Admin Activity)の methodName
+   5 google.cloud.run.v1.DomainMappings.CreateDomainMapping
+   3 google.cloud.run.v1.DomainMappings.DeleteDomainMapping

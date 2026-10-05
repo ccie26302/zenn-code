@@ -1,0 +1,13 @@
+trial,name,t_sec,event,detail
+1,ksh-curltest-1c7add,0.1,before,svc-alphaHTTP200
+1,ksh-curltest-1c7add,3.1,deleted_by_A,rc=0
+1,ksh-curltest-1c7add,8.1,created_by_B,ok
+1,ksh-curltest-1c7add,17.1,serves_B,svc-bravoHTTP200
+2,ksh-curltest-bdf231,0.1,before,HTTP404
+2,ksh-curltest-bdf231,3.4,deleted_by_A,rc=0
+2,ksh-curltest-bdf231,8.1,created_by_B,ok
+2,ksh-curltest-bdf231,19.2,serves_B,svc-bravoHTTP200
+3,ksh-curltest-62c4e2,0.1,before,svc-alphaHTTP200
+3,ksh-curltest-62c4e2,3.2,deleted_by_A,rc=0
+3,ksh-curltest-62c4e2,7.3,created_by_B,ok
+3,ksh-curltest-62c4e2,29.7,serves_B,svc-bravoHTTP200

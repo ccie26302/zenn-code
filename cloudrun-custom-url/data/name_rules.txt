@@ -1,0 +1,8 @@
+kshab len=5 -> ERROR: (gcloud.beta.run.domain-mappings.create) INVALID_ARGUMENT: metadata.name: The subdomain 'kshab' cannot be used as a valid custom URL. It must be 6-63 cha
+ksh28dex len=8 -> ..........done.
+kshaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa28 len=63 -> ...........done.
+kshaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa28de len=65 -> ERROR: (gcloud.beta.run.domain-mappings.create) INVALID_ARGUMENT: metadata.name: The subdomain 'kshaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa28d
+-ksh28deab len=10 -> ERROR: (gcloud.beta.run.domain-mappings.create) INVALID_ARGUMENT: metadata.name: The subdomain '-ksh28deab' cannot be used as a valid custom URL. It must be 6-6
+ksh28deab- len=10 -> ERROR: (gcloud.beta.run.domain-mappings.create) INVALID_ARGUMENT: metadata.name: The subdomain 'ksh28deab-' cannot be used as a valid custom URL. It must be 6-6
+ksh_28deab len=10 -> ERROR: (gcloud.beta.run.domain-mappings.create) INVALID_ARGUMENT: metadata.name: The subdomain 'ksh_28deab' cannot be used as a valid custom URL. It must be 6-6
+len=64 -> ERROR: (gcloud.beta.run.domain-mappings.create) INVALID_ARGUMENT: metadata.name: The subdomain 'kshaaaaaaaaaaaaaaaaaaaaa
