@@ -1,0 +1,4 @@
+## PHONE_NUMBER の確信度(content:inspect、minLikelihood=VERY_UNLIKELY、2026-10-09)
+単体 "090-1234-5678"                 -> PHONE_NUMBER POSSIBLE '090-1234-5678'
+文の中(氏名・メール・カード番号と並ぶ) -> PHONE_NUMBER UNLIKELY '090-1234-5678', PHONE_NUMBER UNLIKELY '1111 1111'(カード番号の一部)
+=> しきい値 POSSIBLE では文の中の携帯番号を取りこぼす。UNLIKELY まで下げるとカード番号の一部も電話番号として拾う

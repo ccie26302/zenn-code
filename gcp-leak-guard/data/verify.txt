@@ -1,0 +1,18 @@
+PASS  app: トークンなしは 403
+PASS  app: 自分の secret は読める
+PASS  app: 他の secret は PermissionDenied
+PASS  app: ベースイメージの自動更新が有効
+PASS  api: 修正版がある脆弱性は 0
+PASS  週次パッチのジョブが有効
+PASS  バケットは公開できない(public access prevention)
+PASS  消したファイルを論理削除から戻せる
+PASS  バックアップは別のプロジェクトにあり、消せず、保持ポリシーはロック済み
+注意  本番とバックアップ側に同じオーナーがいる(その人が乗っ取られると両方消せる)
+PASS  検知のアラート「SA key created」が有効で通知先がある(設定の確認。発火は data/alert_trial.sh で確かめる)
+PASS  検知のアラート「Public grant (allUsers/allAuthenticatedUsers)」が有効で通知先がある(設定の確認。発火は data/alert_trial.sh で確かめる)
+PASS  検知のアラート「Cloud Run invoker IAM check disabled」が有効で通知先がある(設定の確認。発火は data/alert_trial.sh で確かめる)
+PASS  WIF の条件が <owner/repo> の main だけに限定されている
+PASS  週次ビルドの SA はプロジェクト全体にはビルドの作成とログの書き込みだけ
+PASS  既定の Compute SA に Editor が無い
+PASS  api: インターネットから run.app の URL には届かない(404)
+PASS  api: LB 経由の大量アクセスは 429(  30 200   30 429 )

@@ -1,0 +1,107 @@
+== apis
+Operation "operations/acf.p2-<project-number>5-e42e7491-c46d-41cf-9933-7886be7d5b2b" finished successfully.
+Updated IAM policy for project [<project>].
+既定の Compute SA から Editor を外した
+== runtime
+Created service account [app-runtime].
+Service account email: app-runtime@<project>.iam.gserviceaccount.com
+Created version [1] of the secret [app-db-password].
+Created version [1] of the secret [other-team-key].
+Updated IAM policy for secret [app-db-password].
+== app
+Created service account [app-builder].
+Service account email: app-builder@<project>.iam.gserviceaccount.com
+Creating gs://run-sources-<project>-asia-northeast1/...
+Create request issued for: [cloud-run-source-deploy]
+Waiting for operation [projects/<project>/locations/asia-northeast1/operations/90e7c5de-12a9-4252-a075-166be84a64bd] to complete...
+...................................................................................................done.
+Created repository [cloud-run-source-deploy].
+Updated IAM policy for repository [cloud-run-source-deploy].
+Updated IAM policy for project [<project>].
+Building using Buildpacks and deploying container to Cloud Run service [app] in project [<project>] region [asia-northeast1]
+Building and deploying new service...
+Validating configuration.........done
+Uploading sources........done
+Building Container............................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................done
+Creating Revision.................................................................done
+Routing traffic.....done
+Done.
+Service [app] revision [app-00001-x8g] has been deployed and is serving 100 percent of traffic.
+Service URL: https://app-<project-number>5.asia-northeast1.run.app
+Proxy locally with: gcloud run services proxy app --region asia-northeast1 --project <project>
+== registry
+Create request issued for: [apps]
+Waiting for operation [projects/<project>/locations/asia-northeast1/operations/dccc3fd5-cc38-47ca-8f03-c3b1b9f8adf2] to complete...
+.....................done.
+Created repository [apps].
+Updated repository [apps].
+Dry run is disabled.
+== patch
+Creating gs://<project>-build-src/...
+Copying file:///var/folders/f0/cv7vzddn6x90qfr4wy4v7f9m0000gn/T/tmp.bkYByAOrc4/api-src.tgz to gs://<project>-build-src/api-src.tgz
+  
+...
+Created service account [patch-runner].
+Service account email: patch-runner@<project>.iam.gserviceaccount.com
+Created service account [api-runtime].
+Service account email: api-runtime@<project>.iam.gserviceaccount.com
+Updated IAM policy for project [<project>].
+Updated IAM policy for project [<project>].
+Updated IAM policy for repository [apps].
+Updated IAM policy for serviceAccount [api-runtime@<project>.iam.gserviceaccount.com].
+Updated IAM policy for serviceAccount [patch-runner@<project>.iam.gserviceaccount.com].
+Updated IAM policy for project [<project>].
+https://<run-url>
+Updated IAM policy for service [api].
+== data
+Creating gs://<project>-personal-data/...
+  
+Updating gs://<project>-personal-data/...
+...
+== backup
+effectiveTime=2026-10-09T03:28:54.886000+00:00;isLocked=True;retentionPeriod=600
+== detect
+Created topic [projects/<project>/topics/security-alerts].
+Created subscription [projects/<project>/subscriptions/security-alerts-sub].
+Updated IAM policy for topic [security-alerts].
+WARNING: The following filter keys were not present in any resource : displayName
+Created notification channel [projects/<project>/notificationChannels/<channel-id>].
+WARNING: The following filter keys were not present in any resource : displayName
+Created alert policy [projects/<project>/alertPolicies/<policy-id>].
+Created alert policy [projects/<project>/alertPolicies/<policy-id>].
+Created alert policy [projects/<project>/alertPolicies/<policy-id>].
+== wif
+Created workload identity pool [github-pool].
+Created workload identity pool provider [github].
+Created service account [gh-deployer].
+Service account email: gh-deployer@<project>.iam.gserviceaccount.com
+ERROR: Policy modification failed. For a binding with condition, run "gcloud alpha iam policies lint-condition" to identify issues in condition.
+ERROR: (gcloud.projects.add-iam-policy-binding) INVALID_ARGUMENT: Service account gh-deployer@<project>.iam.gserviceaccount.com does not exist.
+retry 1: g projects add-iam-policy-binding
+Updated IAM policy for project [<project>].
+Updated IAM policy for serviceAccount [gh-deployer@<project>.iam.gserviceaccount.com].
+workload_identity_provider: projects/<project-number>5/locations/global/workloadIdentityPools/github-pool/providers/github
+service_account: gh-deployer@<project>.iam.gserviceaccount.com
+== armor
+Operation "operations/acf.p2-<project-number>5-ad85a4ef-83f8-4558-a9fe-efbe3ecee388" finished successfully.
+Updating...
+Done.
+Service [api] has been updated.
+Created [https://www.googleapis.com/compute/v1/projects/<project>/regions/asia-northeast1/networkEndpointGroups/api-neg].
+Created network endpoint group [api-neg].
+Created [https://www.googleapis.com/compute/v1/projects/<project>/global/securityPolicies/api-armor].
+Updated [https://www.googleapis.com/compute/v1/projects/<project>/global/securityPolicies/api-armor].
+Created [https://www.googleapis.com/compute/v1/projects/<project>/global/backendServices/api-be].
+NAME    BACKENDS  PROTOCOL
+api-be            HTTP
+Updated [https://www.googleapis.com/compute/v1/projects/<project>/global/backendServices/api-be].
+Updated [https://www.googleapis.com/compute/v1/projects/<project>/global/backendServices/api-be].
+Created [https://www.googleapis.com/compute/v1/projects/<project>/global/urlMaps/api-map].
+NAME     DEFAULT_SERVICE
+api-map  backendServices/api-be
+Created [https://www.googleapis.com/compute/v1/projects/<project>/global/targetHttpProxies/api-proxy].
+NAME       URL_MAP
+api-proxy  api-map
+Created [https://www.googleapis.com/compute/v1/projects/<project>/global/forwardingRules/api-fr].
+LB IP: <lb-ip>
+exit=0

@@ -1,0 +1,59 @@
+## A: soft delete only (gs://<project>-bk-softdelete)
+overwritten; soft-deleted generation: 1791513552189558
+A1 restore original after overwrite | OK
+A1 content now: original
+A2 soft-deleted generations after rm: 3
+A3 attacker disables soft delete (--clear-soft-delete) | OK
+A4 soft-deleted entries listed after disable (60s): 0
+A5 restore 1791513552189558 by explicit generation | DENIED | ERROR: (gcloud.storage.restore) HTTPError 400: Soft delete policy is required to request a soft-deleted version.
+A5 restore 1791513553927305 by explicit generation | DENIED | ERROR: (gcloud.storage.restore) HTTPError 400: Soft delete policy is required to request a soft-deleted version.
+A5 restore 1791513556229288 by explicit generation | DENIED | ERROR: (gcloud.storage.restore) HTTPError 400: Soft delete policy is required to request a soft-deleted version.
+## B: retention policy locked, 600s (gs://<project>-bk-locked)
+retentionPolicy: {'retentionPeriod': '600', 'effectiveTime': '2026-10-09T02:40:24.428Z', 'isLocked': True}
+B6 delete project | DENIED | ERROR: (gcloud.projects.delete) FAILED_PRECONDITION: Precondition check failed.
+B7 liens: storage.googleapis.com	A lien is put on project deletion because one or more Cloud Storage resources were put under retention. 
+B8 content: backup 1791513624
+## B (rerun of B1-B5 on the same locked bucket, output filter fixed)
+B1 delete object | DENIED | ERROR: HTTPError 403: Object '<project>-bk-locked/db.dump' is subject to bucket's retention policy or object retention and cannot be deleted or overwritten until 2026-10-08T19:50:25.220895-07:00. This command is authenticated 
+B2 overwrite object | DENIED | ERROR: (gcloud.storage.cp) [<owner>] does not have permission to access b instance [<project>-bk-locked] (or it may not exist): Object '<project>-bk-locked/db.dump' is subject to bucket's retention po
+B3 shorten retention to 1s | DENIED | ERROR: [<owner>] does not have permission to access b instance [<project>-bk-locked] (or it may not exist): Cannot reduce retention duration of a locked Retention Policy for bucket '<project>-bk-locke
+B4 clear retention policy | DENIED | ERROR: [<owner>] does not have permission to access b instance [<project>-bk-locked] (or it may not exist): Bucket '<project>-bk-locked' has a locked Retention Policy which cannot be removed. This com
+B5 delete bucket | DENIED | ERROR: HTTPError 403: Object '<project>-bk-locked/db.dump' is subject to bucket's retention policy or object retention and cannot be deleted or overwritten until 2026-10-08T19:50:25.220895-07:00. This command is authenticated 
+B8 content: backup 1791513624
+## A (after re-enabling soft delete 7d)
+A6 defender re-enables soft delete (a few minutes after A3) | OK
+A7 soft-deleted entries listed after re-enable: 3
+A8 restore 1791513552189558 | OK
+A8 restore 1791513553927305 | OK
+A8 restore 1791513556229288 | OK
+## B9 attacker (project owner) removes the lien
+Deleted [liens/<lien-id>].
+## B10 attacker deletes the project after removing the lien
+Deleted [https://cloudresourcemanager.googleapis.com/v1/projects/<project>].
+state: DELETE_REQUESTED
+content while DELETE_REQUESTED: ERROR: (gcloud.storage.cat) HTTPError 403
+## B11 owner undeletes the project (within 30 days)
+Restored project [https://cloudresourcemanager.googleapis.com/v1/projects/<project>].
+state: ACTIVE
+content after undelete (60s): ERROR: (gcloud.storage.cat) HTTPError 403: The billing account for the owning project is disabled in state absent. This command is authenticated as <owner> whic
+retention: effectiveTime=2026-10-09T02:40:24.428000+00:00;isLocked=True;retentionPeriod=600
+liens after undelete: 
+## B12 after re-linking billing
+content: ERROR: (gcloud.storage.cat) HTTPError 403: The billing account for the owning project is disabled in state absent. This command is authenticated as <owner> whic
+rm still denied: 
+## B13 ~2.5 min after re-linking billing
+content: backup 1791513624
+rm still denied: subject to bucket's retention policy
+liens: 
+## backup-writer (roles/storage.objectCreator on the backup bucket only), 05:26:44 UTC
+cp new object: ERROR: (gcloud.storage.cp) HTTPError 403: backup-writer@<project>.iam.gserviceaccount.com does not have storage.objects.get access to the Google Cloud Storage object. Per 
+read (cat): ERROR: (gcloud.storage.cat) HTTPError 403: backup-writer@<project>.iam.gserviceaccount.com does not have storage.objects.get access to the Google Cloud Storage object. Pe
+list: ERROR: (gcloud.storage.ls) [backup-writer@<project>.iam.gserviceaccount.com] does not have permission to access b instance [<backup-project>-backup] (or it may not exist)
+overwrite same name: ERROR: (gcloud.storage.cp) HTTPError 403: backup-writer@<project>.iam.gserviceaccount.com does not have storage.objects.get access to the Google Cloud Storage object. Per
+delete: ERROR: (gcloud.storage.rm) HTTPError 403: backup-writer@<project>.iam.gserviceaccount.com does not have storage.objects.get access to the Google Cloud Storage object. Per
+## same SA, JSON API upload (no pre-check), 05:27:06 UTC
+upload new object: HTTP 200
+upload same name again (overwrite): HTTP 403
+read: HTTP 403
+delete: HTTP 403
+owner reads it: dump

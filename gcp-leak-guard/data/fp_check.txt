@@ -1,0 +1,18 @@
+## A: weekly job (patch-runner redeploys api), start 04:44:18
+build SUCCESS, finished 2026-10-09T04:45:44.348098Z
+## B: owner toggles --invoker-iam-check / --no-invoker-iam-check, start 04:59:41
+toggled 04:59:46
+2026-10-09T05:00:00.706Z Cloud Run invoker IAM check disabled open 1791522000
+## end 05:00:04
+FPDONE
+## C: verify.sh (tries allUsers on the PAP bucket, soft-delete restore, etc.) 05:00:20-05:00:52; watched 05:00:52-05:06:44 -> no notification
+## D: owner impersonates patch-runner and toggles invoker IAM check (old exclusion), start 05:20:17
+toggled 05:20:20
+## D result: no notification by 05:27:35 (7 min) => with the old exclusion, impersonating patch-runner bypassed the alert. Audit log of the impersonated update has authenticationInfo.serviceAccountDelegationInfo[].firstPartyPrincipal; the Cloud Build one (04:45:36) does not
+## E: new filter. owner impersonates patch-runner and toggles, start 05:45:08
+toggled 05:45:11
+2026-10-09T05:45:29.174Z Cloud Run invoker IAM check disabled open 1791524729
+## F: new filter. weekly job, start 05:45:30 (waiting >5 min after E so the rate limit does not hide it)
+build SUCCESS, finished 2026-10-09T05:52:39.057322Z
+## end 06:06:37
+FP2DONE

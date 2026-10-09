@@ -1,0 +1,8 @@
+## Artifact Registry の脆弱性スキャン(api イメージ、python:3.12-slim ベース、2026-10-09)
+## CRITICAL はどの段階も 0。fixAvailable = 修正版が出ているもの
+stage                                              HIGH MEDIUM LOW  fixAvailable  where
+1 FROM python:3.12-slim (--pull)                      5      6  37             6  site-packages/pip-25.0.1.dist-info と ensurepip/_bundled/pip-25.0.1-py3-none-any.whl の両方(vuln_summary.json)
+2 + apt-get -y upgrade                                5      6  37             6  同上
+3 + pip install --upgrade pip                         5      6  37             6  ensurepip/_bundled/pip-25.0.1-py3-none-any.whl のみ(CVE-2026-1703, CVE-2026-3219, CVE-2025-8869, CVE-2026-6357, CVE-2026-8643, CVE-2026-13346)
+4 + rm ensurepip/_bundled/pip-*.whl (今の Dockerfile)  5      1  36             0  -
+(段階3は MINIMAL 25、段階4も MINIMAL 25)

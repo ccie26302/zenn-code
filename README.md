@@ -60,6 +60,17 @@ Gemini 3.8 Flash TTS の大阪ラベルの声に関西弁を読ませ、名詞�
 - `data/` — 判定結果・書き起こし・聴き取りの回答（音声ファイルは含まない）
 - `REPRODUCE.md` — 再現手順
 
+### `gcp-leak-guard/` — 漏えい続発の今、Google Cloudの備えは効くか実測
+
+個人情報保護委員会の注意喚起(9事例)とランサムへの備えを、Google Cloud の仕組みとして入れる `baseline.sh` と、効いているかを PASS / FAIL で確かめる `verify.sh`。組織のないプロジェクトでも動く。
+
+- `baseline.sh` / `verify.sh` — 入れるスクリプトと確かめるスクリプト(step ごとに流せる)
+- `dlp_mask.sh` — LLM に渡す前の文章から個人情報を伏せる
+- `data/backup_trial.sh` — オーナー権限を取られた前提で、論理削除と、ロックした保持ポリシーのバケットを消しにいく
+- `data/alert_trial.sh` / `alert_compute.py` — 監査ログのアラートが届くまでの時間(新しいインシデント)
+- `data/` — 実測の結果(識別子は伏せた)
+- `REPRODUCE.md` — 再現手順と片付け
+
 ## 使うにあたって
 
 **API キーは各自でご用意ください。** このリポジトリに鍵は含まれていません。

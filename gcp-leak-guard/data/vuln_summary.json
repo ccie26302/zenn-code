@@ -1,0 +1,154 @@
+[
+ {
+  "dockerfile": "pull only",
+  "totals": {
+   "HIGH": 5,
+   "LOW": 37,
+   "MEDIUM": 6,
+   "MINIMAL": 25
+  },
+  "fix_available": [
+   [
+    "LOW",
+    "pip",
+    "25.0.1",
+    "26",
+    [
+     "/usr/local/lib/python3.12/ensurepip/_bundled/pip-25.0.1-py3-none-any.whl",
+     "/usr/local/lib/python3.12/site-packages/pip-25.0.1.dist-info/METADATA"
+    ]
+   ],
+   [
+    "MEDIUM",
+    "pip",
+    "25.0.1",
+    "25.3",
+    [
+     "/usr/local/lib/python3.12/ensurepip/_bundled/pip-25.0.1-py3-none-any.whl",
+     "/usr/local/lib/python3.12/site-packages/pip-25.0.1.dist-info/METADATA"
+    ]
+   ],
+   [
+    "MEDIUM",
+    "pip",
+    "25.0.1",
+    "26.1.2",
+    [
+     "/usr/local/lib/python3.12/ensurepip/_bundled/pip-25.0.1-py3-none-any.whl",
+     "/usr/local/lib/python3.12/site-packages/pip-25.0.1.dist-info/METADATA"
+    ]
+   ],
+   [
+    "MEDIUM",
+    "pip",
+    "25.0.1",
+    "26.1",
+    [
+     "/usr/local/lib/python3.12/ensurepip/_bundled/pip-25.0.1-py3-none-any.whl",
+     "/usr/local/lib/python3.12/site-packages/pip-25.0.1.dist-info/METADATA"
+    ]
+   ],
+   [
+    "MEDIUM",
+    "pip",
+    "25.0.1",
+    "26.1",
+    [
+     "/usr/local/lib/python3.12/ensurepip/_bundled/pip-25.0.1-py3-none-any.whl",
+     "/usr/local/lib/python3.12/site-packages/pip-25.0.1.dist-info/METADATA"
+    ]
+   ],
+   [
+    "MEDIUM",
+    "pip",
+    "25.0.1",
+    "26.2",
+    [
+     "/usr/local/lib/python3.12/ensurepip/_bundled/pip-25.0.1-py3-none-any.whl",
+     "/usr/local/lib/python3.12/site-packages/pip-25.0.1.dist-info/METADATA"
+    ]
+   ]
+  ]
+ },
+ {
+  "dockerfile": "apt upgrade",
+  "totals": {
+   "HIGH": 5,
+   "LOW": 37,
+   "MEDIUM": 6,
+   "MINIMAL": 25
+  },
+  "fix_available": [
+   [
+    "LOW",
+    "pip",
+    "25.0.1",
+    "26",
+    [
+     "/usr/local/lib/python3.12/ensurepip/_bundled/pip-25.0.1-py3-none-any.whl",
+     "/usr/local/lib/python3.12/site-packages/pip-25.0.1.dist-info/METADATA"
+    ]
+   ],
+   [
+    "MEDIUM",
+    "pip",
+    "25.0.1",
+    "26.1",
+    [
+     "/usr/local/lib/python3.12/ensurepip/_bundled/pip-25.0.1-py3-none-any.whl",
+     "/usr/local/lib/python3.12/site-packages/pip-25.0.1.dist-info/METADATA"
+    ]
+   ],
+   [
+    "MEDIUM",
+    "pip",
+    "25.0.1",
+    "26.2",
+    [
+     "/usr/local/lib/python3.12/ensurepip/_bundled/pip-25.0.1-py3-none-any.whl",
+     "/usr/local/lib/python3.12/site-packages/pip-25.0.1.dist-info/METADATA"
+    ]
+   ],
+   [
+    "MEDIUM",
+    "pip",
+    "25.0.1",
+    "26.1",
+    [
+     "/usr/local/lib/python3.12/ensurepip/_bundled/pip-25.0.1-py3-none-any.whl",
+     "/usr/local/lib/python3.12/site-packages/pip-25.0.1.dist-info/METADATA"
+    ]
+   ],
+   [
+    "MEDIUM",
+    "pip",
+    "25.0.1",
+    "25.3",
+    [
+     "/usr/local/lib/python3.12/ensurepip/_bundled/pip-25.0.1-py3-none-any.whl",
+     "/usr/local/lib/python3.12/site-packages/pip-25.0.1.dist-info/METADATA"
+    ]
+   ],
+   [
+    "MEDIUM",
+    "pip",
+    "25.0.1",
+    "26.1.2",
+    [
+     "/usr/local/lib/python3.12/ensurepip/_bundled/pip-25.0.1-py3-none-any.whl",
+     "/usr/local/lib/python3.12/site-packages/pip-25.0.1.dist-info/METADATA"
+    ]
+   ]
+  ]
+ },
+ {
+  "dockerfile": "pip upgrade + remove ensurepip wheel",
+  "totals": {
+   "HIGH": 5,
+   "LOW": 36,
+   "MEDIUM": 1,
+   "MINIMAL": 25
+  },
+  "fix_available": []
+ }
+]

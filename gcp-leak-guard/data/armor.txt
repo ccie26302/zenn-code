@@ -1,0 +1,10 @@
+## Cloud Armor rate limit (30 req / 60 s per IP), 60 requests in a burst
+  60 200
+## run.app direct
+404
+## invalid id via LB (after window)
+## retry 02:13:38 120 requests
+ 120 200
+## after enabling LB logging (burst ~02:14:40, note written 02:15:53): 40 requests -> first 30 = 200, then 10 x 429 (threshold 30/60s)
+## timeline (UTC, from audit log): setSecurityPolicy 02:07:26 / burst#1 ~02:11 (60x200) / burst#2 02:13:38 (120x200) / LB logging patch 02:13:53-02:14:37 / burst#3 ~02:14:40 -> 30x200 then 429
+## note: not enforced for at least ~6 min after attaching; whether the logging patch triggered the push is not separated

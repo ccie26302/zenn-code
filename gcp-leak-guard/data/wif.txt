@@ -1,0 +1,5 @@
+## WIF (GitHub Actions, condition: repository==REPO && ref==refs/heads/main)
+feature attempt=1 failure
+main attempt=2 success
+main attempt1: Permission 'iam.serviceAccounts.getAccessToken' denied (IAM 付与直後の反映待ち。約2分後の再実行で success)
+feature: unauthorized_client: The given credential is rejected by the attribute condition.

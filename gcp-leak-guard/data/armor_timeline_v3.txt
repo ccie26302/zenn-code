@@ -1,0 +1,4 @@
+## v3 project: baseline.sh finished 05:41:48 UTC (armor step last). verify at ~05:45:20 -> 60 x 200 (not enforced)
+05:45:33  first=200 then: 39 200 
+05:46:05  first=200 then: 36 200  3 429 
+05:46:38  first=200 then: 29 200  10 429 

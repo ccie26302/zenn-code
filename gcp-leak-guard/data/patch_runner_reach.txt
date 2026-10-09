@@ -1,0 +1,10 @@
+## patch-runner reach test (impersonation), 04:30:00 UTC, after narrowing roles
+storage ls build-src: gs://<project>-build-src/api-src.tgz
+storage ls personal-data: ERROR: (gcloud.storage.ls) [patch-runner@<project>.iam.gserviceaccount.com] does not have permission to access b instance [<project>-personal-data] (or it may n
+secrets access app-db-password: ERROR: (gcloud.secrets.versions.access) PERMISSION_DENIED: Permission 'secretmanager.versions.access' denied on resource
+## control: same test with the old project-level roles/cloudbuild.builds.builder re-added temporarily (audit log: ADD 04:30:29, REMOVE 04:30:37 UTC; the 04:44 weekly build ran without it) (04:30:31 UTC)
+storage ls personal-data: 
+storage cp to personal-data: 
+storage ls after cp: gs://<project>-personal-data/written-by-patch-runner.txt 
+## M1: patch-runner creates a build WITHOUT serviceAccount (default build SA = Compute default SA) that writes to personal-data (05:21:13 UTC)
+builds submit: PERMISSION_DENIED: caller does not have permission to act as service account (the default build SA). => blocked in this (new) project. Projects whose default is the legacy <number>@cloudbuild.gserviceaccount.com were not tested

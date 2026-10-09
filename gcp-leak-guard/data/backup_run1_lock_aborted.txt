@@ -1,0 +1,33 @@
+## A: soft delete only (gs://<project>-bk-softdelete)
+Creating gs://<project>-bk-softdelete/...
+Copying file://- to gs://<project>-bk-softdelete/db.dump
+  
+....
+Copying file://- to gs://<project>-bk-softdelete/db.dump
+  
+...
+overwritten; soft-deleted generation: 1791513423611557
+A1 restore original after overwrite | OK
+A1 content now: original
+A2 soft-deleted entries after rm: 3
+A3 attacker disables soft delete (--clear-soft-delete) | OK
+A4 soft-deleted entries after disable: 0
+A5 restore after soft delete disabled | NOTHING TO RESTORE
+## B: retention policy locked, 600s (gs://<project>-bk-locked)
+Creating gs://<project>-bk-locked/...
+Copying file://- to gs://<project>-bk-locked/db.dump
+  
+...
+  
+Updating gs://<project>-bk-locked/...
+.ERROR: Abort locking retention policy on "gs://<project>-bk-locked/".
+
+locked: effectiveTime=2026-10-09T02:37:47.072000+00:00;retentionPeriod=600
+B1 delete object | DENIED | Removing gs://<project>-bk-locked/db.dump...
+B2 overwrite object | DENIED | Copying file://- to gs://<project>-bk-locked/db.dump
+B3 shorten retention to 1s | OK
+B4 clear retention policy | OK
+B5 delete bucket | OK
+B6 delete project | OK
+B7 liens: 
+B8 content: ERROR: (gcloud.storage.cat) gs://<project>-bk-locked not found: 404.

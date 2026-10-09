@@ -1,0 +1,3 @@
+## dlp_mask.sh (stdin, DLP_LOCATION=asia-northeast1), 2026-10-09
+customInfoType なし: 顧客情報: [PERSON_NAME]([EMAIL_ADDRESS], 090-1234-5678)、カード [CREDIT_CARD_NUMBER] で決済。この内容で返信文を作って。
+customInfoType あり: 顧客情報: [PERSON_NAME]([EMAIL_ADDRESS], [JP_MOBILE])、カード [CREDIT_CARD_NUMBER] で決済。この内容で返信文を作って。
