@@ -1,0 +1,179 @@
+{
+ "timeSeries": [
+  {
+   "metric": {
+    "labels": {
+     "request_type": "shared",
+     "type": "input"
+    },
+    "type": "aiplatform.googleapis.com/publisher/online_serving/token_count"
+   },
+   "resource": {
+    "type": "aiplatform.googleapis.com/PublisherModel",
+    "labels": {
+     "location": "eu",
+     "project_id": "<project-id>"
+    }
+   },
+   "metricKind": "DELTA",
+   "valueType": "INT64",
+   "points": [
+    {
+     "interval": {
+      "startTime": "2026-10-13T23:59:00Z",
+      "endTime": "2026-10-15T23:59:00Z"
+     },
+     "value": {
+      "int64Value": "543"
+     }
+    }
+   ]
+  },
+  {
+   "metric": {
+    "labels": {
+     "type": "output",
+     "request_type": "shared"
+    },
+    "type": "aiplatform.googleapis.com/publisher/online_serving/token_count"
+   },
+   "resource": {
+    "type": "aiplatform.googleapis.com/PublisherModel",
+    "labels": {
+     "location": "eu",
+     "project_id": "<project-id>"
+    }
+   },
+   "metricKind": "DELTA",
+   "valueType": "INT64",
+   "points": [
+    {
+     "interval": {
+      "startTime": "2026-10-13T23:59:00Z",
+      "endTime": "2026-10-15T23:59:00Z"
+     },
+     "value": {
+      "int64Value": "1302"
+     }
+    }
+   ]
+  },
+  {
+   "metric": {
+    "labels": {
+     "type": "input",
+     "request_type": "shared"
+    },
+    "type": "aiplatform.googleapis.com/publisher/online_serving/token_count"
+   },
+   "resource": {
+    "type": "aiplatform.googleapis.com/PublisherModel",
+    "labels": {
+     "project_id": "<project-id>",
+     "location": "global"
+    }
+   },
+   "metricKind": "DELTA",
+   "valueType": "INT64",
+   "points": [
+    {
+     "interval": {
+      "startTime": "2026-10-13T23:59:00Z",
+      "endTime": "2026-10-15T23:59:00Z"
+     },
+     "value": {
+      "int64Value": "12673680"
+     }
+    }
+   ]
+  },
+  {
+   "metric": {
+    "labels": {
+     "request_type": "shared",
+     "type": "output"
+    },
+    "type": "aiplatform.googleapis.com/publisher/online_serving/token_count"
+   },
+   "resource": {
+    "type": "aiplatform.googleapis.com/PublisherModel",
+    "labels": {
+     "project_id": "<project-id>",
+     "location": "global"
+    }
+   },
+   "metricKind": "DELTA",
+   "valueType": "INT64",
+   "points": [
+    {
+     "interval": {
+      "startTime": "2026-10-13T23:59:00Z",
+      "endTime": "2026-10-15T23:59:00Z"
+     },
+     "value": {
+      "int64Value": "206834"
+     }
+    }
+   ]
+  },
+  {
+   "metric": {
+    "labels": {
+     "request_type": "shared",
+     "type": "input"
+    },
+    "type": "aiplatform.googleapis.com/publisher/online_serving/token_count"
+   },
+   "resource": {
+    "type": "aiplatform.googleapis.com/PublisherModel",
+    "labels": {
+     "location": "us",
+     "project_id": "<project-id>"
+    }
+   },
+   "metricKind": "DELTA",
+   "valueType": "INT64",
+   "points": [
+    {
+     "interval": {
+      "startTime": "2026-10-13T23:59:00Z",
+      "endTime": "2026-10-15T23:59:00Z"
+     },
+     "value": {
+      "int64Value": "625"
+     }
+    }
+   ]
+  },
+  {
+   "metric": {
+    "labels": {
+     "type": "output",
+     "request_type": "shared"
+    },
+    "type": "aiplatform.googleapis.com/publisher/online_serving/token_count"
+   },
+   "resource": {
+    "type": "aiplatform.googleapis.com/PublisherModel",
+    "labels": {
+     "project_id": "<project-id>",
+     "location": "us"
+    }
+   },
+   "metricKind": "DELTA",
+   "valueType": "INT64",
+   "points": [
+    {
+     "interval": {
+      "startTime": "2026-10-13T23:59:00Z",
+      "endTime": "2026-10-15T23:59:00Z"
+     },
+     "value": {
+      "int64Value": "1424"
+     }
+    }
+   ]
+  }
+ ],
+ "unit": "1"
+}

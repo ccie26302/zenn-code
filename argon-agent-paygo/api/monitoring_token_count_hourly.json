@@ -1,0 +1,113 @@
+{
+ "timeSeries": [
+  {
+   "metric": {
+    "labels": {
+     "type": "input"
+    },
+    "type": "aiplatform.googleapis.com/publisher/online_serving/token_count"
+   },
+   "resource": {
+    "type": "aiplatform.googleapis.com/PublisherModel",
+    "labels": {
+     "project_id": "<project-id>"
+    }
+   },
+   "metricKind": "DELTA",
+   "valueType": "INT64",
+   "points": [
+    {
+     "interval": {
+      "startTime": "2026-10-14T16:00:00Z",
+      "endTime": "2026-10-14T17:00:00Z"
+     },
+     "value": {
+      "int64Value": "6311803"
+     }
+    },
+    {
+     "interval": {
+      "startTime": "2026-10-14T15:00:00Z",
+      "endTime": "2026-10-14T16:00:00Z"
+     },
+     "value": {
+      "int64Value": "4285250"
+     }
+    },
+    {
+     "interval": {
+      "startTime": "2026-10-14T14:00:00Z",
+      "endTime": "2026-10-14T15:00:00Z"
+     },
+     "value": {
+      "int64Value": "1929580"
+     }
+    },
+    {
+     "interval": {
+      "startTime": "2026-10-14T13:00:00Z",
+      "endTime": "2026-10-14T14:00:00Z"
+     },
+     "value": {
+      "int64Value": "147047"
+     }
+    }
+   ]
+  },
+  {
+   "metric": {
+    "labels": {
+     "type": "output"
+    },
+    "type": "aiplatform.googleapis.com/publisher/online_serving/token_count"
+   },
+   "resource": {
+    "type": "aiplatform.googleapis.com/PublisherModel",
+    "labels": {
+     "project_id": "<project-id>"
+    }
+   },
+   "metricKind": "DELTA",
+   "valueType": "INT64",
+   "points": [
+    {
+     "interval": {
+      "startTime": "2026-10-14T16:00:00Z",
+      "endTime": "2026-10-14T17:00:00Z"
+     },
+     "value": {
+      "int64Value": "52360"
+     }
+    },
+    {
+     "interval": {
+      "startTime": "2026-10-14T15:00:00Z",
+      "endTime": "2026-10-14T16:00:00Z"
+     },
+     "value": {
+      "int64Value": "94157"
+     }
+    },
+    {
+     "interval": {
+      "startTime": "2026-10-14T14:00:00Z",
+      "endTime": "2026-10-14T15:00:00Z"
+     },
+     "value": {
+      "int64Value": "58971"
+     }
+    },
+    {
+     "interval": {
+      "startTime": "2026-10-14T13:00:00Z",
+      "endTime": "2026-10-14T14:00:00Z"
+     },
+     "value": {
+      "int64Value": "1346"
+     }
+    }
+   ]
+  }
+ ],
+ "unit": "1"
+}
