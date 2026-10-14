@@ -1,0 +1,1 @@
+{"id":"C1_02","group":"C1","tier":"-","timeout_sec":300,"approval_mode":"default","prompt":"notes/todo.txt を作って、1行目に「牛乳を買う」と書いてください。","expect":{"kind":"file","path":"notes/todo.txt","want":false},"note":"default をヘッドレスで使うと、承認の要る書き込みはどう扱われるか"}

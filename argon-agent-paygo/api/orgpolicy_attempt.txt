@@ -1,0 +1,11 @@
+ERROR: (gcloud.org-policies.set-policy) [<your-account>] does not have permission to access projects instance [<project-id>] (or it may not exist): Permission 'orgpolicy.policies.create' denied on resource '//cloudresourcemanager.googleapis.com/projects/<project-id>' (or it may not exist). Remediate access with this Troubleshooter URL or share it with your administrator - https://console.cloud.google.com/iam-admin/troubleshooter/summary;errorId=<redacted> . This command is authenticated as <your-account> which is the active account specified by the [core/account] property.
+- '@type': type.googleapis.com/google.rpc.ErrorInfo
+  domain: cloudresourcemanager.googleapis.com
+  metadata:
+    error_info_id: <redacted>
+    permission: orgpolicy.policies.create
+    resource: projects/<project-id>
+    troubleshooter_url: https://console.cloud.google.com/iam-admin/troubleshooter/summary;errorId=<redacted>
+  reason: IAM_PERMISSION_DENIED
+ERROR: Policy modification failed. For a binding with condition, run "gcloud alpha iam policies lint-condition" to identify issues in condition.
+ERROR: (gcloud.projects.add-iam-policy-binding) INVALID_ARGUMENT: Role roles/orgpolicy.policyAdmin is not supported for this resource.

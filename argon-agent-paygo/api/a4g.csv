@@ -1,0 +1,996 @@
+gemini-4-argon,"Python Library Documentation: module argparse
+
+NAME
+    argparse - Command-line parsing library
+
+DESCRIPTION
+    This module is an optparse-inspired command-line parsing library that:
+
+        - handles both optional and positional arguments
+        - produces highly informative usage messages
+        - supports parsers that dispatch to sub-parsers
+
+    The following is a simple usage example that sums integers from the
+    command-line and writes the result to a file::
+
+        parser = argparse.ArgumentParser(
+            description='sum the integers at the command line')
+        parser.add_argument(
+            'integers', metavar='int', nargs='+', type=int,
+            help='an integer to be summed')
+        parser.add_argument(
+            '--log', default=sys.stdout, type=argparse.FileType('w'),
+            help='the file where the sum should be written')
+        args = parser.parse_args()
+        args.log.write('%s' % sum(args.integers))
+        args.log.close()
+
+    The module",0,238,962,724,OK
+gemini-4-argon,"Python Library Documentation: module argparse
+
+NAME
+    argparse - Command-line parsing library
+
+DESCRIPTION
+    This module is an optparse-inspired command-line parsing library that:
+
+        - handles both optional and positional arguments
+        - produces highly informative usage messages
+        - supports parsers that dispatch to sub-parsers
+
+    The following is a simple usage example that sums integers from the
+    command-line and writes the result to a file::
+
+        parser = argparse.ArgumentParser(
+            description='sum the integers at the command line')
+        parser.add_argument(
+            'integers', metavar='int', nargs='+', type=int,
+            help='an integer to be summed')
+        parser.add_argument(
+            '--log', default=sys.stdout, type=argparse.FileType('w'),
+            help='the file where the sum should be written')
+        args = parser.parse_args()
+        args.log.write('%s' % sum(args.integers))
+        args.log.close()
+
+    The module",1,238,962,724,OK
+gemini-4-argon,"Python Library Documentation: module argparse
+
+NAME
+    argparse - Command-line parsing library
+
+DESCRIPTION
+    This module is an optparse-inspired command-line parsing library that:
+
+        - handles both optional and positional arguments
+        - produces highly informative usage messages
+        - supports parsers that dispatch to sub-parsers
+
+    The following is a simple usage example that sums integers from the
+    command-line and writes the result to a file::
+
+        parser = argparse.ArgumentParser(
+            description='sum the integers at the command line')
+        parser.add_argument(
+            'integers', metavar='int', nargs='+', type=int,
+            help='an integer to be summed')
+        parser.add_argument(
+            '--log', default=sys.stdout, type=argparse.FileType('w'),
+            help='the file where the sum should be written')
+        args = parser.parse_args()
+        args.log.write('%s' % sum(args.integers))
+        args.log.close()
+
+    The module",2,238,962,724,OK
+gemini-3.8-flash,"Python Library Documentation: module argparse
+
+NAME
+    argparse - Command-line parsing library
+
+DESCRIPTION
+    This module is an optparse-inspired command-line parsing library that:
+
+        - handles both optional and positional arguments
+        - produces highly informative usage messages
+        - supports parsers that dispatch to sub-parsers
+
+    The following is a simple usage example that sums integers from the
+    command-line and writes the result to a file::
+
+        parser = argparse.ArgumentParser(
+            description='sum the integers at the command line')
+        parser.add_argument(
+            'integers', metavar='int', nargs='+', type=int,
+            help='an integer to be summed')
+        parser.add_argument(
+            '--log', default=sys.stdout, type=argparse.FileType('w'),
+            help='the file where the sum should be written')
+        args = parser.parse_args()
+        args.log.write('%s' % sum(args.integers))
+        args.log.close()
+
+    The module",0,238,238,0,OK
+gemini-4-argon,"Python Library Documentation: module argparse
+
+NAME
+    argparse - Command-line parsing library
+
+DESCRIPTION
+    This module is an optparse-inspired command-line parsing library that:
+
+        - handles both optional and positional arguments
+        - produces highly informative usage messages
+        - supports parsers that dispatch to sub-parsers
+
+    The following is a simple usage example that sums integers from the
+    command-line and writes the result to a file::
+
+        parser = argparse.ArgumentParser(
+            description='sum the integers at the command line')
+        parser.add_argument(
+            'integers', metavar='int', nargs='+', type=int,
+            help='an integer to be summed')
+        parser.add_argument(
+            '--log', default=sys.stdout, type=argparse.FileType('w'),
+            help='the file where the sum should be written')
+        args = parser.parse_args()
+        args.log.write('%s' % sum(args.integers))
+        args.log.close()
+
+    The module contains the following public classes:
+
+        - ArgumentParser -- The main entry point for command-line parsing. As the
+            example above shows, the add_argument() method is used to populate
+            the parser with actions for optional and positional arguments. Then
+            the parse_args() method is invoked to convert the args at the
+            command-line into an object with attributes.
+
+        - ArgumentError -- The exception raised by ArgumentParser objects when
+       ",0,334,361,27,OK
+gemini-4-argon,"Python Library Documentation: module argparse
+
+NAME
+    argparse - Command-line parsing library
+
+DESCRIPTION
+    This module is an optparse-inspired command-line parsing library that:
+
+        - handles both optional and positional arguments
+        - produces highly informative usage messages
+        - supports parsers that dispatch to sub-parsers
+
+    The following is a simple usage example that sums integers from the
+    command-line and writes the result to a file::
+
+        parser = argparse.ArgumentParser(
+            description='sum the integers at the command line')
+        parser.add_argument(
+            'integers', metavar='int', nargs='+', type=int,
+            help='an integer to be summed')
+        parser.add_argument(
+            '--log', default=sys.stdout, type=argparse.FileType('w'),
+            help='the file where the sum should be written')
+        args = parser.parse_args()
+        args.log.write('%s' % sum(args.integers))
+        args.log.close()
+
+    The module contains the following public classes:
+
+        - ArgumentParser -- The main entry point for command-line parsing. As the
+            example above shows, the add_argument() method is used to populate
+            the parser with actions for optional and positional arguments. Then
+            the parse_args() method is invoked to convert the args at the
+            command-line into an object with attributes.
+
+        - ArgumentError -- The exception raised by ArgumentParser objects when
+       ",1,334,361,27,OK
+gemini-4-argon,"Python Library Documentation: module argparse
+
+NAME
+    argparse - Command-line parsing library
+
+DESCRIPTION
+    This module is an optparse-inspired command-line parsing library that:
+
+        - handles both optional and positional arguments
+        - produces highly informative usage messages
+        - supports parsers that dispatch to sub-parsers
+
+    The following is a simple usage example that sums integers from the
+    command-line and writes the result to a file::
+
+        parser = argparse.ArgumentParser(
+            description='sum the integers at the command line')
+        parser.add_argument(
+            'integers', metavar='int', nargs='+', type=int,
+            help='an integer to be summed')
+        parser.add_argument(
+            '--log', default=sys.stdout, type=argparse.FileType('w'),
+            help='the file where the sum should be written')
+        args = parser.parse_args()
+        args.log.write('%s' % sum(args.integers))
+        args.log.close()
+
+    The module contains the following public classes:
+
+        - ArgumentParser -- The main entry point for command-line parsing. As the
+            example above shows, the add_argument() method is used to populate
+            the parser with actions for optional and positional arguments. Then
+            the parse_args() method is invoked to convert the args at the
+            command-line into an object with attributes.
+
+        - ArgumentError -- The exception raised by ArgumentParser objects when
+       ",2,334,361,27,OK
+gemini-3.8-flash,"Python Library Documentation: module argparse
+
+NAME
+    argparse - Command-line parsing library
+
+DESCRIPTION
+    This module is an optparse-inspired command-line parsing library that:
+
+        - handles both optional and positional arguments
+        - produces highly informative usage messages
+        - supports parsers that dispatch to sub-parsers
+
+    The following is a simple usage example that sums integers from the
+    command-line and writes the result to a file::
+
+        parser = argparse.ArgumentParser(
+            description='sum the integers at the command line')
+        parser.add_argument(
+            'integers', metavar='int', nargs='+', type=int,
+            help='an integer to be summed')
+        parser.add_argument(
+            '--log', default=sys.stdout, type=argparse.FileType('w'),
+            help='the file where the sum should be written')
+        args = parser.parse_args()
+        args.log.write('%s' % sum(args.integers))
+        args.log.close()
+
+    The module contains the following public classes:
+
+        - ArgumentParser -- The main entry point for command-line parsing. As the
+            example above shows, the add_argument() method is used to populate
+            the parser with actions for optional and positional arguments. Then
+            the parse_args() method is invoked to convert the args at the
+            command-line into an object with attributes.
+
+        - ArgumentError -- The exception raised by ArgumentParser objects when
+       ",0,334,334,0,OK
+gemini-4-argon,"Python Library Documentation: module argparse
+
+NAME
+    argparse - Command-line parsing library
+
+DESCRIPTION
+    This module is an optparse-inspired command-line parsing library that:
+
+        - handles both optional and positional arguments
+        - produces highly informative usage messages
+        - supports parsers that dispatch to sub-parsers
+
+    The following is a simple usage example that sums integers from the
+    command-line and writes the result to a file::
+
+        parser = argparse.ArgumentParser(
+            description='sum the integers at the command line')
+        parser.add_argument(
+            'integers', metavar='int', nargs='+', type=int,
+            help='an integer to be summed')
+        parser.add_argument(
+            '--log', default=sys.stdout, type=argparse.FileType('w'),
+            help='the file where the sum should be written')
+        args = parser.parse_args()
+        args.log.write('%s' % sum(args.integers))
+        args.log.close()
+
+    The module contains the following public classes:
+
+        - ArgumentParser -- The main entry point for command-line parsing. As the
+            example above shows, the add_argument() method is used to populate
+            the parser with actions for optional and positional arguments. Then
+            the parse_args() method is invoked to convert the args at the
+            command-line into an object with attributes.
+
+        - ArgumentError -- The exception raised by ArgumentParser objects when
+            there are errors with the parser's actions. Errors raised while
+            parsing the command-line are caught by ArgumentParser and emitted
+            as command-line messages.
+
+        - FileType -- A factory for defining types of files to be created. As the
+            example above shows, instances of FileType are typically passed as
+            the type= argument of add_argument() calls.
+
+        - Action -- The base class for parser actions. Typically actions are
+         ",0,432,1156,724,OK
+gemini-4-argon,"Python Library Documentation: module argparse
+
+NAME
+    argparse - Command-line parsing library
+
+DESCRIPTION
+    This module is an optparse-inspired command-line parsing library that:
+
+        - handles both optional and positional arguments
+        - produces highly informative usage messages
+        - supports parsers that dispatch to sub-parsers
+
+    The following is a simple usage example that sums integers from the
+    command-line and writes the result to a file::
+
+        parser = argparse.ArgumentParser(
+            description='sum the integers at the command line')
+        parser.add_argument(
+            'integers', metavar='int', nargs='+', type=int,
+            help='an integer to be summed')
+        parser.add_argument(
+            '--log', default=sys.stdout, type=argparse.FileType('w'),
+            help='the file where the sum should be written')
+        args = parser.parse_args()
+        args.log.write('%s' % sum(args.integers))
+        args.log.close()
+
+    The module contains the following public classes:
+
+        - ArgumentParser -- The main entry point for command-line parsing. As the
+            example above shows, the add_argument() method is used to populate
+            the parser with actions for optional and positional arguments. Then
+            the parse_args() method is invoked to convert the args at the
+            command-line into an object with attributes.
+
+        - ArgumentError -- The exception raised by ArgumentParser objects when
+            there are errors with the parser's actions. Errors raised while
+            parsing the command-line are caught by ArgumentParser and emitted
+            as command-line messages.
+
+        - FileType -- A factory for defining types of files to be created. As the
+            example above shows, instances of FileType are typically passed as
+            the type= argument of add_argument() calls.
+
+        - Action -- The base class for parser actions. Typically actions are
+         ",1,432,1156,724,OK
+gemini-4-argon,"Python Library Documentation: module argparse
+
+NAME
+    argparse - Command-line parsing library
+
+DESCRIPTION
+    This module is an optparse-inspired command-line parsing library that:
+
+        - handles both optional and positional arguments
+        - produces highly informative usage messages
+        - supports parsers that dispatch to sub-parsers
+
+    The following is a simple usage example that sums integers from the
+    command-line and writes the result to a file::
+
+        parser = argparse.ArgumentParser(
+            description='sum the integers at the command line')
+        parser.add_argument(
+            'integers', metavar='int', nargs='+', type=int,
+            help='an integer to be summed')
+        parser.add_argument(
+            '--log', default=sys.stdout, type=argparse.FileType('w'),
+            help='the file where the sum should be written')
+        args = parser.parse_args()
+        args.log.write('%s' % sum(args.integers))
+        args.log.close()
+
+    The module contains the following public classes:
+
+        - ArgumentParser -- The main entry point for command-line parsing. As the
+            example above shows, the add_argument() method is used to populate
+            the parser with actions for optional and positional arguments. Then
+            the parse_args() method is invoked to convert the args at the
+            command-line into an object with attributes.
+
+        - ArgumentError -- The exception raised by ArgumentParser objects when
+            there are errors with the parser's actions. Errors raised while
+            parsing the command-line are caught by ArgumentParser and emitted
+            as command-line messages.
+
+        - FileType -- A factory for defining types of files to be created. As the
+            example above shows, instances of FileType are typically passed as
+            the type= argument of add_argument() calls.
+
+        - Action -- The base class for parser actions. Typically actions are
+         ",2,432,1156,724,OK
+gemini-3.8-flash,"Python Library Documentation: module argparse
+
+NAME
+    argparse - Command-line parsing library
+
+DESCRIPTION
+    This module is an optparse-inspired command-line parsing library that:
+
+        - handles both optional and positional arguments
+        - produces highly informative usage messages
+        - supports parsers that dispatch to sub-parsers
+
+    The following is a simple usage example that sums integers from the
+    command-line and writes the result to a file::
+
+        parser = argparse.ArgumentParser(
+            description='sum the integers at the command line')
+        parser.add_argument(
+            'integers', metavar='int', nargs='+', type=int,
+            help='an integer to be summed')
+        parser.add_argument(
+            '--log', default=sys.stdout, type=argparse.FileType('w'),
+            help='the file where the sum should be written')
+        args = parser.parse_args()
+        args.log.write('%s' % sum(args.integers))
+        args.log.close()
+
+    The module contains the following public classes:
+
+        - ArgumentParser -- The main entry point for command-line parsing. As the
+            example above shows, the add_argument() method is used to populate
+            the parser with actions for optional and positional arguments. Then
+            the parse_args() method is invoked to convert the args at the
+            command-line into an object with attributes.
+
+        - ArgumentError -- The exception raised by ArgumentParser objects when
+            there are errors with the parser's actions. Errors raised while
+            parsing the command-line are caught by ArgumentParser and emitted
+            as command-line messages.
+
+        - FileType -- A factory for defining types of files to be created. As the
+            example above shows, instances of FileType are typically passed as
+            the type= argument of add_argument() calls.
+
+        - Action -- The base class for parser actions. Typically actions are
+         ",0,432,432,0,OK
+gemini-4-argon,"Python Library Documentation: module argparse
+
+NAME
+    argparse - Command-line parsing library
+
+DESCRIPTION
+    This module is an optparse-inspired command-line parsing library that:
+
+        - handles both optional and positional arguments
+        - produces highly informative usage messages
+        - supports parsers that dispatch to sub-parsers
+
+    The following is a simple usage example that sums integers from the
+    command-line and writes the result to a file::
+
+        parser = argparse.ArgumentParser(
+            description='sum the integers at the command line')
+        parser.add_argument(
+            'integers', metavar='int', nargs='+', type=int,
+            help='an integer to be summed')
+        parser.add_argument(
+            '--log', default=sys.stdout, type=argparse.FileType('w'),
+            help='the file where the sum should be written')
+        args = parser.parse_args()
+        args.log.write('%s' % sum(args.integers))
+        args.log.close()
+
+    The module contains the following public classes:
+
+        - ArgumentParser -- The main entry point for command-line parsing. As the
+            example above shows, the add_argument() method is used to populate
+            the parser with actions for optional and positional arguments. Then
+            the parse_args() method is invoked to convert the args at the
+            command-line into an object with attributes.
+
+        - ArgumentError -- The exception raised by ArgumentParser objects when
+            there are errors with the parser's actions. Errors raised while
+            parsing the command-line are caught by ArgumentParser and emitted
+            as command-line messages.
+
+        - FileType -- A factory for defining types of files to be created. As the
+            example above shows, instances of FileType are typically passed as
+            the type= argument of add_argument() calls.
+
+        - Action -- The base class for parser actions. Typically actions are
+            selecte",0,434,1158,724,OK
+gemini-4-argon,"Python Library Documentation: module argparse
+
+NAME
+    argparse - Command-line parsing library
+
+DESCRIPTION
+    This module is an optparse-inspired command-line parsing library that:
+
+        - handles both optional and positional arguments
+        - produces highly informative usage messages
+        - supports parsers that dispatch to sub-parsers
+
+    The following is a simple usage example that sums integers from the
+    command-line and writes the result to a file::
+
+        parser = argparse.ArgumentParser(
+            description='sum the integers at the command line')
+        parser.add_argument(
+            'integers', metavar='int', nargs='+', type=int,
+            help='an integer to be summed')
+        parser.add_argument(
+            '--log', default=sys.stdout, type=argparse.FileType('w'),
+            help='the file where the sum should be written')
+        args = parser.parse_args()
+        args.log.write('%s' % sum(args.integers))
+        args.log.close()
+
+    The module contains the following public classes:
+
+        - ArgumentParser -- The main entry point for command-line parsing. As the
+            example above shows, the add_argument() method is used to populate
+            the parser with actions for optional and positional arguments. Then
+            the parse_args() method is invoked to convert the args at the
+            command-line into an object with attributes.
+
+        - ArgumentError -- The exception raised by ArgumentParser objects when
+            there are errors with the parser's actions. Errors raised while
+            parsing the command-line are caught by ArgumentParser and emitted
+            as command-line messages.
+
+        - FileType -- A factory for defining types of files to be created. As the
+            example above shows, instances of FileType are typically passed as
+            the type= argument of add_argument() calls.
+
+        - Action -- The base class for parser actions. Typically actions are
+            selecte",1,434,1158,724,OK
+gemini-4-argon,"Python Library Documentation: module argparse
+
+NAME
+    argparse - Command-line parsing library
+
+DESCRIPTION
+    This module is an optparse-inspired command-line parsing library that:
+
+        - handles both optional and positional arguments
+        - produces highly informative usage messages
+        - supports parsers that dispatch to sub-parsers
+
+    The following is a simple usage example that sums integers from the
+    command-line and writes the result to a file::
+
+        parser = argparse.ArgumentParser(
+            description='sum the integers at the command line')
+        parser.add_argument(
+            'integers', metavar='int', nargs='+', type=int,
+            help='an integer to be summed')
+        parser.add_argument(
+            '--log', default=sys.stdout, type=argparse.FileType('w'),
+            help='the file where the sum should be written')
+        args = parser.parse_args()
+        args.log.write('%s' % sum(args.integers))
+        args.log.close()
+
+    The module contains the following public classes:
+
+        - ArgumentParser -- The main entry point for command-line parsing. As the
+            example above shows, the add_argument() method is used to populate
+            the parser with actions for optional and positional arguments. Then
+            the parse_args() method is invoked to convert the args at the
+            command-line into an object with attributes.
+
+        - ArgumentError -- The exception raised by ArgumentParser objects when
+            there are errors with the parser's actions. Errors raised while
+            parsing the command-line are caught by ArgumentParser and emitted
+            as command-line messages.
+
+        - FileType -- A factory for defining types of files to be created. As the
+            example above shows, instances of FileType are typically passed as
+            the type= argument of add_argument() calls.
+
+        - Action -- The base class for parser actions. Typically actions are
+            selecte",2,434,1158,724,OK
+gemini-3.8-flash,"Python Library Documentation: module argparse
+
+NAME
+    argparse - Command-line parsing library
+
+DESCRIPTION
+    This module is an optparse-inspired command-line parsing library that:
+
+        - handles both optional and positional arguments
+        - produces highly informative usage messages
+        - supports parsers that dispatch to sub-parsers
+
+    The following is a simple usage example that sums integers from the
+    command-line and writes the result to a file::
+
+        parser = argparse.ArgumentParser(
+            description='sum the integers at the command line')
+        parser.add_argument(
+            'integers', metavar='int', nargs='+', type=int,
+            help='an integer to be summed')
+        parser.add_argument(
+            '--log', default=sys.stdout, type=argparse.FileType('w'),
+            help='the file where the sum should be written')
+        args = parser.parse_args()
+        args.log.write('%s' % sum(args.integers))
+        args.log.close()
+
+    The module contains the following public classes:
+
+        - ArgumentParser -- The main entry point for command-line parsing. As the
+            example above shows, the add_argument() method is used to populate
+            the parser with actions for optional and positional arguments. Then
+            the parse_args() method is invoked to convert the args at the
+            command-line into an object with attributes.
+
+        - ArgumentError -- The exception raised by ArgumentParser objects when
+            there are errors with the parser's actions. Errors raised while
+            parsing the command-line are caught by ArgumentParser and emitted
+            as command-line messages.
+
+        - FileType -- A factory for defining types of files to be created. As the
+            example above shows, instances of FileType are typically passed as
+            the type= argument of add_argument() calls.
+
+        - Action -- The base class for parser actions. Typically actions are
+            selecte",0,434,434,0,OK
+gemini-4-argon,"Python Library Documentation: module argparse
+
+NAME
+    argparse - Command-line parsing library
+
+DESCRIPTION
+    This module is an optparse-inspired command-line parsing library that:
+
+        - handles both optional and positional arguments
+        - produces highly informative usage messages
+        - supports parsers that dispatch to sub-parsers
+
+    The following is a simple usage example that sums integers from the
+    command-line and writes the result to a file::
+
+        parser = argparse.ArgumentParser(
+            description='sum the integers at the command line')
+        parser.add_argument(
+            'integers', metavar='int', nargs='+', type=int,
+            help='an integer to be summed')
+        parser.add_argument(
+            '--log', default=sys.stdout, type=argparse.FileType('w'),
+            help='the file where the sum should be written')
+        args = parser.parse_args()
+        args.log.write('%s' % sum(args.integers))
+        args.log.close()
+
+    The module contains the following public classes:
+
+        - ArgumentParser -- The main entry point for command-line parsing. As the
+            example above shows, the add_argument() method is used to populate
+            the parser with actions for optional and positional arguments. Then
+            the parse_args() method is invoked to convert the args at the
+            command-line into an object with attributes.
+
+        - ArgumentError -- The exception raised by ArgumentParser objects when
+            there are errors with the parser's actions. Errors raised while
+            parsing the command-line are caught by ArgumentParser and emitted
+            as command-line messages.
+
+        - FileType -- A factory for defining types of files to be created. As the
+            example above shows, instances of FileType are typically passed as
+            the type= argument of add_argument() calls.
+
+        - Action -- The base class for parser actions. Typically actions are
+            selected by passi",0,435,1159,724,OK
+gemini-4-argon,"Python Library Documentation: module argparse
+
+NAME
+    argparse - Command-line parsing library
+
+DESCRIPTION
+    This module is an optparse-inspired command-line parsing library that:
+
+        - handles both optional and positional arguments
+        - produces highly informative usage messages
+        - supports parsers that dispatch to sub-parsers
+
+    The following is a simple usage example that sums integers from the
+    command-line and writes the result to a file::
+
+        parser = argparse.ArgumentParser(
+            description='sum the integers at the command line')
+        parser.add_argument(
+            'integers', metavar='int', nargs='+', type=int,
+            help='an integer to be summed')
+        parser.add_argument(
+            '--log', default=sys.stdout, type=argparse.FileType('w'),
+            help='the file where the sum should be written')
+        args = parser.parse_args()
+        args.log.write('%s' % sum(args.integers))
+        args.log.close()
+
+    The module contains the following public classes:
+
+        - ArgumentParser -- The main entry point for command-line parsing. As the
+            example above shows, the add_argument() method is used to populate
+            the parser with actions for optional and positional arguments. Then
+            the parse_args() method is invoked to convert the args at the
+            command-line into an object with attributes.
+
+        - ArgumentError -- The exception raised by ArgumentParser objects when
+            there are errors with the parser's actions. Errors raised while
+            parsing the command-line are caught by ArgumentParser and emitted
+            as command-line messages.
+
+        - FileType -- A factory for defining types of files to be created. As the
+            example above shows, instances of FileType are typically passed as
+            the type= argument of add_argument() calls.
+
+        - Action -- The base class for parser actions. Typically actions are
+            selected by passi",1,435,1159,724,OK
+gemini-4-argon,"Python Library Documentation: module argparse
+
+NAME
+    argparse - Command-line parsing library
+
+DESCRIPTION
+    This module is an optparse-inspired command-line parsing library that:
+
+        - handles both optional and positional arguments
+        - produces highly informative usage messages
+        - supports parsers that dispatch to sub-parsers
+
+    The following is a simple usage example that sums integers from the
+    command-line and writes the result to a file::
+
+        parser = argparse.ArgumentParser(
+            description='sum the integers at the command line')
+        parser.add_argument(
+            'integers', metavar='int', nargs='+', type=int,
+            help='an integer to be summed')
+        parser.add_argument(
+            '--log', default=sys.stdout, type=argparse.FileType('w'),
+            help='the file where the sum should be written')
+        args = parser.parse_args()
+        args.log.write('%s' % sum(args.integers))
+        args.log.close()
+
+    The module contains the following public classes:
+
+        - ArgumentParser -- The main entry point for command-line parsing. As the
+            example above shows, the add_argument() method is used to populate
+            the parser with actions for optional and positional arguments. Then
+            the parse_args() method is invoked to convert the args at the
+            command-line into an object with attributes.
+
+        - ArgumentError -- The exception raised by ArgumentParser objects when
+            there are errors with the parser's actions. Errors raised while
+            parsing the command-line are caught by ArgumentParser and emitted
+            as command-line messages.
+
+        - FileType -- A factory for defining types of files to be created. As the
+            example above shows, instances of FileType are typically passed as
+            the type= argument of add_argument() calls.
+
+        - Action -- The base class for parser actions. Typically actions are
+            selected by passi",2,435,1159,724,OK
+gemini-3.8-flash,"Python Library Documentation: module argparse
+
+NAME
+    argparse - Command-line parsing library
+
+DESCRIPTION
+    This module is an optparse-inspired command-line parsing library that:
+
+        - handles both optional and positional arguments
+        - produces highly informative usage messages
+        - supports parsers that dispatch to sub-parsers
+
+    The following is a simple usage example that sums integers from the
+    command-line and writes the result to a file::
+
+        parser = argparse.ArgumentParser(
+            description='sum the integers at the command line')
+        parser.add_argument(
+            'integers', metavar='int', nargs='+', type=int,
+            help='an integer to be summed')
+        parser.add_argument(
+            '--log', default=sys.stdout, type=argparse.FileType('w'),
+            help='the file where the sum should be written')
+        args = parser.parse_args()
+        args.log.write('%s' % sum(args.integers))
+        args.log.close()
+
+    The module contains the following public classes:
+
+        - ArgumentParser -- The main entry point for command-line parsing. As the
+            example above shows, the add_argument() method is used to populate
+            the parser with actions for optional and positional arguments. Then
+            the parse_args() method is invoked to convert the args at the
+            command-line into an object with attributes.
+
+        - ArgumentError -- The exception raised by ArgumentParser objects when
+            there are errors with the parser's actions. Errors raised while
+            parsing the command-line are caught by ArgumentParser and emitted
+            as command-line messages.
+
+        - FileType -- A factory for defining types of files to be created. As the
+            example above shows, instances of FileType are typically passed as
+            the type= argument of add_argument() calls.
+
+        - Action -- The base class for parser actions. Typically actions are
+            selected by passi",0,435,435,0,OK
+gemini-4-argon,"Python Library Documentation: module argparse
+
+NAME
+    argparse - Command-line parsing library
+
+DESCRIPTION
+    This module is an optparse-inspired command-line parsing library that:
+
+        - handles both optional and positional arguments
+        - produces highly informative usage messages
+        - supports parsers that dispatch to sub-parsers
+
+    The following is a simple usage example that sums integers from the
+    command-line and writes the result to a file::
+
+        parser = argparse.ArgumentParser(
+            description='sum the integers at the command line')
+        parser.add_argument(
+            'integers', metavar='int', nargs='+', type=int,
+            help='an integer to be summed')
+        parser.add_argument(
+            '--log', default=sys.stdout, type=argparse.FileType('w'),
+            help='the file where the sum should be written')
+        args = parser.parse_args()
+        args.log.write('%s' % sum(args.integers))
+        args.log.close()
+
+    The module contains the following public classes:
+
+        - ArgumentParser -- The main entry point for command-line parsing. As the
+            example above shows, the add_argument() method is used to populate
+            the parser with actions for optional and positional arguments. Then
+            the parse_args() method is invoked to convert the args at the
+            command-line into an object with attributes.
+
+        - ArgumentError -- The exception raised by ArgumentParser objects when
+            there are errors with the parser's actions. Errors raised while
+            parsing the command-line are caught by ArgumentParser and emitted
+            as command-line messages.
+
+        - FileType -- A factory for defining types of files to be created. As the
+            example above shows, instances of FileType are typically passed as
+            the type= argument of add_argument() calls.
+
+        - Action -- The base class for parser actions. Typically actions are
+            selected.",0,434,461,27,OK
+gemini-4-argon,"Python Library Documentation: module argparse
+
+NAME
+    argparse - Command-line parsing library
+
+DESCRIPTION
+    This module is an optparse-inspired command-line parsing library that:
+
+        - handles both optional and positional arguments
+        - produces highly informative usage messages
+        - supports parsers that dispatch to sub-parsers
+
+    The following is a simple usage example that sums integers from the
+    command-line and writes the result to a file::
+
+        parser = argparse.ArgumentParser(
+            description='sum the integers at the command line')
+        parser.add_argument(
+            'integers', metavar='int', nargs='+', type=int,
+            help='an integer to be summed')
+        parser.add_argument(
+            '--log', default=sys.stdout, type=argparse.FileType('w'),
+            help='the file where the sum should be written')
+        args = parser.parse_args()
+        args.log.write('%s' % sum(args.integers))
+        args.log.close()
+
+    The module contains the following public classes:
+
+        - ArgumentParser -- The main entry point for command-line parsing. As the
+            example above shows, the add_argument() method is used to populate
+            the parser with actions for optional and positional arguments. Then
+            the parse_args() method is invoked to convert the args at the
+            command-line into an object with attributes.
+
+        - ArgumentError -- The exception raised by ArgumentParser objects when
+            there are errors with the parser's actions. Errors raised while
+            parsing the command-line are caught by ArgumentParser and emitted
+            as command-line messages.
+
+        - FileType -- A factory for defining types of files to be created. As the
+            example above shows, instances of FileType are typically passed as
+            the type= argument of add_argument() calls.
+
+        - Action -- The base class for parser actions. Typically actions are
+            selected.",1,434,461,27,OK
+gemini-4-argon,"Python Library Documentation: module argparse
+
+NAME
+    argparse - Command-line parsing library
+
+DESCRIPTION
+    This module is an optparse-inspired command-line parsing library that:
+
+        - handles both optional and positional arguments
+        - produces highly informative usage messages
+        - supports parsers that dispatch to sub-parsers
+
+    The following is a simple usage example that sums integers from the
+    command-line and writes the result to a file::
+
+        parser = argparse.ArgumentParser(
+            description='sum the integers at the command line')
+        parser.add_argument(
+            'integers', metavar='int', nargs='+', type=int,
+            help='an integer to be summed')
+        parser.add_argument(
+            '--log', default=sys.stdout, type=argparse.FileType('w'),
+            help='the file where the sum should be written')
+        args = parser.parse_args()
+        args.log.write('%s' % sum(args.integers))
+        args.log.close()
+
+    The module contains the following public classes:
+
+        - ArgumentParser -- The main entry point for command-line parsing. As the
+            example above shows, the add_argument() method is used to populate
+            the parser with actions for optional and positional arguments. Then
+            the parse_args() method is invoked to convert the args at the
+            command-line into an object with attributes.
+
+        - ArgumentError -- The exception raised by ArgumentParser objects when
+            there are errors with the parser's actions. Errors raised while
+            parsing the command-line are caught by ArgumentParser and emitted
+            as command-line messages.
+
+        - FileType -- A factory for defining types of files to be created. As the
+            example above shows, instances of FileType are typically passed as
+            the type= argument of add_argument() calls.
+
+        - Action -- The base class for parser actions. Typically actions are
+            selected.",2,434,461,27,OK
+gemini-3.8-flash,"Python Library Documentation: module argparse
+
+NAME
+    argparse - Command-line parsing library
+
+DESCRIPTION
+    This module is an optparse-inspired command-line parsing library that:
+
+        - handles both optional and positional arguments
+        - produces highly informative usage messages
+        - supports parsers that dispatch to sub-parsers
+
+    The following is a simple usage example that sums integers from the
+    command-line and writes the result to a file::
+
+        parser = argparse.ArgumentParser(
+            description='sum the integers at the command line')
+        parser.add_argument(
+            'integers', metavar='int', nargs='+', type=int,
+            help='an integer to be summed')
+        parser.add_argument(
+            '--log', default=sys.stdout, type=argparse.FileType('w'),
+            help='the file where the sum should be written')
+        args = parser.parse_args()
+        args.log.write('%s' % sum(args.integers))
+        args.log.close()
+
+    The module contains the following public classes:
+
+        - ArgumentParser -- The main entry point for command-line parsing. As the
+            example above shows, the add_argument() method is used to populate
+            the parser with actions for optional and positional arguments. Then
+            the parse_args() method is invoked to convert the args at the
+            command-line into an object with attributes.
+
+        - ArgumentError -- The exception raised by ArgumentParser objects when
+            there are errors with the parser's actions. Errors raised while
+            parsing the command-line are caught by ArgumentParser and emitted
+            as command-line messages.
+
+        - FileType -- A factory for defining types of files to be created. As the
+            example above shows, instances of FileType are typically passed as
+            the type= argument of add_argument() calls.
+
+        - Action -- The base class for parser actions. Typically actions are
+            selected.",0,434,434,0,OK

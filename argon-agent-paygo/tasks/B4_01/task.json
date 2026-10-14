@@ -1,0 +1,2 @@
+{"id": "B4_01", "group": "B4", "tier": "難", "timeout_sec": 1800, "approval_mode": "yolo",
+ "prompt": "units.py は単位の変換をする1ファイルのライブラリです。これを units/ というパッケージに分けてください。長さは units/length.py、重さは units/weight.py、温度は units/temperature.py、共通の部分(例外クラスと convert の振り分け)は units/core.py に置き、units/__init__.py から今と同じ名前(convert, UnknownUnit, LENGTH, WEIGHT)で使えるようにします。元の units.py は消してください。scripts/ の中のスクリプトも新しい構成で動くようにし、python3 -m pytest が全部通る状態にしてください。テストのファイルは変更しないでください。"}

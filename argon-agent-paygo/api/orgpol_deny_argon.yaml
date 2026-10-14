@@ -1,0 +1,7 @@
+name: projects/<project-id>/policies/vertexai.allowedModels
+spec:
+  rules:
+  - values:
+      deniedValues:
+      - publishers/google/models/gemini-4-argon:predict
+  - allowAll: true

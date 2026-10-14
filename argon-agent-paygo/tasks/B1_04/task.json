@@ -1,0 +1,2 @@
+{"id": "B1_04", "group": "B1", "tier": "易", "timeout_sec": 600, "approval_mode": "yolo",
+ "prompt": "project/ の下(深い階層を含む)から、拡張子が .log で、サイズが 102400 バイト以上のファイルを探して、report.csv に一覧にしてください。列は path,size_bytes,mtime の3つでヘッダー行を付けます。path は project/ からの相対パス、mtime は最終更新日時を UTC の ISO 8601 で秒まで(例: 2025-03-01T09:30:00Z)。行は path の文字コード順に並べてください。report.csv は作業フォルダの直下に作ります。"}

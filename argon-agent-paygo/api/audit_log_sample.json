@@ -1,0 +1,134 @@
+[
+  {
+    "insertId": "1kmub69e39l7d",
+    "logName": "projects/<project-id>/logs/cloudaudit.googleapis.com%2Fdata_access",
+    "operation": {
+      "id": "17105801457762276206",
+      "last": true,
+      "producer": "aiplatform.googleapis.com"
+    },
+    "protoPayload": {
+      "@type": "type.googleapis.com/google.cloud.audit.AuditLog",
+      "authenticationInfo": {
+        "oauthInfo": {
+          "oauthClientId": "<redacted>"
+        },
+        "principalEmail": "argon-agent@<project-id>.iam.gserviceaccount.com",
+        "principalSubject": "serviceAccount:argon-agent@<project-id>.iam.gserviceaccount.com",
+        "serviceAccountDelegationInfo": [
+          {
+            "firstPartyPrincipal": {
+              "principalEmail": "<your-account>"
+            }
+          }
+        ]
+      },
+      "authorizationInfo": [
+        {
+          "granted": true,
+          "permission": "aiplatform.endpoints.predict",
+          "permissionType": "DATA_READ",
+          "resource": "projects/<project-id>/locations/global/publishers/google/models/gemini-4-argon",
+          "resourceAttributes": {}
+        }
+      ],
+      "methodName": "google.cloud.aiplatform.v1beta1.PredictionService.StreamGenerateContent",
+      "request": {
+        "@type": "type.googleapis.com/google.cloud.aiplatform.v1beta1.GenerateContentRequest",
+        "model": "projects/<project-id>/locations/global/publishers/google/models/gemini-4-argon"
+      },
+      "requestMetadata": {
+        "callerIp": "<redacted>",
+        "callerSuppliedUserAgent": "GeminiCLI-tui/0.64.0/gemini-4-argon (linux; arm64; terminal),gzip(gfe)",
+        "destinationAttributes": {},
+        "requestAttributes": {
+          "auth": {},
+          "time": "2026-10-14T16:26:56.704022805Z"
+        }
+      },
+      "resourceName": "projects/<project-id>/locations/global/publishers/google/models/gemini-4-argon",
+      "response": {
+        "@type": "type.googleapis.com/google.cloud.aiplatform.v1beta1.GenerateContentResponse"
+      },
+      "serviceName": "aiplatform.googleapis.com",
+      "status": {}
+    },
+    "receiveTimestamp": "2026-10-14T16:27:00.265593459Z",
+    "resource": {
+      "labels": {
+        "method": "google.cloud.aiplatform.v1beta1.PredictionService.StreamGenerateContent",
+        "project_id": "<project-id>",
+        "service": "aiplatform.googleapis.com"
+      },
+      "type": "audited_resource"
+    },
+    "severity": "INFO",
+    "timestamp": "2026-10-14T16:26:56.680644214Z"
+  },
+  {
+    "insertId": "1kmub69e39l7c",
+    "logName": "projects/<project-id>/logs/cloudaudit.googleapis.com%2Fdata_access",
+    "operation": {
+      "first": true,
+      "id": "17105801457762276206",
+      "producer": "aiplatform.googleapis.com"
+    },
+    "protoPayload": {
+      "@type": "type.googleapis.com/google.cloud.audit.AuditLog",
+      "authenticationInfo": {
+        "oauthInfo": {
+          "oauthClientId": "<redacted>"
+        },
+        "principalEmail": "argon-agent@<project-id>.iam.gserviceaccount.com",
+        "principalSubject": "serviceAccount:argon-agent@<project-id>.iam.gserviceaccount.com",
+        "serviceAccountDelegationInfo": [
+          {
+            "firstPartyPrincipal": {
+              "principalEmail": "<your-account>"
+            }
+          }
+        ]
+      },
+      "authorizationInfo": [
+        {
+          "granted": true,
+          "permission": "aiplatform.endpoints.predict",
+          "permissionType": "DATA_READ",
+          "resource": "projects/<project-id>/locations/global/publishers/google/models/gemini-4-argon",
+          "resourceAttributes": {}
+        }
+      ],
+      "methodName": "google.cloud.aiplatform.v1beta1.PredictionService.StreamGenerateContent",
+      "request": {
+        "@type": "type.googleapis.com/google.cloud.aiplatform.v1beta1.GenerateContentRequest",
+        "model": "projects/<project-id>/locations/global/publishers/google/models/gemini-4-argon"
+      },
+      "requestMetadata": {
+        "callerIp": "<redacted>",
+        "callerSuppliedUserAgent": "GeminiCLI-tui/0.64.0/gemini-4-argon (linux; arm64; terminal),gzip(gfe)",
+        "destinationAttributes": {},
+        "requestAttributes": {
+          "auth": {},
+          "time": "2026-10-14T16:26:56.704022805Z"
+        }
+      },
+      "resourceName": "projects/<project-id>/locations/global/publishers/google/models/gemini-4-argon",
+      "response": {
+        "@type": "type.googleapis.com/google.cloud.aiplatform.v1beta1.GenerateContentResponse"
+      },
+      "serviceName": "aiplatform.googleapis.com",
+      "status": {}
+    },
+    "receiveTimestamp": "2026-10-14T16:27:00.265593459Z",
+    "resource": {
+      "labels": {
+        "method": "google.cloud.aiplatform.v1beta1.PredictionService.StreamGenerateContent",
+        "project_id": "<project-id>",
+        "service": "aiplatform.googleapis.com"
+      },
+      "type": "audited_resource"
+    },
+    "severity": "INFO",
+    "timestamp": "2026-10-14T16:26:56.680644214Z"
+  }
+]

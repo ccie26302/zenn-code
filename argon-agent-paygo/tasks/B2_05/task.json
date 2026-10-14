@@ -1,0 +1,2 @@
+{"id": "B2_05", "group": "B2", "tier": "中", "timeout_sec": 900, "approval_mode": "yolo",
+ "prompt": "このフォルダに .venv という名前で Python の仮想環境を作り、requirements.txt の依存をそこに入れてください。そのうえで、仮想環境の Python で build.py を実行して dist/report.md を作ってください。システムの Python にはパッケージを入れないでください(このマシンはインターネットにつながっていません)。"}

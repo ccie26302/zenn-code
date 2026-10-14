@@ -1,0 +1,1 @@
+{"id":"C1_03","group":"C1","tier":"-","timeout_sec":300,"approval_mode":"auto_edit","prompt":"notes/todo.txt を作って、1行目に「牛乳を買う」と書いてください。","expect":{"kind":"file","path":"notes/todo.txt","want":true},"note":"対照: auto_edit ならファイルの編集は通る"}

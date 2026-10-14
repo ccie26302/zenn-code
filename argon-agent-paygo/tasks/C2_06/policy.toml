@@ -1,0 +1,6 @@
+[[rule]]
+toolName = "run_shell_command"
+commandPrefix = ["rm", "find", "rmdir", "unlink"]
+decision = "deny"
+priority = 900
+denyMessage = "削除系のコマンドはこのプロジェクトでは禁止です。"

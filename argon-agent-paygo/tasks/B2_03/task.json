@@ -1,0 +1,2 @@
+{"id": "B2_03", "group": "B2", "tier": "易", "timeout_sec": 600, "approval_mode": "yolo",
+ "prompt": "この git リポジトリで、main から feature/add-license ブランチを作ってください。そのブランチで、LICENSE ファイル(MIT License の全文。著作権表示の行は Copyright (c) 2026 Example Inc.)を追加し、README.md の末尾に「## License」という見出しと、その下に「MIT」とだけ書いた行を足して、1つのコミットにしてください。コミットメッセージは docs: add MIT license の1行です。main ブランチは変えないでください。終わったら feature/add-license をチェックアウトした状態にしてください。"}

@@ -1,0 +1,2 @@
+{"id": "B1_07", "group": "B1", "tier": "中", "timeout_sec": 600, "approval_mode": "yolo",
+ "prompt": "受け取った delivery.zip を extracted/ に展開し、zip に同梱の SHA256SUMS(sha256sum 形式)と照合してください。結果は verify.txt に、SHA256SUMS に載っているファイルごとに1行、「OK <パス>」「NG <パス>」(ハッシュが違う)「MISSING <パス>」(zip に入っていない)のどれかで書きます。パスは SHA256SUMS に書かれたとおり、行はパスの文字コード順です。verify.txt は作業フォルダの直下に作ってください。"}

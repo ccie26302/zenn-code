@@ -1,0 +1,2 @@
+{"id": "B2_06", "group": "B2", "tier": "難", "timeout_sec": 900, "approval_mode": "yolo",
+ "prompt": "README.md の「セットアップ」の手順どおりに動かして、out/summary.json を作ってください。手順が今のコードと合っていないところがあれば、動くように進めたうえで、README.md の手順も今のコードに合わせて直してください。manage.py は変更しないでください。"}

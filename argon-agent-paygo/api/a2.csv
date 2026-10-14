@@ -1,0 +1,26 @@
+predictのみのSA: generateContent,200,,"{
+  ""candidates"": [
+    {
+      ""content"": {
+        ""role"": ""model"",
+        ""parts"": [
+          {
+            ""text"": ""2"",
+            ""thoughtSignature"": ""AY89a1/LgJvJqe+qGr8q9B5spED833B4LxJwEVR76"
+predictのみのSA: countTokens,200,,"{
+  ""totalTokens"": 7,
+  ""totalBillableCharacters"": 9,
+  ""promptTokensDetails"": [
+    {
+      ""modality"": ""TEXT"",
+      ""tokenCount"": 7
+    }
+  ]
+}
+"
+権限なしのSA: generateContent,401,CREDENTIALS_MISSING,"Request is missing required authentication credential. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project."
+課金なし・API無効の新規プロジェクト(利用者): generateContent,403,SERVICE_DISABLED,"Agent Platform API has not been used in project <disposable-project> before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/aiplatform.googleapis.com/overview?project=<disposable-project> then retry. If you enabled this API recently, wait a few minutes for the actio"
+課金なしの新規プロジェクトで API を有効化,0,,"Operation ""operations/acat.p2-<project-number>-8d78ec2b-8502-42dc-a2af-5cbc7770a5c7"" finished successfully."
+権限なしのSA: generateContent(再試行),401,CREDENTIALS_MISSING,"Request is missing required authentication credential. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project."
+課金なし・API有効化後の新規プロジェクト(利用者): generateContent,403,BILLING_DISABLED,"This API method requires billing to be enabled. Please enable billing on project #<disposable-project> by visiting https://console.developers.google.com/billing/enable?project=<disposable-project> then retry. If you enabled billing for this project recently, wait a few minutes for the action to propagate "
+権限なしのSA: generateContent(反映後 0),403,IAM_PERMISSION_DENIED,Permission 'aiplatform.endpoints.predict' denied on resource '//aiplatform.googleapis.com/projects/<project-id>/locations/global/publishers/google/models/gemini-4-argon' (or it may not exist). Remediate access with this Troubleshooter URL or share it with your administrator - https://console.cloud

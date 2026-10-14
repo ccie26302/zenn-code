@@ -1,0 +1,6 @@
+[[rule]]
+toolName = "run_shell_command"
+argsPattern = "\\.env"
+decision = "deny"
+priority = 900
+denyMessage = ".env を読むコマンドは禁止です。"

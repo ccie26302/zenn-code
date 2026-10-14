@@ -6,6 +6,18 @@ Zenn に書いた検証記事の、測定コードと生データです。記事
 
 ## 収録
 
+### `argon-agent-paygo/` — Argonは従量課金で使える、CLIのplanは書き込んだ
+
+Gemini 4 Argon を Google Cloud(Gemini Enterprise Agent Platform)の従量課金で呼び、Gemini CLI 0.64.0 をエージェントとして隔離したコンテナで動かした一式。
+
+- `PLAN.md` — 事前登録と変更履歴(測定の前に git にコミット)
+- `harness/` — 隔離の仕組み(`--internal` ネットワーク、偽のメタデータサーバ、トークンを差し替えて全要求を記録する中継 `proxy/proxy.py`)、1試行を回す `trial.py`、本測定 `main.sh`・C の `c.sh`・追加の `add.sh`
+- `tasks/` — 課題(B1・B2・B4 の17本と C の承認モード・ポリシー・.env)。初期状態・判定・模範解答・惜しい誤答、`validate.sh` と `validation.csv`
+- `api/` — API 単体の測定(呼べる場所、エラー、遅延、Priority/Flex、パラメータ、countTokens と prompt_token_count のずれ)
+- `runs/` — 全試行の生データ(stream-json、中継の記録、判定、row.json)。`results_all.csv` は row.json から作った一覧(壊れた試行は valid=0)
+- `report.py` — 記事の数字をすべて出す集計(出力は `REPORT.md`)
+- `REPRODUCE.md` — 再現手順
+
 ### `owata2-system1-realtime/` — 画面だけのJev互換AIに人生オワタ2は早かった
 
 Jev と同じ `/v1/systemone` 形式で呼べる公開の判定モデル(kev-4b、laya-multilingual)に、『人生オワタの大冒険2』1面の最初の穴を、画面だけを見てゲームを止めずに遊ばせた一式と、応答時間のベンチマーク。ゲーム本体・ゲーム画面・録画は含めていません(作者の公式ページを開いて遊ぶ)。

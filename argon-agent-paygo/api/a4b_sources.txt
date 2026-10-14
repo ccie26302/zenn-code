@@ -1,0 +1,7 @@
+a4b.py が使った日本語の文章(名前順で本文9,000字超の先頭5本。測定時点、countTokens の再計算で一致を確認)
+zenn-agent-injection-model-comparison.md
+zenn-agentchain-layered-defense.md
+zenn-airlock-agent-governance.md
+zenn-atonokoto-digital-legacy-agent.md
+zenn-cloudrun-agent-identity.md
+英語: pydoc の json, csv, argparse, pathlib, logging(Python 3.13)

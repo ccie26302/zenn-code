@@ -1,0 +1,2 @@
+{"id": "B1_06", "group": "B1", "tier": "難", "timeout_sec": 900, "approval_mode": "yolo",
+ "prompt": "customers.csv(顧客)と orders.json(注文)をまとめて merged.json を作ってください。merged.json は顧客ごとのオブジェクトの配列で、キーは id(整数), name, email, order_count(注文の件数), total_amount(金額の合計、整数の円)です。注文のない顧客も order_count 0、total_amount 0 で入れます。id の昇順に並べます。customers.csv に同じ id の行が複数あるときは、ファイルの後ろにある行を採用してください。email が空の顧客は email を null にします。注文の金額は \"1,200\" のような文字列や数値で入っているので、整数に直して合計します。customers.csv にない customer_id の注文は merged.json に入れず、orphans.json に元の注文オブジェクトのまま、元の順で配列にしてください。"}

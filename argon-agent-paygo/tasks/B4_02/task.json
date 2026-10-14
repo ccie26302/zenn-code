@@ -1,0 +1,2 @@
+{"id": "B4_02", "group": "B4", "tier": "難", "timeout_sec": 1800, "approval_mode": "yolo",
+ "prompt": "SPEC.md の仕様どおりに、Python の標準ライブラリだけで todo.py を作ってください。あわせて tests/test_todo.py にテストを書き、python3 -m pytest が通る状態にしてください。仕様に書かれた出力の文言と終了コードは、そのとおりにしてください。"}

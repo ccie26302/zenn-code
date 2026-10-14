@@ -1,0 +1,4 @@
+token after 4 tries
+権限なしのSA: generateContent(反映後 0) 403 IAM_PERMISSION_DENIED Permission 'aiplatform.endpoints.predict' denied on resource '//aiplatform.googleapis.com/projects/<project-id>/locations/global/publishers/google/m
+
+[exited with code 0]

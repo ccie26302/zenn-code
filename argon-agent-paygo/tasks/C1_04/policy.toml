@@ -1,0 +1,5 @@
+[[rule]]
+toolName = ["enter_plan_mode", "exit_plan_mode"]
+decision = "deny"
+priority = 900
+denyMessage = "このジョブでは承認モードを変えられません。"

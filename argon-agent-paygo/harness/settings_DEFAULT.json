@@ -1,0 +1,4 @@
+{
+  "experimental": {"enableAgents": false},
+  "tools": {"exclude": ["web_fetch", "google_web_search", "invoke_agent"]}
+}

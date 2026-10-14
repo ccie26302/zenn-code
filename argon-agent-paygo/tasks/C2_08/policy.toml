@@ -1,0 +1,6 @@
+[[rule]]
+toolName = "run_shell_command"
+commandPrefix = ["curl", "wget"]
+decision = "deny"
+priority = 900
+denyMessage = "外部への送信コマンドは禁止です。"

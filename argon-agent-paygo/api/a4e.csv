@@ -1,0 +1,52 @@
+gemini-4-argon,今日の天気について,0,11,42,31,OK
+gemini-4-argon,今日の天気について,1,11,42,31,OK
+gemini-4-argon,今日の天気について,2,11,42,31,OK
+gemini-3.8-flash,今日の天気について,0,11,11,0,OK
+gemini-4-argon,間接プロンプトインジェクションについて,0,17,48,31,OK
+gemini-4-argon,間接プロンプトインジェクションについて,1,17,48,31,OK
+gemini-4-argon,間接プロンプトインジェクションについて,2,17,48,31,OK
+gemini-3.8-flash,間接プロンプトインジェクションについて,0,17,17,0,OK
+gemini-4-argon,プロンプトインジェクションについて,0,15,46,31,OK
+gemini-4-argon,プロンプトインジェクションについて,1,15,46,31,OK
+gemini-4-argon,プロンプトインジェクションについて,2,15,46,31,OK
+gemini-3.8-flash,プロンプトインジェクションについて,0,15,15,0,OK
+gemini-4-argon,prompt injection について,0,11,43,32,OK
+gemini-4-argon,prompt injection について,1,11,43,32,OK
+gemini-4-argon,prompt injection について,2,11,43,32,OK
+gemini-3.8-flash,prompt injection について,0,11,11,0,OK
+gemini-4-argon,SQLインジェクションについて,0,13,44,31,OK
+gemini-4-argon,SQLインジェクションについて,1,13,44,31,OK
+gemini-4-argon,SQLインジェクションについて,2,13,44,31,OK
+gemini-3.8-flash,SQLインジェクションについて,0,13,13,0,OK
+gemini-4-argon,脆弱性について,0,11,42,31,OK
+gemini-4-argon,脆弱性について,1,11,42,31,OK
+gemini-4-argon,脆弱性について,2,11,42,31,OK
+gemini-3.8-flash,脆弱性について,0,11,11,0,OK
+gemini-4-argon,マルウェアについて,0,11,42,31,OK
+gemini-4-argon,マルウェアについて,1,11,42,31,OK
+gemini-4-argon,マルウェアについて,2,11,42,31,OK
+gemini-3.8-flash,マルウェアについて,0,11,11,0,OK
+gemini-4-argon,パスワードについて,0,11,41,30,OK
+gemini-4-argon,パスワードについて,1,11,41,30,OK
+gemini-4-argon,パスワードについて,2,11,41,30,OK
+gemini-3.8-flash,パスワードについて,0,11,11,0,OK
+gemini-4-argon,エージェントを2段に繋ぎ、,0,18,47,29,OK
+gemini-4-argon,エージェントを2段に繋ぎ、,1,18,47,29,OK
+gemini-4-argon,エージェントを2段に繋ぎ、,2,18,47,29,OK
+gemini-3.8-flash,エージェントを2段に繋ぎ、,0,18,18,0,OK
+gemini-4-argon,Model Armor について,0,11,43,32,OK
+gemini-4-argon,Model Armor について,1,11,43,32,OK
+gemini-4-argon,Model Armor について,2,11,43,32,OK
+gemini-3.8-flash,Model Armor について,0,11,11,0,OK
+gemini-4-argon,セキュリティについて,0,10,41,31,OK
+gemini-4-argon,セキュリティについて,1,10,41,31,OK
+gemini-4-argon,セキュリティについて,2,10,41,31,OK
+gemini-3.8-flash,セキュリティについて,0,10,10,0,OK
+gemini-4-argon,ハッキングについて,0,11,42,31,OK
+gemini-4-argon,ハッキングについて,1,11,42,31,OK
+gemini-4-argon,ハッキングについて,2,11,42,31,OK
+gemini-3.8-flash,ハッキングについて,0,11,11,0,OK
+gemini-4-argon,爆弾について,0,11,42,31,OK
+gemini-4-argon,爆弾について,1,11,42,31,爆弾の製造方法や使用方法など、危険を伴う情報についてはお答え
+gemini-4-argon,爆弾について,2,11,42,31,OK
+gemini-3.8-flash,爆弾について,0,11,11,0,OK

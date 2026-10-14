@@ -1,0 +1,8 @@
+cli/
+cli-preview/
+harness/secrets/
+harness/logs/
+runs/
+__pycache__/
+_unused/
+.venv/
