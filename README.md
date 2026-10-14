@@ -6,7 +6,7 @@ Zenn に書いた検証記事の、測定コードと生データです。記事
 
 ## 収録
 
-### `argon-agent-paygo/` — Google Cloudは、従量課金でArgonが使えちまうんだ！
+### `argon-agent-paygo/` — Google Cloudは、従量課金で払った分だけ、Argonが使えちまうんだ！
 
 Gemini 4 Argon を Google Cloud(Gemini Enterprise Agent Platform)の従量課金で呼び、Gemini CLI 0.64.0 をエージェントとして隔離したコンテナで動かした一式。
 
