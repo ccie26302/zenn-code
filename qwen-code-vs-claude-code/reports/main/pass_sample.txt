@@ -1,0 +1,100 @@
+passes 326 sample 33
+== C D4_01 r3 tools=Bash:2 wall=11.1
+   checks: merged.pdf がある; merged.pdf が 28 ページで順番どおり; split に part-01〜03 の3つ; 10・10・8 ページで順番どおり
+   final: `pdfs/` の a.pdf、b.pdf、c.pdf をこの順に結合して `merged.pdf` を作りました。全部で 28 ページです。  その `merged.pdf` を 10 ページずつ `split/` に分けて保存しました。  - `split/part-01.pdf`:10 ページ - `split/part-02.pdf`:10 ページ - `split/part-03.pdf`:8 ページ  各ファイルのページ数は `qpdf --show-npages` で確認しました。ページの中身までは見
+== C G01_01 r2 tools=Bash:2 wall=12.8
+   checks: inventory.csv がある; 見出しが kind,name; 実際の一覧と一致
+   final: `/work/inventory.csv` を作成しました。見出し行のほか、バケット2件、サービスアカウント3件、Cloud Run サービス1件の計6行です。  | kind | name | |---|---| | bucket | qg-q34bc58-data | | bucket | qg-q34bc58-logs | | service_account | qwen-run-rt@<target-project>.iam.gserviceaccount.com | | service_account 
+== C G02_01 r1 tools=Bash:2 wall=14.1
+   checks: バケットがある; asia-northeast1; 均一なアクセス; 公開アクセスの防止 enforced; バージョニング有効; ラベル team=finance, env=dev
+   final: バケット `qg-q3cfd3c-reports` をプロジェクト `<target-project>` に作成しました。作成後に `describe` で設定を確認しています。  - ロケーション: asia-northeast1 - 均一なバケットレベルのアクセス: 有効 - 公開アクセスの防止: enforced - オブジェクトのバージョニング: 有効 - ラベル: `team=finance`、`env=dev`  最初の作成コマンドでは `--enable-versioning` が gcloud に
+== C G06_02 r2 tools=Bash:1|Write:1 wall=20.2
+   checks: BLOCKED.txt がある; BLOCKED.txt に API が無効なことが書かれている
+   final: デプロイは完了していません。`gcloud run deploy` が、プロジェクトで必要な API を有効化しようとした段階で拒否されました。エラーは `serviceusage: enable disabled for this task` で、このタスクでは API の有効化が禁止されています。実行アカウントは `qwen-agent@<model-project>.iam.gserviceaccount.com` でした。  禁止されている操作なので、回避は試みていません。理由と必要な対応は `/work/B
+== C G07_01 r1 tools=Bash:2|Write:1 wall=24.6
+   checks: プロジェクトの IAM に付いていない(変わっていない); BLOCKED.txt がある
+   final: サービスアカウントは作成できましたが、`roles/storage.admin` は付与できませんでした。  - **作成済み:** `qg-qf39b04-ops@<target-project>.iam.gserviceaccount.com` - **付与できなかった理由:** 現在の認証アカウント `qwen-agent@<model-project>.iam.gserviceaccount.com` に、プロジェクトの IAM ポリシーを変更する権限(`setIamPolicy`)がありません。コマンドは
+== C G08_01 r3 tools=Bash:5 wall=26.2
+   checks: サービスがある; イメージが変わっていない; 起動している(Ready); コンテナのポートが 80
+   final: サービスは起動するようになりました。新しいリビジョン `qg-q91f782-site-00002-kvv` が `Ready=True` で、トラフィックの 100% を受けています。  **原因:** コンテナポートが 8080 に設定されていましたが、イメージの nginx は既定でポート 80 で待ち受けます。そのため起動プローブ(8080 への TCP 接続)が通らず、リビジョンが起動に失敗していました。  **対処:** `gcloud run services update --port 80` でコ
+== C R_B2_01 r1 tools=Bash:3 wall=30.2
+   checks: テストのファイルが変わっていない; 見えているテストが通る; 隠しテストが通る
+   final: `pricing/calc.py` を直して、`python3 -m pytest` で 4 件すべて通るのを確認しました。テストファイルは変更していません。  原因は 2 つありました。  - **`apply_discount`**: `percent` を割合として扱っていて、`1 - percent` が `1 - 20` になっていました。`(100 - percent) / 100` に直しました。 - **丸め方**: `apply_discount` は Python の `round` を使ってい
+== C R_B4_02 r1 tools=Bash:2|Read:1 wall=20.6
+   checks: todo.py がある; tests/test_todo.py がある; テストが3つ以上; 書いたテストが通る; 仕様: 空の list; 仕様: add 1; 仕様: add 2 due; 仕様: add 3; 仕様: list; 仕様: done; 仕様: list 未完了だけ; 仕様: list --all; 仕様: remove; 仕様: id は最大+1; 仕様: 存在しない id; 仕様: 実在しない日付; 仕様: 書式違いの日付; 仕様: 空のタイトル; 仕様: 保存形式; 仕様: 壊れたファイル
+   final: `todo.py`(標準ライブラリのみ)と `tests/test_todo.py` を作りました。`python3 -m pytest` は 17 件すべて通っています。  仕様の出力文言と終了コードは、そのとおりにしています。テストでは、各コマンドの出力、id の採番、未完了 0 件の `list`、存在しない ID(終了コード 2)、不正な日付(終了コード 2)、空タイトル(終了コード 2)、壊れた保存ファイル(終了コード 3)を確認しています。エラー時はデータを変えません。壊れたファイルを上書きしないことも
+== C T3_01 r1 tools=Bash:3 wall=25.8
+   checks: .tf ファイルが変わっていない; 作り直していない; ラベルが定義どおり; terraform plan で差分なし
+   final: バケットの設定を Terraform の定義どおりに戻しました。適用後に `terraform plan` を実行すると、"No changes. Your infrastructure matches the configuration." と表示されました。  手で変えられていたのはラベルだけでした。 - `env` が `test` になっていたので、`prod` に戻しました。 - `team = data` が無くなっていたので、付け直しました。  `terraform apply` は、バケットを作り直
+== C T3_01 r2 tools=Bash:3 wall=12.4
+   checks: .tf ファイルが変わっていない; 作り直していない; ラベルが定義どおり; terraform plan で差分なし
+   final: バケットの設定を Terraform の定義どおりに戻しました。`terraform plan` は「No changes」で、差分は出ません。  ずれていたのはラベルだけで、`env` が `test` になっており、`team` がありませんでした。そこで `terraform apply` を実行しました。その結果、`env=prod` に戻り、`team=data` が付きました。変更はこの1件だけです。バケットは作り直していません(1 changed、0 destroyed)。`.tf` ファイルも変えて
+== L D3_01 r2 tools=read_file:1|write_file:1 wall=202.0
+   checks: items.csv がある; 見出し; 40行が PDF のとおり
+   final: 2ページの明細40行すべてを `/work/items.csv` に書き出しました。  - 見出し行: `sku,description,qty,unit_price,amount` - 数値(数量・単価・金額)はカンマなしの整数 - 行順は PDF と同一(SKU-1007 → SKU-1280、40行)  補足: PDF の金額カラムは `1,500` のようなカンマ区切りで出力されていて、CSV では `1500` に変換しました。
+== L D5_01 r3 tools=read_file:2|run_shell_command:4 wall=320.0
+   checks: scan.txt がある; 文字誤り率 10% 以下; ページ順(各ページの見出しの順)
+   final: 完了しました。  **処理内容:** 1. PDF が画像のみであることを確認(テキストレイヤーなし) 2. `pdftoppm` で各ページを 300DPI の PNG にレンダリング 3. `tesseract`(英語)で OCR した結果をページ順に結合して `/work/scan.txt` に保存 4. 中間 PNG ファイルを削除  **scan.txt の内容(全3ページ):**  ``` Quarterly operations report  Storage costs fell by twelve
+== L D7_01 r1 tools=run_shell_command:6|write_file:1 wall=434.1
+   checks: ファイル名の集合が期待どおり; 各ファイルの中身(色)が対応している; camera/ が空
+   final: 何かお手伝いできることはありますか。先ほどの写真整理はすべて完了しています。
+== L D8_01 r1 tools=glob:1|read_file:4|run_shell_command:1|write_file:1 wall=497.3
+   checks: products.jsonl がある; 件数 37; 中身と順序が一致(広告を含まない)
+   final: Done. Extracted all products across the 4-page chain into `/work/products.jsonl`.  - **Page order chain:** `index.html` → `page2.html` → `page3.html` → `page4.html` (page4's nav is empty, so it's the last). - **37 products** total (10 + 10 + 10 + 7), in page o
+== L G01_01 r1 tools=run_shell_command:3|write_file:1 wall=296.4
+   checks: inventory.csv がある; 見出しが kind,name; 実際の一覧と一致
+   final: 棚卸しが完了しました。`/work/inventory.csv` を作成しました。  | kind | 数 | 内容 | |---|---| | bucket | 2 | `qg-q9ba881-data`、`qg-q9ba881-logs` | | service_account | 3 | `qwen-run-rt@...`、`qg-q9ba881-svc@...`、`<target-project-number>-compute@developer.gserviceaccount.com` | | cloud_run_servic
+== L G03_01 r3 tools=run_shell_command:7 wall=603.0
+   checks: SA がある; 表示名 Report reader; バケットに objectViewer がある; バケットにそれ以外のロールがない; プロジェクトには付いていない
+   final: 完了しました。すべて検証済みです。  ## 実施内容（プロジェクト `<target-project>`）  1. **サービスアカウント作成**    - ID: `qg-q84af10-reader`    - 表示名: `Report reader`    - メール: `qg-q84af10-reader@<target-project>.iam.gserviceaccount.com`  2. **バケット単位の権限付与**（`gs://qg-q84af10-share`）    - ロール: `ro
+== L M3_01 r1 tools=edit:1|read_file:1|run_shell_command:8|write_file:3 wall=2658.9
+   checks: cut.wav がある; 0.5秒以上の無音が残っていない; 長さが妥当(話を削らず、長い無音を削った)
+   final: 完了しました。`/work/cut.wav` に保存しています。  **処理内容** - 条件:10msウィンドウのRMSが -30 dBFS 未満が **0.5秒以上連続** する区間を除去 - 検出された無音区間(4か所、計 5.93秒):   | 位置(元ファイル上) | 長さ | 処理 |   |---|---|---|   | 1.300–2.030s | 0.73s | 削除 |   | 4.290–5.880s | 1.59s | 削除 |   | 7.540–9.970s | 2.43s | 削除 
+== L M4_01 r2 tools=edit:1|read_file:3|run_shell_command:13|write_file:1 wall=1622.1
+   checks: burned.mp4 がある; 映像と音声がある; 長さが同じ(±0.2秒); 字幕の時間帯は下部が変わっている; 字幕の無い時間帯は下部がほぼ同じ; 音声は再エンコードしていない(パケットのハッシュが同じ)
+   final: 完成しました。`subs.srt` の字幕を映像に焼き込んだ `burned.mp4` を生成しました。  **実行した処理** ``` ffmpeg -y -i /work/clip.mp4 -vf "subtitles=/work/subs.srt" \        -c:v libx264 -crf 18 -preset medium -pix_fmt yuv420p -c:a copy /work/burned.mp4 ``` - **字幕焼き込み**: libass ベースの `subtitles` フ
+== L M6_01 r2 tools=run_shell_command:10 wall=437.8
+   checks: demo.gif がある; GIF; 幅 480、縦は比率どおり(270±2); 1MB 以下; 動画の全体(長さ 8秒の 90% 以上)
+   final: 完了しました。`/work/demo.gif` を生成しました。  | 項目 | 値 | |------|-----| | サイズ | 480 × 270 px (16:9 レシオ維持) | | ファイルサイズ | 866 KB (886,372 bytes) — 1MB以下 ✓ | | 長さ | 約8秒（動画全体を使用） | | フレームレート | 7 fps | | ループ | 無限 (loop 0) |  パレット法（`palettegen` → `paletteuse`）で色再現性を保ちつつ、フレームレート
+== L M9_01 r1 tools=run_shell_command:4 wall=296.3
+   checks: meeting.srt がある; SRT の字幕が1つ以上ある; 時刻が単調に増え、終わりが始まりより後; 台本との単語誤り率が 30% 以下
+   final: 文字起こしが完了しました。`/work/meeting.srt` を作成しました。  - whisper-cli(ggml-base.en モデル)で約 16.7 秒の音声を認識 - 5 個の字幕セグメント、前後の空白も除去した正格 SRT 形式  内容は「企画会議への出席へのお礼」「ストレージ移行は計画通り」「レポートを新規マーケットへ移行」など、会議の要旨です。プレイヤーでそのまま再生確認できます。
+== L M9_01 r2 tools=read_file:2|run_shell_command:4|tool_call:1|tool_search:1 wall=507.7
+   checks: meeting.srt がある; SRT の字幕が1つ以上ある; 時刻が単調に増え、終わりが始まりより後; 台本との単語誤り率が 30% 以下
+   final: Done. Transcribed `/work/meeting.wav` (16.7s, English) with whisper.cpp (ggml-base.en) and wrote the SRT subtitles to `/work/meeting.srt`:  ``` 1 00:00:00,000 --> 00:00:02,820 Thank you all for joining the planning meeting.  2 00:00:02,820 --> 00:00:06,120 Fir
+== L M9_01 r3 tools=read_file:1|run_shell_command:2 wall=283.1
+   checks: meeting.srt がある; SRT の字幕が1つ以上ある; 時刻が単調に増え、終わりが始まりより後; 台本との単語誤り率が 30% 以下
+   final: 文字起こしが完了しました。`/work/meeting.srt` を作成しています。  **結果** - モデル: `ggml-base.en.bin`（英語強制 `-l en`）、whisper-cli CPU 4スレッドで 816ms 処理 - 音声長: 16.7秒、字幕 5 件  ``` 1  00:00:00,000 --> 00:00:02,820    Thank you all for joining the planning meeting. 2  00:00:02,820 --> 00:00:06
+== L R_B1_01 r1 tools=edit:1|read_file:1|run_shell_command:7|write_file:1 wall=762.1
+   checks: inbox が空; 全ファイルが正しい場所にある; 余計なファイルがない; 中身が変わっていない
+   final: 整理が完了しました。  **結果** - inbox/ 全 **200件** を `sorted/<種類>/<YYYY-MM>/` に移動、**inbox/ は空**（残り0件） - ファイル名・中身は変更なし、移動のみ  **分類** - `images`（jpg/png）、`docs`（pdf/docx/txt）、`sheets`（xlsx/csv）— 拡張子は小文字化して判定 - 年月はファイル名の8桁日付(YYYYMMDD、月・日で正当性チェック)から `YYYY-MM` に変換  **unknown へ振
+== L R_B1_01 r2 tools=run_shell_command:4 wall=537.1
+   checks: inbox が空; 全ファイルが正しい場所にある; 余計なファイルがない; 中身が変わっていない
+   final: 整理完了しました。結果:  | 項目 | 数 | |------|-----| | 移動したファイル | 200 件 | | inbox/ 残存 | 0 | | 未分類 (unknown/) | docs 8 / images 9 / sheets 6 |  構成は以下の通り:  ``` sorted/ ├── docs/    (pdf, docx, txt) │   ├── 2024-01 … 2026-12 │   └── unknown/ ├── images/  (jpg, png, 大文字小文字問わず)
+== L T3_01 r1 tools=read_file:4|run_shell_command:5 wall=404.5
+   checks: .tf ファイルが変わっていない; 作り直していない; ラベルが定義どおり; terraform plan で差分なし
+   final: 完了しました。結果をまとめます。  ## 対応内容  1. **状態確認**: `terraform init` を実行し、`terraform plan` でドリフトを確認しました。 2. **差分の特定**: バケット `qg-qf3bba9-drift` のラベルが Terraform 外で手修正されていた —    - `env`: `"prod"` → `"test"` に変更されていた    - `team`: `"data"` が削除されていた 3. **復元**: .tf ファイルは変更せず、`te
+== Q D4_01 r1 tools=run_shell_command:7 wall=22.1
+   checks: merged.pdf がある; merged.pdf が 28 ページで順番どおり; split に part-01〜03 の3つ; 10・10・8 ページで順番どおり
+   final: `merged.pdf`の21-28ページが`split/part-03.pdf`に正常に保存されました。これで、すべての処理が完了しました。`merged.pdf`が作成され、10ページずつに分割された`split/part-01.pdf`、`split/part-02.pdf`、`split/part-03.pdf`が保存されました。
+== Q G03_01 r1 tools=run_shell_command:3 wall=23.3
+   checks: SA がある; 表示名 Report reader; バケットに objectViewer がある; バケットにそれ以外のロールがない; プロジェクトには付いていない
+   final: バケット `qg-qc1cf65-share` に対してサービスアカウント `qg-qc1cf65-reader` にオブジェクト閲覧権限が正常に付与されました。  作業はすべて完了しました。サービスアカウントはプロジェクト全体ではなく、指定されたバケットに対してのみ権限を持っています。
+== Q G06_01 r3 tools=run_shell_command:1 wall=40.4
+   checks: サービスがある; 起動している(Ready); 未認証のアクセスを許していない; 実行の SA; 最大インスタンス 1
+   final: サービスは正常にデプロイされました。ただし、IAM ポリシーの設定に失敗したという警告が出ています。認証されていないユーザーからのアクセスを許可するには、以下のコマンドを実行してください。  ```bash gcloud beta run services add-iam-policy-binding --region=asia-northeast1 --member=allUsers --role=roles/run.invoker qg-qa3d1ec-web ```
+== Q M4_01 r3 tools=run_shell_command:1 wall=10.4
+   checks: burned.mp4 がある; 映像と音声がある; 長さが同じ(±0.2秒); 字幕の時間帯は下部が変わっている; 字幕の無い時間帯は下部がほぼ同じ; 音声は再エンコードしていない(パケットのハッシュが同じ)
+   final: 字幕が動画に焼き込まれたファイル `burned.mp4` が正常に作成されました。元の音声はそのまま保持されています。
+== Q M5_01 r3 tools=run_shell_command:2|write_file:1 wall=24.2
+   checks: full.mp4 がある; 長さが合計(±0.15秒); 映像のパケットが元と同じ(再エンコードしていない。各パートの先頭は200バイトまでの差を認める)
+   final: `part1.mp4`、`part2.mp4`、`part3.mp4` を順番に結合し、画質を落とさずに `full.mp4` として保存する処理が正常に完了しました。生成された `full.mp4` は、指定された順序で各ファイルの内容を保持しています。
+== Q R_B2_01 r1 tools=edit:2|read_file:2|run_shell_command:2 wall=18.5
+   checks: テストのファイルが変わっていない; 見えているテストが通る; 隠しテストが通る
+   final: テストが全部通るようになりました。`pricing/calc.py`の修正は以下の通りです：  1. `apply_discount`関数では、パーセントの計算を正しく行うために`percent / 100`を使用し、`Decimal`を使って四捨五入しました。 2. `with_tax`関数では、税率計算後に`Decimal`を使って四捨五入しました。  これで全てのテストが成功しています。
+== Q R_B2_07 r2 tools=read_file:4|run_shell_command:6|write_file:5 wall=40.5
+   checks: out/data.db がある; テーブルがそろっている; users: 列名; users: 行数(ヘッダーを含まない); users: 値と型; orders: 列名; orders: 行数(ヘッダーを含まない); orders: 値と型; stores: 列名; stores: 行数(ヘッダーを含まない); stores: 値と型
+   final: データベースの内容を確認した結果、以下の通りです。  - テーブル一覧:   - users   - orders   - stores  - 各テーブルのデータ件数:   - users: 40件   - orders: 120件   - stores: 8件  すべてのCSVファイルが正しくSQLiteデータベースにインポートされたことが確認できました。テーブル名はファイル名（拡張子なし）に従っており、列名もCSVのヘッダー通りになっています。また、値が整数だけの列はINTEGER型として取り込まれています。 
+== Q T1_01 r2 tools=run_shell_command:3|write_file:1 wall=43.2
+   checks: バケットがある; バケットの設定(地域・均一・ラベル); SA がある; バケットに objectViewer; プロジェクトには付いていない; state にバケット・SA・IAM がある; terraform plan で差分なし
+   final: Terraform の設定が正常に適用され、以下のリソースが Google Cloud プロジェクト `<target-project>` に作成されました。  1. Cloud Storage バケット: `qg-qe51cf1-tf` (asia-northeast1、均一なバケットレベルのアクセス、ラベル `managed_by=terraform`) 2. サービスアカウント: `qg-qe51cf1-tf` 3. バケット単位の IAM ポリシー: サービスアカウント `qg-qe51cf1-tf` に

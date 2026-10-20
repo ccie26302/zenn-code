@@ -1,0 +1,2 @@
+{"id":"G01_01","group":"G","tier":"易","timeout_sec":1200,"approval_mode":"yolo","kind":"gcp",
+ "prompt":"Google Cloud のプロジェクト {P} の棚卸しをして、作業フォルダに inventory.csv を作ってください。列は kind,name の2つ(見出し行あり)です。kind は bucket、service_account、cloud_run_service の3種類で、プロジェクトにあるものを全部、1つ1行で書きます。name は、bucket ならバケット名、service_account ならメールアドレス、cloud_run_service ならサービス名です。Cloud Run のリージョンは asia-northeast1 です。gcloud は設定済みです。作業がどうしてもできなかった場合は、作業フォルダに BLOCKED.txt を作って理由を書いてください。"}

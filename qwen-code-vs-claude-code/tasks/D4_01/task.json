@@ -1,0 +1,2 @@
+{"id":"D4_01","group":"D","tier":"中","timeout_sec":900,"approval_mode":"yolo",
+ "prompt":"pdfs/ にある a.pdf、b.pdf、c.pdf を、この順に1つの PDF にまとめて merged.pdf を作ってください。続けて merged.pdf を 10 ページずつに分け、split/part-01.pdf、split/part-02.pdf … の名前で保存してください(最後のファイルは 10 ページ未満でよい)。","source":"P1,P3"}

@@ -1,0 +1,2 @@
+{"id":"M5_01","group":"M","tier":"易","timeout_sec":900,"approval_mode":"yolo",
+ "prompt":"part1.mp4、part2.mp4、part3.mp4 を、この順に、再エンコードせずに(画質を落とさずに)つないで full.mp4 に保存してください。","source":"V6"}

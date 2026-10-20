@@ -1,0 +1,2 @@
+{"id":"T3_01","group":"T","tier":"中","timeout_sec":2400,"approval_mode":"yolo","kind":"gcp",
+ "prompt":"作業フォルダの infra/ にある Terraform で、Google Cloud のプロジェクト {P} のバケットを管理しています(state は infra/terraform.tfstate)。このバケットの設定が、Terraform の外で手で変えられてしまいました。.tf ファイルは変えずに、実際の設定を Terraform の定義どおりに戻し、terraform plan で差分が出ない状態にしてください。バケットを作り直さないでください。Terraform と google プロバイダ(7.8.0)は使える状態です。作業がどうしてもできなかった場合は、作業フォルダに BLOCKED.txt を作って理由を書いてください。"}

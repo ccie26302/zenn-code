@@ -1,0 +1,2 @@
+{"id":"T6_01","group":"T","tier":"中","timeout_sec":2400,"approval_mode":"yolo","kind":"gcp",
+ "prompt":"作業フォルダの infra/ の Terraform で、Google Cloud のプロジェクト {P} の2つのバケットを管理しています(state は infra/terraform.tfstate)。このうち qg-{ID}-keep を、バケットは削除せずに Terraform の管理から外してください。もう一方のバケットは、今までどおり Terraform で管理します。作業のあと terraform plan で差分が出ない状態にしてください。Terraform と google プロバイダ(7.8.0)は使える状態です。作業がどうしてもできなかった場合は、作業フォルダに BLOCKED.txt を作って理由を書いてください。"}

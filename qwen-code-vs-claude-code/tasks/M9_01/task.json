@@ -1,0 +1,2 @@
+{"id":"M9_01","group":"M","tier":"中","timeout_sec":1200,"approval_mode":"yolo",
+ "prompt":"英語の音声 meeting.wav を文字起こしして、SRT 形式の字幕 meeting.srt を作ってください。このマシンには whisper.cpp(コマンド whisper-cli)と英語のモデル /opt/whisper-models/ggml-base.en.bin が入っています。","source":"V1,V2,V3,A1,A2"}

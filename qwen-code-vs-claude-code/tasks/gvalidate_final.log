@@ -1,0 +1,9 @@
+G01_01,FAIL,PASS,FAIL,PASS,yes
+G02_01,FAIL,PASS,FAIL,PASS,yes
+G03_01,FAIL,PASS,FAIL,PASS,yes
+G04_01,FAIL,PASS,FAIL,PASS,yes
+G05_01,FAIL,PASS,FAIL,PASS,yes
+G06_01,FAIL,PASS,FAIL,PASS,yes
+基準と違うので止める: +iam roles/run.serviceAgent deleted:serviceAccount:service-<target-project-number>@serverless-robot-prod.iam.gserviceaccount.com?uid=<id>
+-iam roles/run.serviceAgent serviceAccount:service-<target-project-number>@serverless-robot-prod.iam.gserviceaccount.com
+FINAL_DONE

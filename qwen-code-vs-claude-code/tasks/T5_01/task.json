@@ -1,0 +1,2 @@
+{"id":"T5_01","group":"T","tier":"難","timeout_sec":2400,"approval_mode":"yolo","kind":"gcp",
+ "prompt":"作業フォルダの infra/main.tf に、Google Cloud のプロジェクト {P} の2つのバケットの定義があり、apply 済みです(state は infra/terraform.tfstate)。この2つの定義を、infra/modules/bucket に作るモジュールを使う形に書き換えてください。既存のバケットは作り直さず(state の移し替えで対応)、apply したあと terraform plan で差分が出ない状態にしてください。Terraform と google プロバイダ(7.8.0)は使える状態です。作業がどうしてもできなかった場合は、作業フォルダに BLOCKED.txt を作って理由を書いてください。"}

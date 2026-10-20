@@ -1,0 +1,2 @@
+{"id":"T4_01","group":"T","tier":"中","timeout_sec":2400,"approval_mode":"yolo","kind":"gcp",
+ "prompt":"作業フォルダの infra/ にある Terraform が、terraform validate で失敗します。直して apply し、定義されている Google Cloud のバケット(プロジェクト {P})を作ってください。バケットの設定(名前、ロケーション、均一なアクセス、ラベル)は、ファイルに書かれた意図どおりにしてください。state は infra/ のローカルの terraform.tfstate にしてください。Terraform と google プロバイダ(7.8.0)は使える状態です。作業がどうしてもできなかった場合は、作業フォルダに BLOCKED.txt を作って理由を書いてください。"}

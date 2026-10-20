@@ -1,0 +1,2 @@
+{"id":"M6_01","group":"M","tier":"中","timeout_sec":900,"approval_mode":"yolo",
+ "prompt":"demo.mp4 を、幅 480 ピクセル(縦は比率を保つ)、ファイルサイズ 1MB 以下のアニメーション GIF にして demo.gif に保存してください。動きが分かるよう、動画の全体を使ってください。","source":"V5"}

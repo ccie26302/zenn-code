@@ -1,0 +1,2 @@
+{"id":"T1_01","group":"T","tier":"中","timeout_sec":2400,"approval_mode":"yolo","kind":"gcp",
+ "prompt":"Terraform で、Google Cloud のプロジェクト {P} に次を作ってください。(1) Cloud Storage のバケット qg-{ID}-tf(asia-northeast1、均一なバケットレベルのアクセス、ラベル managed_by=terraform) (2) サービスアカウント qg-{ID}-tf (3) そのサービスアカウントに、このバケットに対してだけ roles/storage.objectViewer を付ける(バケット単位の IAM)。.tf ファイルは作業フォルダの infra/ に置き、state は infra/ のローカルの terraform.tfstate にして、apply まで実行してください。Terraform と google プロバイダ(7.8.0)は使える状態です。作業がどうしてもできなかった場合は、作業フォルダに BLOCKED.txt を作って理由を書いてください。"}

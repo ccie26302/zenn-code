@@ -1,0 +1,2 @@
+{"id":"M7_01","group":"M","tier":"中","timeout_sec":900,"approval_mode":"yolo",
+ "prompt":"podcast.wav の音量を、EBU R128 の測り方で統合ラウドネス -16 LUFS(±1)、トゥルーピーク -1.5 dBTP 以下にそろえて、podcast_norm.wav に保存してください。長さは変えないでください。","source":"A3"}

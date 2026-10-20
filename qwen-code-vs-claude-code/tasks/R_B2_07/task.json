@@ -1,0 +1,1 @@
+{"id": "R_B2_07", "group": "B2", "tier": "難", "timeout_sec": 900, "approval_mode": "yolo", "prompt": "data/ にある CSV をすべて、SQLite のデータベース out/data.db に取り込んでください。テーブル名はファイル名(拡張子なし)、列名は CSV のヘッダーのとおりにし、ヘッダー行はデータとして入れないでください。値が整数だけの列は INTEGER 型の値として入れてください(それ以外は TEXT)。社内の手順書 docs/import.md も参考にしてください。"}

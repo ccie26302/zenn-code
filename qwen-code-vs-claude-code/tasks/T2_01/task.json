@@ -1,0 +1,2 @@
+{"id":"T2_01","group":"T","tier":"中","timeout_sec":2400,"approval_mode":"yolo","kind":"gcp",
+ "prompt":"Google Cloud のプロジェクト {P} に、Terraform の外で作られた Cloud Storage のバケット qg-{ID}-legacy があります。これを Terraform の管理下に入れてください。.tf ファイルは作業フォルダの infra/ に置き、state は infra/ のローカルの terraform.tfstate にして、import したあと terraform plan で差分が出ない状態にしてください。バケットを作り直さないでください。Terraform と google プロバイダ(7.8.0)は使える状態です。作業がどうしてもできなかった場合は、作業フォルダに BLOCKED.txt を作って理由を書いてください。"}

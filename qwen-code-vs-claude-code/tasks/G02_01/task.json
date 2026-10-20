@@ -1,0 +1,2 @@
+{"id":"G02_01","group":"G","tier":"易","timeout_sec":1200,"approval_mode":"yolo","kind":"gcp",
+ "prompt":"Google Cloud のプロジェクト {P} に、次の設定で Cloud Storage のバケット qg-{ID}-reports を作ってください。ロケーションは asia-northeast1、均一なバケットレベルのアクセスを有効、公開アクセスの防止を enforced、オブジェクトのバージョニングを有効、ラベルは team=finance と env=dev の2つ。gcloud は設定済みです。作業がどうしてもできなかった場合は、作業フォルダに BLOCKED.txt を作って理由を書いてください。"}

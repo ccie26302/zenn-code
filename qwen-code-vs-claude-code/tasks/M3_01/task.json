@@ -1,0 +1,2 @@
+{"id":"M3_01","group":"M","tier":"中","timeout_sec":900,"approval_mode":"yolo",
+ "prompt":"talk.wav から、-30dB 以下で 0.5 秒以上続く無音の区間を取り除いて、cut.wav に保存してください。話している部分は削らないでください。","source":"V2,V3,V4"}

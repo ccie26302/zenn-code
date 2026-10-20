@@ -1,0 +1,2 @@
+{"id":"M2_01","group":"M","tier":"易","timeout_sec":600,"approval_mode":"yolo",
+ "prompt":"横長の video.mp4 を、縦型の 1080x1920 に変換して vertical.mp4 に保存してください。元の映像の縦横比は保ち、余白は上下の黒帯にしてください。音声は残してください。","source":"V1,V3,V6"}

@@ -1,0 +1,2 @@
+{"id":"M10_01","group":"M","tier":"易","timeout_sec":900,"approval_mode":"yolo",
+ "prompt":"photos/ の JPEG 画像(3枚)を、それぞれ幅 320、640、1280 ピクセル(縦は比率を保つ)の WebP にして、out/ に <元の名前(拡張子なし)>-<幅>.webp という名前で保存してください。どのファイルも 100KB 以下にしてください。","source":"I3"}

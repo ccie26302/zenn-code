@@ -1,0 +1,12 @@
+cli/
+cli-preview/
+harness/secrets/
+harness/logs/
+harness/mitm/
+harness/ca/
+harness/ctl/
+runs/
+.venv/
+_unused/
+__pycache__/
+harness/cred/

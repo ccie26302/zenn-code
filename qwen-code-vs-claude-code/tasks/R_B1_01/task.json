@@ -1,0 +1,1 @@
+{"id": "R_B1_01", "group": "B1", "tier": "中", "timeout_sec": 600, "approval_mode": "yolo", "prompt": "inbox/ に溜まったファイルを整理してください。種類と年月で sorted/<種類>/<YYYY-MM>/ に移動します。種類は、jpg・png を images、pdf・docx・txt を docs、xlsx・csv を sheets とします(拡張子の大文字・小文字は区別しない)。年月はファイル名に入っている8桁の日付(YYYYMMDD)から取ります。ファイル名に8桁の日付がないものは sorted/<種類>/unknown/ に入れてください。ファイル名と中身は変えず、移動が終わったら inbox/ は空にしてください。"}

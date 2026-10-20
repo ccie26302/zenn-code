@@ -1,0 +1,7 @@
+reader-settings(.env has REFRESH=off)#1 {} answer= '2'
+reader-settings(.env has REFRESH=off)#2 {} answer= '2'
+reader-settings(.env has REFRESH=off)#3 {} answer= '2'
+settings.json+shell env REFRESH=off#1 {} answer= '2'
+settings.json+shell env REFRESH=off#2 {} answer= '2'
+settings.json+shell env REFRESH=off#3 {} answer= '2'
+settings.json only(control) {'models.dev': 1} answer= '2'

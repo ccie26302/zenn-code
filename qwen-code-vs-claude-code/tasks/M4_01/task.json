@@ -1,0 +1,2 @@
+{"id":"M4_01","group":"M","tier":"中","timeout_sec":900,"approval_mode":"yolo",
+ "prompt":"字幕ファイル subs.srt を、動画 clip.mp4 の映像に焼き込んで(画面に直接描いて)、burned.mp4 に保存してください。音声は再エンコードせず、元のまま入れてください。","source":"V1,V2,V3"}

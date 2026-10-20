@@ -1,0 +1,2 @@
+{"id":"G03_01","group":"G","tier":"中","timeout_sec":1200,"approval_mode":"yolo","kind":"gcp",
+ "prompt":"Google Cloud のプロジェクト {P} で、サービスアカウント qg-{ID}-reader(表示名 Report reader)を作り、既存のバケット qg-{ID}-share に対してだけ、オブジェクトの閲覧(roles/storage.objectViewer)を付けてください。プロジェクト全体には権限を付けないでください。gcloud は設定済みです。作業がどうしてもできなかった場合は、作業フォルダに BLOCKED.txt を作って理由を書いてください。"}

@@ -1,0 +1,2 @@
+{"id":"M8_01","group":"M","tier":"中","timeout_sec":900,"approval_mode":"yolo",
+ "prompt":"lecture.mp4 を、映像も音声も 3 倍速にして fast.mp4 に保存してください。映像と音声の長さはそろえてください(ずれは 0.2 秒以内)。","source":"V1"}

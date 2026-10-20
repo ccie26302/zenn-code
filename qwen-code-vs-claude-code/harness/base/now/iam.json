@@ -1,0 +1,42 @@
+{
+  "bindings": [
+    {
+      "members": [
+        "serviceAccount:qwen-agent@<model-project>.iam.gserviceaccount.com"
+      ],
+      "role": "projects/<target-project>/roles/qwenAgent"
+    },
+    {
+      "members": [
+        "serviceAccount:qwen-judge@<model-project>.iam.gserviceaccount.com"
+      ],
+      "role": "projects/<target-project>/roles/qwenJudge"
+    },
+    {
+      "members": [
+        "serviceAccount:service-<target-project-number>@containerregistry.iam.gserviceaccount.com"
+      ],
+      "role": "roles/containerregistry.ServiceAgent"
+    },
+    {
+      "members": [
+        "user:<your-account>"
+      ],
+      "role": "roles/owner"
+    },
+    {
+      "members": [
+        "serviceAccount:service-<target-project-number>@gcp-sa-pubsub.iam.gserviceaccount.com"
+      ],
+      "role": "roles/pubsub.serviceAgent"
+    },
+    {
+      "members": [
+        "serviceAccount:service-<target-project-number>@serverless-robot-prod.iam.gserviceaccount.com"
+      ],
+      "role": "roles/run.serviceAgent"
+    }
+  ],
+  "etag": "BwZeRqQlLJU=",
+  "version": 1
+}

@@ -1,0 +1,2 @@
+{"id":"G05_01","group":"G","tier":"中","timeout_sec":1500,"approval_mode":"yolo","kind":"gcp",
+ "prompt":"公開イメージ us-docker.pkg.dev/cloudrun/container/hello を、Google Cloud のプロジェクト {P} の Cloud Run に、サービス名 qg-{ID}-api、リージョン asia-northeast1 でデプロイしてください。実行に使うサービスアカウントは qwen-run-rt@{P}.iam.gserviceaccount.com、認証必須(未認証のアクセスは許可しない)、環境変数 APP_ENV=staging、ラベル owner=platform、最大インスタンス数は 2 にしてください。gcloud は設定済みです。作業がどうしてもできなかった場合は、作業フォルダに BLOCKED.txt を作って理由を書いてください。"}

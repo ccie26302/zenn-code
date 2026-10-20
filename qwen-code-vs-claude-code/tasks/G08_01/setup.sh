@@ -1,0 +1,2 @@
+gcloud run deploy qg-$ID-site --project $P --region asia-northeast1 --image docker.io/library/nginx@sha256:65645c7bb6a0661892a8b03b89d0743208a18dd2f3f17a54ef4b76fb8e2f2a10 --service-account qwen-run-rt@$P.iam.gserviceaccount.com --no-allow-unauthenticated --max-instances 1 -q >/dev/null 2>&1
+gcloud run services describe qg-$ID-site --project $P --region asia-northeast1 --format='value(metadata.name)' | grep -q site

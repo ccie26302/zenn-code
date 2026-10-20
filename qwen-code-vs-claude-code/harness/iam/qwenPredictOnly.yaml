@@ -1,0 +1,6 @@
+etag: BwZd9lrVrUY=
+includedPermissions:
+- aiplatform.endpoints.predict
+name: projects/<model-project>/roles/qwenPredictOnly
+stage: GA
+title: Qwen predict only

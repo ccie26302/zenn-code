@@ -1,0 +1,2 @@
+{"id":"D8_01","group":"D","tier":"中","timeout_sec":1200,"approval_mode":"yolo",
+ "prompt":"site/ にある商品一覧のウェブページ(site/index.html から始まり、「次へ」のリンクで複数ページに分かれています)から、全ページの商品を抜き出して products.jsonl に保存してください。1行に1商品の JSON で、キーは sku(文字列)、name(文字列)、price(円の整数、カンマや「円」は除く)、in_stock(真偽値。「在庫あり」なら true、「在庫切れ」なら false)。行の順はページ順・表示順です。","source":"B2"}

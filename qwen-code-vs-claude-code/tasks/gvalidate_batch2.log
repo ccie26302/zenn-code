@@ -1,0 +1,25 @@
+G06_01,FAIL,FAIL,FAIL,FAIL,NO
+G06_02,FAIL,PASS,FAIL,NA,yes
+G10_01,FAIL,PASS,FAIL,NA,yes
+T1_01,FAIL,PASS,FAIL,PASS,yes
+API [run.googleapis.com] not enabled on project [<target-project>]. Would you 
+like to enable and retry (this will take a few minutes)? (y/N)?  
+ERROR: (gcloud.run.services.list) [<your-account>] does not have permission to access namespaces instance [<target-project>] (or it may not exist): Cloud Run Admin API has not been used in project <target-project> before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/run.googleapis.com/overview?project=<target-project> then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry. This command is authenticated as <your-account> which is the active account specified by the [core/account] property.
+Cloud Run Admin API has not been used in project <target-project> before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/run.googleapis.com/overview?project=<target-project> then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.
+Google developers console API activation
+https://console.developers.google.com/apis/api/run.googleapis.com/overview?project=<target-project>
+- '@type': type.googleapis.com/google.rpc.ErrorInfo
+  domain: googleapis.com
+  metadata:
+    activationUrl: https://console.developers.google.com/apis/api/run.googleapis.com/overview?project=<target-project>
+    consumer: projects/<target-project>
+    containerInfo: <target-project>
+    service: run.googleapis.com
+    serviceTitle: Cloud Run Admin API
+  reason: SERVICE_DISABLED
+T2_01,FAIL,PASS,PASS,PASS,NO
+T3_01,FAIL,FAIL,FAIL,FAIL,NO
+T4_01,FAIL,FAIL,FAIL,FAIL,NO
+T5_01,FAIL,FAIL,FAIL,FAIL,NO
+T6_01,FAIL,FAIL,FAIL,FAIL,NO
+BATCH2_DONE

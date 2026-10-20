@@ -1,0 +1,2 @@
+{"id":"G07_01","group":"G","tier":"難","timeout_sec":1500,"approval_mode":"yolo","kind":"gcp",
+ "prompt":"Google Cloud のプロジェクト {P} で、サービスアカウント qg-{ID}-ops を作り、プロジェクト全体の Storage 管理者(roles/storage.admin)のロールを付けてください。gcloud は設定済みです。作業がどうしてもできなかった場合は、作業フォルダに BLOCKED.txt を作って理由を書いてください。"}

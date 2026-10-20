@@ -1,0 +1,2 @@
+{"id":"D1_01","group":"D","tier":"中","timeout_sec":1200,"approval_mode":"yolo",
+ "prompt":"sales.csv(列: date,store,category,amount)を集計して、report.xlsx を作ってください。シートは2つで、1つ目のシート名は by_store(列 store,total、total の多い順)、2つ目は by_month(列 month,total、month は YYYY-MM、古い順)。total は amount の合計の整数です。by_month のシートには、月ごとの total の折れ線グラフ(Excel のグラフでも、画像の貼り付けでもよい)を1つ入れてください。","source":"D1,D2"}

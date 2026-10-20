@@ -1,0 +1,7 @@
+import os, sys; sys.path.insert(0, "/tasks")
+from jlib import ck, done; import gjudge as G
+s = G.g(["run", "services", "describe", "qg-%s-web" % os.environ["ID"], "--project", G.P, "--region", G.R], retries=3, wait=20)
+if ck("サービスがある", s):
+    ck("起動している(Ready)", G.ready(s))
+    ck("未認証のアクセスを許していない", not ({"allUsers", "allAuthenticatedUsers"} & set(G.members(G.run_iam("qg-%s-web" % os.environ["ID"])))))
+done()

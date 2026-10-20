@@ -1,0 +1,2 @@
+{"id":"D3_01","group":"D","tier":"中","timeout_sec":1200,"approval_mode":"yolo",
+ "prompt":"invoice.pdf(2ページ)にある明細の表を、すべて items.csv に抜き出してください。列は sku,description,qty,unit_price,amount(見出し行あり)で、数値はカンマなしの整数にしてください。行の順は PDF のとおりです。","source":"P1,P3"}

@@ -1,0 +1,1 @@
+{"id": "R_B2_04", "group": "B2", "tier": "難", "timeout_sec": 900, "approval_mode": "yolo", "prompt": "この git リポジトリで、feature/retry ブランチを main にマージしてください。コンフリクトが起きるはずなので、main の変更と feature/retry の変更の両方が生きる形で解消し、python3 -m pytest が全部通る状態でマージコミットを作ってください。終わったら main をチェックアウトした状態にしてください。"}

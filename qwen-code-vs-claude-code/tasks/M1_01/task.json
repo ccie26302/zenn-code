@@ -1,0 +1,2 @@
+{"id":"M1_01","group":"M","tier":"易","timeout_sec":600,"approval_mode":"yolo",
+ "prompt":"video.mp4 から音声だけを取り出し、16kHz・モノラル・16bit PCM の WAV にして audio.wav に保存してください。","source":"V1,V7,A1,A2"}

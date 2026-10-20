@@ -1,0 +1,2 @@
+{"id":"D5_01","group":"D","tier":"中","timeout_sec":1200,"approval_mode":"yolo",
+ "prompt":"scan.pdf は、英語の文書をスキャンした画像だけの PDF(3ページ)です。OCR で文字を読み取り、全ページのテキストをページ順に scan.txt に保存してください。","source":"P1,P3"}

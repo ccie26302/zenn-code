@@ -1,0 +1,2 @@
+{"id":"D6_01","group":"D","tier":"易","timeout_sec":900,"approval_mode":"yolo",
+ "prompt":"legacy/ にある CSV ファイルは Shift_JIS(CP932)で書かれています。すべてを UTF-8(BOM なし)に変換して、utf8/ に同じファイル名で保存してください。元のファイルは変更しないでください。","source":"D5"}

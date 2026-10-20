@@ -1,0 +1,2 @@
+{"id":"D7_01","group":"D","tier":"中","timeout_sec":900,"approval_mode":"yolo",
+ "prompt":"camera/ の JPEG 写真を、EXIF の撮影日時(DateTimeOriginal)をもとに YYYYMMDD_HHMMSS.jpg という名前に変えて、sorted/ に移してください。撮影日時が同じものは、YYYYMMDD_HHMMSS_2.jpg、_3 … と番号を付けます(番号を付ける順は元のファイル名の文字コード順)。EXIF に撮影日時が無い写真は、名前を変えずに no_exif/ に移してください。写真の中身は変えないでください。","source":"I1"}
