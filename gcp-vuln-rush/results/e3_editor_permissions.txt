@@ -1,0 +1,1 @@
+roles/editor の権限の数(2026-10-23、gcloud iam roles describe roles/editor): 12265

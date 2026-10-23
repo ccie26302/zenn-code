@@ -1,0 +1,37 @@
+label,case,rep,http,body
+authz_off,Cloud Run を直接・トークンなし,1,403,<html><head><meta http-equiv="content-type" content="text/html;charset=utf-8"><title>403 Forbidden</title></head><body t
+authz_off,Cloud Run を直接・トークンなし,2,403,<html><head><meta http-equiv="content-type" content="text/html;charset=utf-8"><title>403 Forbidden</title></head><body t
+authz_off,Cloud Run を直接・トークンなし,3,403,<html><head><meta http-equiv="content-type" content="text/html;charset=utf-8"><title>403 Forbidden</title></head><body t
+authz_off,ゲートウェイ・トークンなし,1,401,{"code":401"message":"Jwt is missing"}
+authz_off,ゲートウェイ・トークンなし,2,401,{"code":401"message":"Jwt is missing"}
+authz_off,ゲートウェイ・トークンなし,3,401,{"code":401"message":"Jwt is missing"}
+authz_off,ゲートウェイ・署名を1文字変えたトークン,1,401,{"code":401"message":"Jwt verification fails"}
+authz_off,ゲートウェイ・署名を1文字変えたトークン,2,401,{"code":401"message":"Jwt verification fails"}
+authz_off,ゲートウェイ・署名を1文字変えたトークン,3,401,{"code":401"message":"Jwt verification fails"}
+authz_off,ゲートウェイ・別の宛先(audience)のトークン,1,403,{"code":403"message":"Audiences in Jwt are not allowed"}
+authz_off,ゲートウェイ・別の宛先(audience)のトークン,2,403,{"code":403"message":"Audiences in Jwt are not allowed"}
+authz_off,ゲートウェイ・別の宛先(audience)のトークン,3,403,{"code":403"message":"Audiences in Jwt are not allowed"}
+authz_off,ゲートウェイ・alice のトークンで alice のデータ,1,200,{"user":"alice""caller":"e4-alice@<project-id>.iam.gserviceaccount.com""orders":[{"id":1"item":"book"}]}
+authz_off,ゲートウェイ・alice のトークンで alice のデータ,2,200,{"user":"alice""caller":"e4-alice@<project-id>.iam.gserviceaccount.com""orders":[{"id":1"item":"book"}]}
+authz_off,ゲートウェイ・alice のトークンで alice のデータ,3,200,{"user":"alice""caller":"e4-alice@<project-id>.iam.gserviceaccount.com""orders":[{"id":1"item":"book"}]}
+authz_off,ゲートウェイ・alice のトークンで bob のデータ,1,200,{"user":"bob""caller":"e4-alice@<project-id>.iam.gserviceaccount.com""orders":[{"id":2"item":"pen"}]}
+authz_off,ゲートウェイ・alice のトークンで bob のデータ,2,200,{"user":"bob""caller":"e4-alice@<project-id>.iam.gserviceaccount.com""orders":[{"id":2"item":"pen"}]}
+authz_off,ゲートウェイ・alice のトークンで bob のデータ,3,200,{"user":"bob""caller":"e4-alice@<project-id>.iam.gserviceaccount.com""orders":[{"id":2"item":"pen"}]}
+authz_on,Cloud Run を直接・トークンなし,1,403,<html><head><meta http-equiv="content-type" content="text/html;charset=utf-8"><title>403 Forbidden</title></head><body t
+authz_on,Cloud Run を直接・トークンなし,2,403,<html><head><meta http-equiv="content-type" content="text/html;charset=utf-8"><title>403 Forbidden</title></head><body t
+authz_on,Cloud Run を直接・トークンなし,3,403,<html><head><meta http-equiv="content-type" content="text/html;charset=utf-8"><title>403 Forbidden</title></head><body t
+authz_on,ゲートウェイ・トークンなし,1,401,{"code":401"message":"Jwt is missing"}
+authz_on,ゲートウェイ・トークンなし,2,401,{"code":401"message":"Jwt is missing"}
+authz_on,ゲートウェイ・トークンなし,3,401,{"code":401"message":"Jwt is missing"}
+authz_on,ゲートウェイ・署名を1文字変えたトークン,1,401,{"code":401"message":"Jwt verification fails"}
+authz_on,ゲートウェイ・署名を1文字変えたトークン,2,401,{"code":401"message":"Jwt verification fails"}
+authz_on,ゲートウェイ・署名を1文字変えたトークン,3,401,{"code":401"message":"Jwt verification fails"}
+authz_on,ゲートウェイ・別の宛先(audience)のトークン,1,403,{"code":403"message":"Audiences in Jwt are not allowed"}
+authz_on,ゲートウェイ・別の宛先(audience)のトークン,2,403,{"code":403"message":"Audiences in Jwt are not allowed"}
+authz_on,ゲートウェイ・別の宛先(audience)のトークン,3,403,{"code":403"message":"Audiences in Jwt are not allowed"}
+authz_on,ゲートウェイ・alice のトークンで alice のデータ,1,200,{"user":"alice""caller":"e4-alice@<project-id>.iam.gserviceaccount.com""orders":[{"id":1"item":"book"}]}
+authz_on,ゲートウェイ・alice のトークンで alice のデータ,2,200,{"user":"alice""caller":"e4-alice@<project-id>.iam.gserviceaccount.com""orders":[{"id":1"item":"book"}]}
+authz_on,ゲートウェイ・alice のトークンで alice のデータ,3,200,{"user":"alice""caller":"e4-alice@<project-id>.iam.gserviceaccount.com""orders":[{"id":1"item":"book"}]}
+authz_on,ゲートウェイ・alice のトークンで bob のデータ,1,403,{"error":"forbidden"}
+authz_on,ゲートウェイ・alice のトークンで bob のデータ,2,403,{"error":"forbidden"}
+authz_on,ゲートウェイ・alice のトークンで bob のデータ,3,403,{"error":"forbidden"}

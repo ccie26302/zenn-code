@@ -1,0 +1,7 @@
+cond,rep,result
+open,1,{"external_site":{"http":200,"error":""},"google_api":{"http":400,"error":""}}
+open,2,{"external_site":{"http":200,"error":""},"google_api":{"http":400,"error":""}}
+open,3,{"external_site":{"http":200,"error":""},"google_api":{"http":400,"error":""}}
+closed,1,{"external_site":{"http":0,"error":"Failed to connect to example.com port 443 after 6105 ms: Connection timed out"},"google_api":{"http":400,"error":""}}
+closed,2,{"external_site":{"http":0,"error":"Failed to connect to example.com port 443 after 6102 ms: Connection timed out"},"google_api":{"http":400,"error":""}}
+closed,3,{"external_site":{"http":0,"error":"Failed to connect to example.com port 443 after 6102 ms: Connection timed out"},"google_api":{"http":400,"error":""}}

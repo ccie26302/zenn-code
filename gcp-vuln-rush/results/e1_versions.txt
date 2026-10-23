@@ -1,0 +1,5 @@
+php84,deploy_rc=0,deploy_s=67,{"php_version":"8.4.25","sapi":"fpm-fcgi","os":"Linux 4.19.0-gvisor"}
+php85,deploy_rc=0,deploy_s=40,{"php_version":"8.5.10","sapi":"fpm-fcgi","os":"Linux 4.19.0-gvisor"}
+php83,deploy_rc=0,deploy_s=36,{"php_version":"8.3.33","sapi":"fpm-fcgi","os":"Linux 4.19.0-gvisor"}
+php82,deploy_rc=0,deploy_s=37,{"php_version":"8.2.33","sapi":"fpm-fcgi","os":"Linux 4.19.0-gvisor"}
+2026-10-22T23:35:36Z fresh php84: {"php_version":"8.4.25","sapi":"fpm-fcgi","os":"Linux 4.19.0-gvisor"}
