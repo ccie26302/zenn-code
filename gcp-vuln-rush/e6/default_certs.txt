@@ -1,0 +1,18 @@
+== <name>.a.run.app
+0 s:/CN=*.a.run.app
+i:/C=US/O=Google Trust Services/CN=WE2
+1 s:/C=US/O=Google Trust Services/CN=WE2
+i:/C=US/O=Google Trust Services LLC/CN=GTS Root R4
+2 s:/C=US/O=Google Trust Services LLC/CN=GTS Root R4
+i:/C=BE/O=GlobalSign nv-sa/OU=Root CA/CN=GlobalSign Root CA
+notBefore=Sep 28 18:38:27 2026 GMT
+notAfter=Dec 21 18:38:26 2026 GMT
+== <name>.an.gateway.dev
+0 s:/CN=*.gateway.dev
+i:/C=US/O=Google Trust Services/CN=WE2
+1 s:/C=US/O=Google Trust Services/CN=WE2
+i:/C=US/O=Google Trust Services LLC/CN=GTS Root R4
+2 s:/C=US/O=Google Trust Services LLC/CN=GTS Root R4
+i:/C=BE/O=GlobalSign nv-sa/OU=Root CA/CN=GlobalSign Root CA
+notBefore=Sep 28 18:38:19 2026 GMT
+notAfter=Dec 21 18:38:18 2026 GMT
