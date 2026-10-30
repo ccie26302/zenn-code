@@ -1,0 +1,23 @@
+{
+  "acl": [
+    {
+      "email": "user@example.com",
+      "entity": "user@example.com",
+      "role": "OWNER"
+    }
+  ],
+  "bucket": "PROJECT-rfg",
+  "content_type": "text/plain",
+  "crc32c_hash": "NT3Yvg==",
+  "creation_time": "2026-10-30T08:37:03+0000",
+  "etag": "CLX0+5qr4ZcDEAU=",
+  "generation": "1793349423921717",
+  "md5_hash": "sZRqySSS0jR8YjW00mERhA==",
+  "metageneration": 5,
+  "name": "seed.txt",
+  "size": 6,
+  "storage_class": "STANDARD",
+  "storage_class_update_time": "2026-10-30T08:37:03+0000",
+  "storage_url": "gs://PROJECT-rfg/seed.txt#1793349423921717",
+  "update_time": "2026-10-30T08:37:23+0000"
+}

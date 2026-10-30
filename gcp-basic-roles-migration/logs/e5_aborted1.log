@@ -1,0 +1,2 @@
+{"i": 1, "method": "atomic", "t_change": 1793355555.60516, "t_second_call": 1793355555.60516, "n_calls": 20, "c_denied_n": 0, "c_first_denied": null, "c_last_denied": null, "r_first_ok": 1.85, "settled": true, "observed_sec": 22.5}
+{"i": 2, "method": "add_first", "t_change": 1793355599.125812, "t_second_call": 1793355601.247374, "n_calls": 20, "c_denied_n": 0, "c_first_denied": null, "c_last_denied": null, "r_first_ok": 3.81, "settled": true, "observed_sec": 18.6}

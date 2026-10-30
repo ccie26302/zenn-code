@@ -1,0 +1,72 @@
+# PROJECT
+旧ロールの付与: 4 件(自動付与の SA 1 件は別扱い)
+  serviceAccount:br-editor@PROJECT.iam.gserviceaccount.com  roles/editor -> roles/writer
+  serviceAccount:br-owner@PROJECT.iam.gserviceaccount.com  roles/owner -> roles/admin
+  user:user@example.com  roles/owner -> roles/admin
+  serviceAccount:br-viewer@PROJECT.iam.gserviceaccount.com  roles/viewer -> roles/reader
+  [自動付与] serviceAccount:PROJECT_NUMBER-compute@developer.gserviceaccount.com  roles/editor(置き換える前に、その SA が何に使われているかを確認)
+
+## バケット: 差がある組 42
+  PROJECT-b00  owner->admin  広がる: buckets.get,buckets.getIamPolicy,buckets.setIamPolicy,buckets.update,objects.create,objects.delete,objects.get,objects.list  狭まる: -
+  PROJECT-b00  editor->writer  広がる: -  狭まる: buckets.setIamPolicy
+  PROJECT-b00  viewer->reader  広がる: buckets.getIamPolicy  狭まる: -
+  PROJECT-b01  editor->writer  広がる: -  狭まる: buckets.setIamPolicy  オブジェクト(読み取り) 広がる 0 / 狭まる 0 (調べた 3)
+  PROJECT-b01  viewer->reader  広がる: buckets.get,buckets.getIamPolicy,objects.list  狭まる: -  オブジェクト(読み取り) 広がる 1 / 狭まる 0 (調べた 3)
+  PROJECT-b02  owner->admin  広がる: buckets.get,buckets.getIamPolicy,buckets.setIamPolicy,buckets.update,objects.create,objects.delete,objects.get,objects.list  狭まる: -
+  PROJECT-b02  editor->writer  広がる: buckets.get,buckets.getIamPolicy,buckets.update,objects.create,objects.delete,objects.get,objects.list  狭まる: -
+  PROJECT-b02  viewer->reader  広がる: buckets.get,buckets.getIamPolicy,objects.get,objects.list  狭まる: -
+  PROJECT-b03  owner->admin  広がる: -  狭まる: -  オブジェクト(読み取り) 広がる 1 / 狭まる 0 (調べた 3)
+  PROJECT-b03  editor->writer  広がる: buckets.get,buckets.getIamPolicy,buckets.update,objects.create,objects.delete,objects.list  狭まる: -  オブジェクト(読み取り) 広がる 2 / 狭まる 0 (調べた 3)
+  PROJECT-b03  viewer->reader  広がる: buckets.get,buckets.getIamPolicy,objects.list  狭まる: -  オブジェクト(読み取り) 広がる 1 / 狭まる 0 (調べた 3)
+  PROJECT-b04  owner->admin  広がる: -  狭まる: -  オブジェクト(読み取り) 広がる 1 / 狭まる 0 (調べた 3)
+  PROJECT-b04  editor->writer  広がる: buckets.get,buckets.getIamPolicy,buckets.update,objects.create,objects.delete,objects.list  狭まる: -  オブジェクト(読み取り) 広がる 0 / 狭まる 0 (調べた 3)
+  PROJECT-b04  viewer->reader  広がる: buckets.getIamPolicy  狭まる: -  オブジェクト(読み取り) 広がる 0 / 狭まる 0 (調べた 3)
+  PROJECT-b05  editor->writer  広がる: buckets.get,buckets.getIamPolicy,buckets.update,objects.create,objects.delete,objects.list  狭まる: -  オブジェクト(読み取り) 広がる 2 / 狭まる 0 (調べた 3)
+  PROJECT-b05  viewer->reader  広がる: buckets.getIamPolicy  狭まる: -  オブジェクト(読み取り) 広がる 0 / 狭まる 0 (調べた 3)
+  PROJECT-b06  owner->admin  広がる: -  狭まる: -  オブジェクト(読み取り) 広がる 1 / 狭まる 0 (調べた 3)
+  PROJECT-b06  editor->writer  広がる: -  狭まる: buckets.setIamPolicy  オブジェクト(読み取り) 広がる 1 / 狭まる 0 (調べた 3)
+  PROJECT-b06  viewer->reader  広がる: buckets.getIamPolicy  狭まる: -  オブジェクト(読み取り) 広がる 0 / 狭まる 0 (調べた 3)
+  PROJECT-b07  owner->admin  広がる: buckets.get,buckets.getIamPolicy,buckets.setIamPolicy,buckets.update,objects.create,objects.delete,objects.get,objects.list  狭まる: -
+  PROJECT-b07  editor->writer  広がる: -  狭まる: buckets.setIamPolicy
+  PROJECT-b07  viewer->reader  広がる: buckets.getIamPolicy  狭まる: -
+  PROJECT-b08  owner->admin  広がる: -  狭まる: -  オブジェクト(読み取り) 広がる 1 / 狭まる 0 (調べた 3)
+  PROJECT-b08  editor->writer  広がる: -  狭まる: buckets.setIamPolicy  オブジェクト(読み取り) 広がる 1 / 狭まる 0 (調べた 3)
+  PROJECT-b08  viewer->reader  広がる: buckets.get,buckets.getIamPolicy,objects.list  狭まる: -  オブジェクト(読み取り) 広がる 1 / 狭まる 0 (調べた 3)
+  PROJECT-b09  owner->admin  広がる: buckets.get,buckets.getIamPolicy,buckets.setIamPolicy,buckets.update,objects.create,objects.delete,objects.get,objects.list  狭まる: -
+  PROJECT-b09  editor->writer  広がる: buckets.get,buckets.getIamPolicy,buckets.update,objects.create,objects.delete,objects.get,objects.list  狭まる: -
+  PROJECT-b09  viewer->reader  広がる: buckets.get,buckets.getIamPolicy,objects.get,objects.list  狭まる: -
+  PROJECT-b10  editor->writer  広がる: -  狭まる: buckets.setIamPolicy
+  PROJECT-b10  viewer->reader  広がる: buckets.getIamPolicy  狭まる: -
+  PROJECT-b11  editor->writer  広がる: buckets.get,buckets.getIamPolicy,buckets.update,objects.create,objects.delete,objects.list  狭まる: -  オブジェクト(読み取り) 広がる 1 / 狭まる 0 (調べた 3)
+  PROJECT-b11  viewer->reader  広がる: buckets.getIamPolicy  狭まる: -  オブジェクト(読み取り) 広がる 0 / 狭まる 0 (調べた 3)
+  PROJECT-default  editor->writer  広がる: -  狭まる: buckets.setIamPolicy  オブジェクト(読み取り) 広がる 0 / 狭まる 0 (調べた 1)
+  PROJECT-default  viewer->reader  広がる: buckets.getIamPolicy  狭まる: -  オブジェクト(読み取り) 広がる 0 / 狭まる 0 (調べた 1)
+  PROJECT-rfg  owner->admin  広がる: buckets.get,buckets.getIamPolicy,buckets.setIamPolicy,buckets.update,objects.create,objects.delete,objects.list  狭まる: -  オブジェクト(読み取り) 広がる 1 / 狭まる 0 (調べた 1)
+  PROJECT-rfg  editor->writer  広がる: buckets.get,buckets.getIamPolicy,buckets.update,objects.create,objects.delete,objects.list  狭まる: -  オブジェクト(読み取り) 広がる 1 / 狭まる 0 (調べた 1)
+  PROJECT-rfg  viewer->reader  広がる: buckets.get,buckets.getIamPolicy,objects.list  狭まる: -  オブジェクト(読み取り) 広がる 1 / 狭まる 0 (調べた 1)
+  PROJECT-rubla  owner->admin  広がる: buckets.get,buckets.getIamPolicy,buckets.setIamPolicy,buckets.update,objects.create,objects.delete,objects.get,objects.list  狭まる: -
+  PROJECT-rubla  editor->writer  広がる: buckets.get,buckets.getIamPolicy,buckets.update,objects.create,objects.delete,objects.get,objects.list  狭まる: -
+  PROJECT-rubla  viewer->reader  広がる: buckets.get,buckets.getIamPolicy,objects.get,objects.list  狭まる: -
+  PROJECT-ubla  editor->writer  広がる: -  狭まる: buckets.setIamPolicy
+  PROJECT-ubla  viewer->reader  広がる: buckets.getIamPolicy  狭まる: -
+
+## データセット: 差がある組 17
+  br_restr  owner->admin  広がる: tables.create,tables.delete,tables.get,tables.getData,tables.list,tables.updateData  狭まる: -
+  br_restr  editor->writer  広がる: tables.create,tables.delete,tables.get,tables.getData,tables.list,tables.updateData  狭まる: -
+  br_restr  viewer->reader  広がる: tables.get,tables.getData,tables.list  狭まる: -
+  e6_d00  editor->writer  広がる: tables.create,tables.delete,tables.get,tables.getData,tables.list,tables.updateData  狭まる: -
+  e6_d00  viewer->reader  広がる: tables.get,tables.getData,tables.list  狭まる: -
+  e6_d01  owner->admin  広がる: tables.create,tables.delete,tables.get,tables.getData,tables.list,tables.updateData  狭まる: -
+  e6_d01  viewer->reader  広がる: tables.get,tables.getData,tables.list  狭まる: -
+  e6_d02  editor->writer  広がる: tables.create,tables.delete,tables.get,tables.getData,tables.list,tables.updateData  狭まる: -
+  e6_d03  editor->writer  広がる: tables.create,tables.delete,tables.get,tables.getData,tables.list,tables.updateData  狭まる: -
+  e6_d03  viewer->reader  広がる: tables.get,tables.getData,tables.list  狭まる: -
+  e6_d04  owner->admin  広がる: tables.create,tables.delete,tables.get,tables.getData,tables.list,tables.updateData  狭まる: -
+  e6_d05  owner->admin  広がる: tables.create,tables.delete,tables.get,tables.getData,tables.list,tables.updateData  狭まる: -
+  e6_d05  viewer->reader  広がる: tables.get,tables.getData,tables.list  狭まる: -
+  e6_d06  owner->admin  広がる: tables.create,tables.delete,tables.get,tables.getData,tables.list,tables.updateData  狭まる: -
+  e6_d06  viewer->reader  広がる: tables.get,tables.getData,tables.list  狭まる: -
+  e6_d07  owner->admin  広がる: tables.create,tables.delete,tables.get,tables.getData,tables.list,tables.updateData  狭まる: -
+  e6_d07  editor->writer  広がる: tables.create,tables.delete,tables.get,tables.getData,tables.list,tables.updateData  狭まる: -
+
+隠しデータセット(クエリ結果の置き場) 7 個は上の数に含めていない

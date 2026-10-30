@@ -1,0 +1,557 @@
+{
+ "project": "PROJECT",
+ "bindings": [
+  {
+   "member": "serviceAccount:br-editor@PROJECT.iam.gserviceaccount.com",
+   "role": "roles/editor",
+   "proposal": "roles/writer"
+  },
+  {
+   "member": "serviceAccount:br-owner@PROJECT.iam.gserviceaccount.com",
+   "role": "roles/owner",
+   "proposal": "roles/admin"
+  },
+  {
+   "member": "user:user@example.com",
+   "role": "roles/owner",
+   "proposal": "roles/admin"
+  },
+  {
+   "member": "serviceAccount:br-viewer@PROJECT.iam.gserviceaccount.com",
+   "role": "roles/viewer",
+   "proposal": "roles/reader"
+  }
+ ],
+ "auto_grants": [
+  {
+   "member": "serviceAccount:PROJECT_NUMBER-compute@developer.gserviceaccount.com",
+   "role": "roles/editor",
+   "proposal": "roles/writer"
+  }
+ ],
+ "buckets": [
+  {
+   "bucket": "PROJECT-default",
+   "ubla": false,
+   "pair": "owner->admin",
+   "widen": [],
+   "narrow": [],
+   "objects_widen_get": 0,
+   "objects_narrow_get": 0,
+   "objects_checked": 1,
+   "examples": []
+  },
+  {
+   "bucket": "PROJECT-default",
+   "ubla": false,
+   "pair": "editor->writer",
+   "widen": [],
+   "narrow": [
+    "storage.buckets.setIamPolicy"
+   ],
+   "objects_widen_get": 0,
+   "objects_narrow_get": 0,
+   "objects_checked": 1,
+   "examples": []
+  },
+  {
+   "bucket": "PROJECT-default",
+   "ubla": false,
+   "pair": "viewer->reader",
+   "widen": [
+    "storage.buckets.getIamPolicy"
+   ],
+   "narrow": [],
+   "objects_widen_get": 0,
+   "objects_narrow_get": 0,
+   "objects_checked": 1,
+   "examples": []
+  },
+  {
+   "bucket": "PROJECT-rfg",
+   "ubla": false,
+   "pair": "owner->admin",
+   "widen": [
+    "storage.buckets.get",
+    "storage.buckets.getIamPolicy",
+    "storage.buckets.setIamPolicy",
+    "storage.buckets.update",
+    "storage.objects.create",
+    "storage.objects.delete",
+    "storage.objects.list"
+   ],
+   "narrow": [],
+   "objects_widen_get": 1,
+   "objects_narrow_get": 0,
+   "objects_checked": 1,
+   "examples": [
+    "seed.txt"
+   ]
+  },
+  {
+   "bucket": "PROJECT-rfg",
+   "ubla": false,
+   "pair": "editor->writer",
+   "widen": [
+    "storage.buckets.get",
+    "storage.buckets.getIamPolicy",
+    "storage.buckets.update",
+    "storage.objects.create",
+    "storage.objects.delete",
+    "storage.objects.list"
+   ],
+   "narrow": [],
+   "objects_widen_get": 1,
+   "objects_narrow_get": 0,
+   "objects_checked": 1,
+   "examples": [
+    "seed.txt"
+   ]
+  },
+  {
+   "bucket": "PROJECT-rfg",
+   "ubla": false,
+   "pair": "viewer->reader",
+   "widen": [
+    "storage.buckets.get",
+    "storage.buckets.getIamPolicy",
+    "storage.objects.list"
+   ],
+   "narrow": [],
+   "objects_widen_get": 1,
+   "objects_narrow_get": 0,
+   "objects_checked": 1,
+   "examples": [
+    "seed.txt"
+   ]
+  },
+  {
+   "bucket": "PROJECT-rubla",
+   "ubla": true,
+   "pair": "owner->admin",
+   "widen": [
+    "storage.buckets.get",
+    "storage.buckets.getIamPolicy",
+    "storage.buckets.setIamPolicy",
+    "storage.buckets.update",
+    "storage.objects.create",
+    "storage.objects.delete",
+    "storage.objects.get",
+    "storage.objects.list"
+   ],
+   "narrow": [],
+   "objects_widen_get": 0,
+   "objects_narrow_get": 0,
+   "objects_checked": 0,
+   "examples": []
+  },
+  {
+   "bucket": "PROJECT-rubla",
+   "ubla": true,
+   "pair": "editor->writer",
+   "widen": [
+    "storage.buckets.get",
+    "storage.buckets.getIamPolicy",
+    "storage.buckets.update",
+    "storage.objects.create",
+    "storage.objects.delete",
+    "storage.objects.get",
+    "storage.objects.list"
+   ],
+   "narrow": [],
+   "objects_widen_get": 0,
+   "objects_narrow_get": 0,
+   "objects_checked": 0,
+   "examples": []
+  },
+  {
+   "bucket": "PROJECT-rubla",
+   "ubla": true,
+   "pair": "viewer->reader",
+   "widen": [
+    "storage.buckets.get",
+    "storage.buckets.getIamPolicy",
+    "storage.objects.get",
+    "storage.objects.list"
+   ],
+   "narrow": [],
+   "objects_widen_get": 0,
+   "objects_narrow_get": 0,
+   "objects_checked": 0,
+   "examples": []
+  },
+  {
+   "bucket": "PROJECT-ubla",
+   "ubla": true,
+   "pair": "owner->admin",
+   "widen": [],
+   "narrow": [],
+   "objects_widen_get": 0,
+   "objects_narrow_get": 0,
+   "objects_checked": 0,
+   "examples": []
+  },
+  {
+   "bucket": "PROJECT-ubla",
+   "ubla": true,
+   "pair": "editor->writer",
+   "widen": [],
+   "narrow": [
+    "storage.buckets.setIamPolicy"
+   ],
+   "objects_widen_get": 0,
+   "objects_narrow_get": 0,
+   "objects_checked": 0,
+   "examples": []
+  },
+  {
+   "bucket": "PROJECT-ubla",
+   "ubla": true,
+   "pair": "viewer->reader",
+   "widen": [
+    "storage.buckets.getIamPolicy"
+   ],
+   "narrow": [],
+   "objects_widen_get": 0,
+   "objects_narrow_get": 0,
+   "objects_checked": 0,
+   "examples": []
+  }
+ ],
+ "datasets": [
+  {
+   "dataset": "_44682f18dcacf131636b26fac9c0964e7acfe283",
+   "hidden": true,
+   "pair": "owner->admin",
+   "widen": [
+    "bigquery.tables.create",
+    "bigquery.tables.delete",
+    "bigquery.tables.get",
+    "bigquery.tables.getData",
+    "bigquery.tables.list",
+    "bigquery.tables.updateData"
+   ],
+   "narrow": []
+  },
+  {
+   "dataset": "_44682f18dcacf131636b26fac9c0964e7acfe283",
+   "hidden": true,
+   "pair": "editor->writer",
+   "widen": [
+    "bigquery.tables.create",
+    "bigquery.tables.delete",
+    "bigquery.tables.get",
+    "bigquery.tables.getData",
+    "bigquery.tables.list",
+    "bigquery.tables.updateData"
+   ],
+   "narrow": []
+  },
+  {
+   "dataset": "_44682f18dcacf131636b26fac9c0964e7acfe283",
+   "hidden": true,
+   "pair": "viewer->reader",
+   "widen": [
+    "bigquery.tables.get",
+    "bigquery.tables.getData",
+    "bigquery.tables.list"
+   ],
+   "narrow": []
+  },
+  {
+   "dataset": "_55a50c17574fa283ab8922536d64882b70c133cf",
+   "hidden": true,
+   "pair": "owner->admin",
+   "widen": [
+    "bigquery.tables.create",
+    "bigquery.tables.delete",
+    "bigquery.tables.get",
+    "bigquery.tables.getData",
+    "bigquery.tables.list",
+    "bigquery.tables.updateData"
+   ],
+   "narrow": []
+  },
+  {
+   "dataset": "_55a50c17574fa283ab8922536d64882b70c133cf",
+   "hidden": true,
+   "pair": "editor->writer",
+   "widen": [
+    "bigquery.tables.create",
+    "bigquery.tables.delete",
+    "bigquery.tables.get",
+    "bigquery.tables.getData",
+    "bigquery.tables.list",
+    "bigquery.tables.updateData"
+   ],
+   "narrow": []
+  },
+  {
+   "dataset": "_55a50c17574fa283ab8922536d64882b70c133cf",
+   "hidden": true,
+   "pair": "viewer->reader",
+   "widen": [
+    "bigquery.tables.get",
+    "bigquery.tables.getData",
+    "bigquery.tables.list"
+   ],
+   "narrow": []
+  },
+  {
+   "dataset": "_791ce3fae093ce6758a3cbb8157202f36c3d9dba",
+   "hidden": true,
+   "pair": "owner->admin",
+   "widen": [
+    "bigquery.tables.create",
+    "bigquery.tables.delete",
+    "bigquery.tables.get",
+    "bigquery.tables.getData",
+    "bigquery.tables.list",
+    "bigquery.tables.updateData"
+   ],
+   "narrow": []
+  },
+  {
+   "dataset": "_791ce3fae093ce6758a3cbb8157202f36c3d9dba",
+   "hidden": true,
+   "pair": "editor->writer",
+   "widen": [
+    "bigquery.tables.create",
+    "bigquery.tables.delete",
+    "bigquery.tables.get",
+    "bigquery.tables.getData",
+    "bigquery.tables.list",
+    "bigquery.tables.updateData"
+   ],
+   "narrow": []
+  },
+  {
+   "dataset": "_791ce3fae093ce6758a3cbb8157202f36c3d9dba",
+   "hidden": true,
+   "pair": "viewer->reader",
+   "widen": [
+    "bigquery.tables.get",
+    "bigquery.tables.getData",
+    "bigquery.tables.list"
+   ],
+   "narrow": []
+  },
+  {
+   "dataset": "_893eaef052be61a3d0e93e740a5b6a3c97f12f3d",
+   "hidden": true,
+   "pair": "owner->admin",
+   "widen": [
+    "bigquery.tables.create",
+    "bigquery.tables.delete",
+    "bigquery.tables.get",
+    "bigquery.tables.getData",
+    "bigquery.tables.list",
+    "bigquery.tables.updateData"
+   ],
+   "narrow": []
+  },
+  {
+   "dataset": "_893eaef052be61a3d0e93e740a5b6a3c97f12f3d",
+   "hidden": true,
+   "pair": "editor->writer",
+   "widen": [
+    "bigquery.tables.create",
+    "bigquery.tables.delete",
+    "bigquery.tables.get",
+    "bigquery.tables.getData",
+    "bigquery.tables.list",
+    "bigquery.tables.updateData"
+   ],
+   "narrow": []
+  },
+  {
+   "dataset": "_893eaef052be61a3d0e93e740a5b6a3c97f12f3d",
+   "hidden": true,
+   "pair": "viewer->reader",
+   "widen": [
+    "bigquery.tables.get",
+    "bigquery.tables.getData",
+    "bigquery.tables.list"
+   ],
+   "narrow": []
+  },
+  {
+   "dataset": "_95d6271c5db4cf606cb6d995c71ba544d5e704ea",
+   "hidden": true,
+   "pair": "owner->admin",
+   "widen": [
+    "bigquery.tables.create",
+    "bigquery.tables.delete",
+    "bigquery.tables.get",
+    "bigquery.tables.getData",
+    "bigquery.tables.list",
+    "bigquery.tables.updateData"
+   ],
+   "narrow": []
+  },
+  {
+   "dataset": "_95d6271c5db4cf606cb6d995c71ba544d5e704ea",
+   "hidden": true,
+   "pair": "editor->writer",
+   "widen": [
+    "bigquery.tables.create",
+    "bigquery.tables.delete",
+    "bigquery.tables.get",
+    "bigquery.tables.getData",
+    "bigquery.tables.list",
+    "bigquery.tables.updateData"
+   ],
+   "narrow": []
+  },
+  {
+   "dataset": "_95d6271c5db4cf606cb6d995c71ba544d5e704ea",
+   "hidden": true,
+   "pair": "viewer->reader",
+   "widen": [
+    "bigquery.tables.get",
+    "bigquery.tables.getData",
+    "bigquery.tables.list"
+   ],
+   "narrow": []
+  },
+  {
+   "dataset": "_d03837e26d201f474cf745903cd324b6a50a23a6",
+   "hidden": true,
+   "pair": "owner->admin",
+   "widen": [
+    "bigquery.tables.create",
+    "bigquery.tables.delete",
+    "bigquery.tables.get",
+    "bigquery.tables.getData",
+    "bigquery.tables.list",
+    "bigquery.tables.updateData"
+   ],
+   "narrow": []
+  },
+  {
+   "dataset": "_d03837e26d201f474cf745903cd324b6a50a23a6",
+   "hidden": true,
+   "pair": "editor->writer",
+   "widen": [
+    "bigquery.tables.create",
+    "bigquery.tables.delete",
+    "bigquery.tables.get",
+    "bigquery.tables.getData",
+    "bigquery.tables.list",
+    "bigquery.tables.updateData"
+   ],
+   "narrow": []
+  },
+  {
+   "dataset": "_d03837e26d201f474cf745903cd324b6a50a23a6",
+   "hidden": true,
+   "pair": "viewer->reader",
+   "widen": [
+    "bigquery.tables.get",
+    "bigquery.tables.getData",
+    "bigquery.tables.list"
+   ],
+   "narrow": []
+  },
+  {
+   "dataset": "_e343534c3d55482603fb5d970c1461ddd82c55f2",
+   "hidden": true,
+   "pair": "owner->admin",
+   "widen": [
+    "bigquery.tables.create",
+    "bigquery.tables.delete",
+    "bigquery.tables.get",
+    "bigquery.tables.getData",
+    "bigquery.tables.list",
+    "bigquery.tables.updateData"
+   ],
+   "narrow": []
+  },
+  {
+   "dataset": "_e343534c3d55482603fb5d970c1461ddd82c55f2",
+   "hidden": true,
+   "pair": "editor->writer",
+   "widen": [
+    "bigquery.tables.create",
+    "bigquery.tables.delete",
+    "bigquery.tables.get",
+    "bigquery.tables.getData",
+    "bigquery.tables.list",
+    "bigquery.tables.updateData"
+   ],
+   "narrow": []
+  },
+  {
+   "dataset": "_e343534c3d55482603fb5d970c1461ddd82c55f2",
+   "hidden": true,
+   "pair": "viewer->reader",
+   "widen": [
+    "bigquery.tables.get",
+    "bigquery.tables.getData",
+    "bigquery.tables.list"
+   ],
+   "narrow": []
+  },
+  {
+   "dataset": "br_default",
+   "hidden": false,
+   "pair": "owner->admin",
+   "widen": [],
+   "narrow": []
+  },
+  {
+   "dataset": "br_default",
+   "hidden": false,
+   "pair": "editor->writer",
+   "widen": [],
+   "narrow": []
+  },
+  {
+   "dataset": "br_default",
+   "hidden": false,
+   "pair": "viewer->reader",
+   "widen": [],
+   "narrow": []
+  },
+  {
+   "dataset": "br_restr",
+   "hidden": false,
+   "pair": "owner->admin",
+   "widen": [
+    "bigquery.tables.create",
+    "bigquery.tables.delete",
+    "bigquery.tables.get",
+    "bigquery.tables.getData",
+    "bigquery.tables.list",
+    "bigquery.tables.updateData"
+   ],
+   "narrow": []
+  },
+  {
+   "dataset": "br_restr",
+   "hidden": false,
+   "pair": "editor->writer",
+   "widen": [
+    "bigquery.tables.create",
+    "bigquery.tables.delete",
+    "bigquery.tables.get",
+    "bigquery.tables.getData",
+    "bigquery.tables.list",
+    "bigquery.tables.updateData"
+   ],
+   "narrow": []
+  },
+  {
+   "dataset": "br_restr",
+   "hidden": false,
+   "pair": "viewer->reader",
+   "widen": [
+    "bigquery.tables.get",
+    "bigquery.tables.getData",
+    "bigquery.tables.list"
+   ],
+   "narrow": []
+  }
+ ],
+ "errors": []
+}

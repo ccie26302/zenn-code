@@ -1,0 +1,376 @@
+[
+  {
+    "assetType": "bigquery.googleapis.com/Dataset",
+    "policy": {
+      "bindings": [
+        {
+          "members": [
+            "projectEditor:PROJECT"
+          ],
+          "role": "roles/bigquery.dataEditor"
+        },
+        {
+          "members": [
+            "user:user@example.com"
+          ],
+          "role": "roles/bigquery.dataOwner"
+        },
+        {
+          "members": [
+            "projectViewer:PROJECT"
+          ],
+          "role": "roles/bigquery.dataViewer"
+        }
+      ]
+    },
+    "project": "projects/PROJECT_NUMBER",
+    "resource": "//bigquery.googleapis.com/projects/PROJECT/datasets/e6c_d07"
+  },
+  {
+    "assetType": "bigquery.googleapis.com/Dataset",
+    "policy": {
+      "bindings": [
+        {
+          "members": [
+            "user:user@example.com"
+          ],
+          "role": "roles/bigquery.dataOwner"
+        }
+      ]
+    },
+    "project": "projects/PROJECT_NUMBER",
+    "resource": "//bigquery.googleapis.com/projects/PROJECT/datasets/e6c_d06"
+  },
+  {
+    "assetType": "bigquery.googleapis.com/Dataset",
+    "policy": {
+      "bindings": [
+        {
+          "members": [
+            "projectOwner:PROJECT",
+            "user:user@example.com"
+          ],
+          "role": "roles/bigquery.dataOwner"
+        },
+        {
+          "members": [
+            "projectViewer:PROJECT"
+          ],
+          "role": "roles/bigquery.dataViewer"
+        }
+      ]
+    },
+    "project": "projects/PROJECT_NUMBER",
+    "resource": "//bigquery.googleapis.com/projects/PROJECT/datasets/e6c_d05"
+  },
+  {
+    "assetType": "bigquery.googleapis.com/Dataset",
+    "policy": {
+      "bindings": [
+        {
+          "members": [
+            "projectOwner:PROJECT",
+            "user:user@example.com"
+          ],
+          "role": "roles/bigquery.dataOwner"
+        },
+        {
+          "members": [
+            "projectViewer:PROJECT"
+          ],
+          "role": "roles/bigquery.dataViewer"
+        }
+      ]
+    },
+    "project": "projects/PROJECT_NUMBER",
+    "resource": "//bigquery.googleapis.com/projects/PROJECT/datasets/e6c_d04"
+  },
+  {
+    "assetType": "bigquery.googleapis.com/Dataset",
+    "policy": {
+      "bindings": [
+        {
+          "members": [
+            "projectOwner:PROJECT",
+            "user:user@example.com"
+          ],
+          "role": "roles/bigquery.dataOwner"
+        }
+      ]
+    },
+    "project": "projects/PROJECT_NUMBER",
+    "resource": "//bigquery.googleapis.com/projects/PROJECT/datasets/e6c_d03"
+  },
+  {
+    "assetType": "bigquery.googleapis.com/Dataset",
+    "policy": {
+      "bindings": [
+        {
+          "members": [
+            "projectEditor:PROJECT"
+          ],
+          "role": "roles/bigquery.dataEditor"
+        },
+        {
+          "members": [
+            "projectOwner:PROJECT",
+            "user:user@example.com"
+          ],
+          "role": "roles/bigquery.dataOwner"
+        }
+      ]
+    },
+    "project": "projects/PROJECT_NUMBER",
+    "resource": "//bigquery.googleapis.com/projects/PROJECT/datasets/e6c_d02"
+  },
+  {
+    "assetType": "bigquery.googleapis.com/Dataset",
+    "policy": {
+      "bindings": [
+        {
+          "members": [
+            "projectEditor:PROJECT"
+          ],
+          "role": "roles/bigquery.dataEditor"
+        },
+        {
+          "members": [
+            "user:user@example.com"
+          ],
+          "role": "roles/bigquery.dataOwner"
+        }
+      ]
+    },
+    "project": "projects/PROJECT_NUMBER",
+    "resource": "//bigquery.googleapis.com/projects/PROJECT/datasets/e6c_d01"
+  },
+  {
+    "assetType": "bigquery.googleapis.com/Dataset",
+    "policy": {
+      "bindings": [
+        {
+          "members": [
+            "projectEditor:PROJECT"
+          ],
+          "role": "roles/bigquery.dataEditor"
+        },
+        {
+          "members": [
+            "user:user@example.com"
+          ],
+          "role": "roles/bigquery.dataOwner"
+        }
+      ]
+    },
+    "project": "projects/PROJECT_NUMBER",
+    "resource": "//bigquery.googleapis.com/projects/PROJECT/datasets/e6c_d00"
+  },
+  {
+    "assetType": "bigquery.googleapis.com/Dataset",
+    "policy": {
+      "bindings": [
+        {
+          "members": [
+            "user:user@example.com"
+          ],
+          "role": "roles/bigquery.dataOwner"
+        },
+        {
+          "members": [
+            "projectViewer:PROJECT"
+          ],
+          "role": "roles/bigquery.dataViewer"
+        }
+      ]
+    },
+    "project": "projects/PROJECT_NUMBER",
+    "resource": "//bigquery.googleapis.com/projects/PROJECT/datasets/e6_d07"
+  },
+  {
+    "assetType": "bigquery.googleapis.com/Dataset",
+    "policy": {
+      "bindings": [
+        {
+          "members": [
+            "projectEditor:PROJECT"
+          ],
+          "role": "roles/bigquery.dataEditor"
+        },
+        {
+          "members": [
+            "user:user@example.com"
+          ],
+          "role": "roles/bigquery.dataOwner"
+        }
+      ]
+    },
+    "project": "projects/PROJECT_NUMBER",
+    "resource": "//bigquery.googleapis.com/projects/PROJECT/datasets/e6_d06"
+  },
+  {
+    "assetType": "bigquery.googleapis.com/Dataset",
+    "policy": {
+      "bindings": [
+        {
+          "members": [
+            "projectEditor:PROJECT"
+          ],
+          "role": "roles/bigquery.dataEditor"
+        },
+        {
+          "members": [
+            "user:user@example.com"
+          ],
+          "role": "roles/bigquery.dataOwner"
+        }
+      ]
+    },
+    "project": "projects/PROJECT_NUMBER",
+    "resource": "//bigquery.googleapis.com/projects/PROJECT/datasets/e6_d05"
+  },
+  {
+    "assetType": "bigquery.googleapis.com/Dataset",
+    "policy": {
+      "bindings": [
+        {
+          "members": [
+            "projectEditor:PROJECT"
+          ],
+          "role": "roles/bigquery.dataEditor"
+        },
+        {
+          "members": [
+            "user:user@example.com"
+          ],
+          "role": "roles/bigquery.dataOwner"
+        },
+        {
+          "members": [
+            "projectViewer:PROJECT"
+          ],
+          "role": "roles/bigquery.dataViewer"
+        }
+      ]
+    },
+    "project": "projects/PROJECT_NUMBER",
+    "resource": "//bigquery.googleapis.com/projects/PROJECT/datasets/e6_d04"
+  },
+  {
+    "assetType": "bigquery.googleapis.com/Dataset",
+    "policy": {
+      "bindings": [
+        {
+          "members": [
+            "projectOwner:PROJECT",
+            "user:user@example.com"
+          ],
+          "role": "roles/bigquery.dataOwner"
+        }
+      ]
+    },
+    "project": "projects/PROJECT_NUMBER",
+    "resource": "//bigquery.googleapis.com/projects/PROJECT/datasets/e6_d03"
+  },
+  {
+    "assetType": "bigquery.googleapis.com/Dataset",
+    "policy": {
+      "bindings": [
+        {
+          "members": [
+            "projectOwner:PROJECT",
+            "user:user@example.com"
+          ],
+          "role": "roles/bigquery.dataOwner"
+        },
+        {
+          "members": [
+            "projectViewer:PROJECT"
+          ],
+          "role": "roles/bigquery.dataViewer"
+        }
+      ]
+    },
+    "project": "projects/PROJECT_NUMBER",
+    "resource": "//bigquery.googleapis.com/projects/PROJECT/datasets/e6_d02"
+  },
+  {
+    "assetType": "bigquery.googleapis.com/Dataset",
+    "policy": {
+      "bindings": [
+        {
+          "members": [
+            "projectEditor:PROJECT"
+          ],
+          "role": "roles/bigquery.dataEditor"
+        },
+        {
+          "members": [
+            "user:user@example.com"
+          ],
+          "role": "roles/bigquery.dataOwner"
+        }
+      ]
+    },
+    "project": "projects/PROJECT_NUMBER",
+    "resource": "//bigquery.googleapis.com/projects/PROJECT/datasets/e6_d01"
+  },
+  {
+    "assetType": "bigquery.googleapis.com/Dataset",
+    "policy": {
+      "bindings": [
+        {
+          "members": [
+            "projectOwner:PROJECT",
+            "user:user@example.com"
+          ],
+          "role": "roles/bigquery.dataOwner"
+        }
+      ]
+    },
+    "project": "projects/PROJECT_NUMBER",
+    "resource": "//bigquery.googleapis.com/projects/PROJECT/datasets/e6_d00"
+  },
+  {
+    "assetType": "bigquery.googleapis.com/Dataset",
+    "policy": {
+      "bindings": [
+        {
+          "members": [
+            "user:user@example.com"
+          ],
+          "role": "roles/bigquery.dataOwner"
+        }
+      ]
+    },
+    "project": "projects/PROJECT_NUMBER",
+    "resource": "//bigquery.googleapis.com/projects/PROJECT/datasets/br_restr"
+  },
+  {
+    "assetType": "bigquery.googleapis.com/Dataset",
+    "policy": {
+      "bindings": [
+        {
+          "members": [
+            "projectEditor:PROJECT"
+          ],
+          "role": "roles/bigquery.dataEditor"
+        },
+        {
+          "members": [
+            "projectOwner:PROJECT",
+            "user:user@example.com"
+          ],
+          "role": "roles/bigquery.dataOwner"
+        },
+        {
+          "members": [
+            "projectViewer:PROJECT"
+          ],
+          "role": "roles/bigquery.dataViewer"
+        }
+      ]
+    },
+    "project": "projects/PROJECT_NUMBER",
+    "resource": "//bigquery.googleapis.com/projects/PROJECT/datasets/br_default"
+  }
+]

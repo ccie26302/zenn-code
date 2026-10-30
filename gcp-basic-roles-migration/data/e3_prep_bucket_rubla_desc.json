@@ -1,0 +1,17 @@
+{
+  "creation_time": "2026-10-30T08:36:58+0000",
+  "default_storage_class": "STANDARD",
+  "generation": 1793349418377458465,
+  "location": "ASIA-NORTHEAST1",
+  "location_type": "region",
+  "metageneration": 3,
+  "name": "PROJECT-rubla",
+  "public_access_prevention": "inherited",
+  "soft_delete_policy": {
+    "effectiveTime": "2026-10-30T08:36:58.891000+00:00",
+    "retentionDurationSeconds": "604800"
+  },
+  "storage_url": "gs://PROJECT-rubla/",
+  "uniform_bucket_level_access": true,
+  "update_time": "2026-10-30T08:37:29+0000"
+}

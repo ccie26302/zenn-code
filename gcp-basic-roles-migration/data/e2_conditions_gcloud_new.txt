@@ -1,0 +1,10 @@
+# gcloud (new roles)
+=== roles/admin
+Updated IAM policy for project [PROJECT].
+rc=0
+=== roles/writer
+Updated IAM policy for project [PROJECT].
+rc=0
+=== roles/reader
+Updated IAM policy for project [PROJECT].
+rc=0

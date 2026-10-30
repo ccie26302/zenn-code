@@ -1,0 +1,28 @@
+names strict done
+names escape done
+names unconditional done
+Traceback (most recent call last):
+  File "/Users/koikeshinya/googleCloud/basicroles/scripts/e4.py", line 121, in <module>
+    expiry(out, 5)
+  File "/Users/koikeshinya/googleCloud/basicroles/scripts/e4.py", line 58, in expiry
+    pol = iamedit.get()
+  File "/Users/koikeshinya/googleCloud/basicroles/scripts/iamedit.py", line 10, in get
+    assert st == 200, body
+AssertionError: {
+  "error": {
+    "code": 401,
+    "message": "Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.",
+    "status": "UNAUTHENTICATED",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.rpc.ErrorInfo",
+        "reason": "ACCESS_TOKEN_TYPE_UNSUPPORTED",
+        "metadata": {
+          "method": "google.cloudresourcemanager.v1.Projects.GetIamPolicy",
+          "service": "cloudresourcemanager.googleapis.com"
+        }
+      }
+    ]
+  }
+}
+

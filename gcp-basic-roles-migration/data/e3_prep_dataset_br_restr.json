@@ -1,0 +1,21 @@
+{
+  "access": [
+    {
+      "role": "OWNER",
+      "userByEmail": "user@example.com"
+    }
+  ],
+  "creationTime": "1793349457145",
+  "datasetReference": {
+    "datasetId": "br_restr",
+    "projectId": "PROJECT"
+  },
+  "etag": "q4H1S22WiKQO4/MXBeCGwQ==",
+  "id": "PROJECT:br_restr",
+  "kind": "bigquery#dataset",
+  "lastModifiedTime": "1793349459709",
+  "location": "US",
+  "maxTimeTravelHours": "168",
+  "selfLink": "https://bigquery.googleapis.com/bigquery/v2/projects/PROJECT/datasets/br_restr",
+  "type": "DEFAULT"
+}

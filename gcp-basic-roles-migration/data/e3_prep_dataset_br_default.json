@@ -1,0 +1,33 @@
+{
+  "access": [
+    {
+      "role": "WRITER",
+      "specialGroup": "projectWriters"
+    },
+    {
+      "role": "OWNER",
+      "specialGroup": "projectOwners"
+    },
+    {
+      "role": "OWNER",
+      "userByEmail": "user@example.com"
+    },
+    {
+      "role": "READER",
+      "specialGroup": "projectReaders"
+    }
+  ],
+  "creationTime": "1793349279613",
+  "datasetReference": {
+    "datasetId": "br_default",
+    "projectId": "PROJECT"
+  },
+  "etag": "7f+KJvCeG4S845FLdmdFaA==",
+  "id": "PROJECT:br_default",
+  "kind": "bigquery#dataset",
+  "lastModifiedTime": "1793349279613",
+  "location": "US",
+  "maxTimeTravelHours": "168",
+  "selfLink": "https://bigquery.googleapis.com/bigquery/v2/projects/PROJECT/datasets/br_default",
+  "type": "DEFAULT"
+}

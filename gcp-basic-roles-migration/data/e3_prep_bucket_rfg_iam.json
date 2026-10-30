@@ -1,0 +1,11 @@
+{
+  "bindings": [
+    {
+      "members": [
+        "user:user@example.com"
+      ],
+      "role": "roles/storage.legacyBucketOwner"
+    }
+  ],
+  "etag": "CAs="
+}

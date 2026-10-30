@@ -1,0 +1,24 @@
+=== roles/owner
+ERROR: (gcloud.projects.add-iam-policy-binding) Binding with a condition and a basic role is not allowed. Basic roles are `roles/editor`, `roles/owner`, and `roles/viewer`.
+rc=1
+=== roles/editor
+ERROR: (gcloud.projects.add-iam-policy-binding) Binding with a condition and a basic role is not allowed. Basic roles are `roles/editor`, `roles/owner`, and `roles/viewer`.
+rc=1
+=== roles/viewer
+ERROR: (gcloud.projects.add-iam-policy-binding) Binding with a condition and a basic role is not allowed. Basic roles are `roles/editor`, `roles/owner`, and `roles/viewer`.
+rc=1
+=== roles/admin
+WARNING: Adding binding with condition to a policy without condition will change the behavior of add-iam-policy-binding and remove-iam-policy-binding commands.
+ERROR: Policy modification failed. For a binding with condition, run "gcloud alpha iam policies lint-condition" to identify issues in condition.
+ERROR: (gcloud.projects.add-iam-policy-binding) INVALID_ARGUMENT: Service account br-e2@PROJECT.iam.gserviceaccount.com does not exist.
+rc=1
+=== roles/writer
+WARNING: Adding binding with condition to a policy without condition will change the behavior of add-iam-policy-binding and remove-iam-policy-binding commands.
+ERROR: Policy modification failed. For a binding with condition, run "gcloud alpha iam policies lint-condition" to identify issues in condition.
+ERROR: (gcloud.projects.add-iam-policy-binding) INVALID_ARGUMENT: Service account br-e2@PROJECT.iam.gserviceaccount.com does not exist.
+rc=1
+=== roles/reader
+WARNING: Adding binding with condition to a policy without condition will change the behavior of add-iam-policy-binding and remove-iam-policy-binding commands.
+ERROR: Policy modification failed. For a binding with condition, run "gcloud alpha iam policies lint-condition" to identify issues in condition.
+ERROR: (gcloud.projects.add-iam-policy-binding) INVALID_ARGUMENT: Service account br-e2@PROJECT.iam.gserviceaccount.com does not exist.
+rc=1

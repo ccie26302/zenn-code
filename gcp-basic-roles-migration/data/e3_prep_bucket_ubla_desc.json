@@ -1,0 +1,17 @@
+{
+  "creation_time": "2026-10-30T08:36:55+0000",
+  "default_storage_class": "STANDARD",
+  "generation": 1793349415076701267,
+  "location": "ASIA-NORTHEAST1",
+  "location_type": "region",
+  "metageneration": 1,
+  "name": "PROJECT-ubla",
+  "public_access_prevention": "inherited",
+  "soft_delete_policy": {
+    "effectiveTime": "2026-10-30T08:36:55.620000+00:00",
+    "retentionDurationSeconds": "604800"
+  },
+  "storage_url": "gs://PROJECT-ubla/",
+  "uniform_bucket_level_access": true,
+  "update_time": "2026-10-30T08:36:55+0000"
+}

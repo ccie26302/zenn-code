@@ -1,0 +1,1085 @@
+[
+  {
+    "insertId": "eg0mvte1u9v0",
+    "logName": "projects/PROJECT/logs/cloudaudit.googleapis.com%2Factivity",
+    "protoPayload": {
+      "@type": "type.googleapis.com/google.cloud.audit.AuditLog",
+      "authenticationInfo": {
+        "oauthInfo": {
+          "oauthClientId": "32555940559.apps.googleusercontent.com"
+        },
+        "principalEmail": "user@example.com",
+        "principalSubject": "user:user@example.com"
+      },
+      "authorizationInfo": [
+        {
+          "granted": true,
+          "permission": "resourcemanager.projects.setIamPolicy",
+          "permissionType": "ADMIN_WRITE",
+          "resource": "projects/PROJECT",
+          "resourceAttributes": {
+            "name": "projects/PROJECT",
+            "service": "cloudresourcemanager.googleapis.com",
+            "type": "cloudresourcemanager.googleapis.com/Project"
+          }
+        },
+        {
+          "granted": true,
+          "permission": "resourcemanager.projects.setIamPolicy",
+          "permissionType": "ADMIN_WRITE",
+          "resource": "projects/PROJECT",
+          "resourceAttributes": {
+            "name": "projects/PROJECT",
+            "service": "cloudresourcemanager.googleapis.com",
+            "type": "cloudresourcemanager.googleapis.com/Project"
+          }
+        }
+      ],
+      "methodName": "SetIamPolicy",
+      "request": {
+        "@type": "type.googleapis.com/google.iam.v1.SetIamPolicyRequest",
+        "policy": {
+          "bindings": [
+            {
+              "members": [
+                "serviceAccount:br-admin@PROJECT.iam.gserviceaccount.com"
+              ],
+              "role": "roles/admin"
+            },
+            {
+              "members": [
+                "serviceAccount:br-e2cond@PROJECT.iam.gserviceaccount.com"
+              ],
+              "role": "roles/admin"
+            },
+            {
+              "members": [
+                "serviceAccount:PROJECT_NUMBER@cloudservices.gserviceaccount.com"
+              ],
+              "role": "roles/compute.instanceGroupManagerServiceAgent"
+            },
+            {
+              "members": [
+                "serviceAccount:service-PROJECT_NUMBER@compute-system.iam.gserviceaccount.com"
+              ],
+              "role": "roles/compute.serviceAgent"
+            },
+            {
+              "members": [
+                "serviceAccount:service-PROJECT_NUMBER@containerregistry.iam.gserviceaccount.com"
+              ],
+              "role": "roles/containerregistry.ServiceAgent"
+            },
+            {
+              "members": [
+                "serviceAccount:PROJECT_NUMBER-compute@developer.gserviceaccount.com",
+                "serviceAccount:br-e5swap@PROJECT.iam.gserviceaccount.com",
+                "serviceAccount:br-editor@PROJECT.iam.gserviceaccount.com"
+              ],
+              "role": "roles/editor"
+            },
+            {
+              "members": [
+                "serviceAccount:br-owner@PROJECT.iam.gserviceaccount.com",
+                "user:user@example.com"
+              ],
+              "role": "roles/owner"
+            },
+            {
+              "members": [
+                "serviceAccount:service-PROJECT_NUMBER@gcp-sa-pubsub.iam.gserviceaccount.com"
+              ],
+              "role": "roles/pubsub.serviceAgent"
+            },
+            {
+              "members": [
+                "serviceAccount:br-reader@PROJECT.iam.gserviceaccount.com"
+              ],
+              "role": "roles/reader"
+            },
+            {
+              "members": [
+                "serviceAccount:br-e2cond@PROJECT.iam.gserviceaccount.com"
+              ],
+              "role": "roles/reader"
+            },
+            {
+              "members": [
+                "serviceAccount:service-PROJECT_NUMBER@serverless-robot-prod.iam.gserviceaccount.com"
+              ],
+              "role": "roles/run.serviceAgent"
+            },
+            {
+              "members": [
+                "serviceAccount:br-viewer@PROJECT.iam.gserviceaccount.com"
+              ],
+              "role": "roles/viewer"
+            },
+            {
+              "members": [
+                "serviceAccount:br-writer@PROJECT.iam.gserviceaccount.com"
+              ],
+              "role": "roles/writer"
+            },
+            {
+              "members": [
+                "serviceAccount:br-e2cond@PROJECT.iam.gserviceaccount.com"
+              ],
+              "role": "roles/writer"
+            },
+            {
+              "members": [
+                "serviceAccount:br-e4cond@PROJECT.iam.gserviceaccount.com"
+              ],
+              "role": "roles/writer"
+            }
+          ],
+          "etag": "BwZfDCY9jsE="
+        },
+        "resource": "PROJECT"
+      },
+      "requestMetadata": {
+        "callerIp": "REDACTED",
+        "callerSuppliedUserAgent": "Python-urllib/3.9,gzip(gfe)",
+        "destinationAttributes": {},
+        "requestAttributes": {}
+      },
+      "resourceName": "projects/PROJECT",
+      "response": {
+        "@type": "type.googleapis.com/google.iam.v1.Policy",
+        "bindings": [
+          {
+            "members": [
+              "serviceAccount:br-admin@PROJECT.iam.gserviceaccount.com"
+            ],
+            "role": "roles/admin"
+          },
+          {
+            "members": [
+              "serviceAccount:br-e2cond@PROJECT.iam.gserviceaccount.com"
+            ],
+            "role": "roles/admin"
+          },
+          {
+            "members": [
+              "serviceAccount:PROJECT_NUMBER@cloudservices.gserviceaccount.com"
+            ],
+            "role": "roles/compute.instanceGroupManagerServiceAgent"
+          },
+          {
+            "members": [
+              "serviceAccount:service-PROJECT_NUMBER@compute-system.iam.gserviceaccount.com"
+            ],
+            "role": "roles/compute.serviceAgent"
+          },
+          {
+            "members": [
+              "serviceAccount:service-PROJECT_NUMBER@containerregistry.iam.gserviceaccount.com"
+            ],
+            "role": "roles/containerregistry.ServiceAgent"
+          },
+          {
+            "members": [
+              "serviceAccount:PROJECT_NUMBER-compute@developer.gserviceaccount.com",
+              "serviceAccount:br-e5swap@PROJECT.iam.gserviceaccount.com",
+              "serviceAccount:br-editor@PROJECT.iam.gserviceaccount.com"
+            ],
+            "role": "roles/editor"
+          },
+          {
+            "members": [
+              "serviceAccount:br-owner@PROJECT.iam.gserviceaccount.com",
+              "user:user@example.com"
+            ],
+            "role": "roles/owner"
+          },
+          {
+            "members": [
+              "serviceAccount:service-PROJECT_NUMBER@gcp-sa-pubsub.iam.gserviceaccount.com"
+            ],
+            "role": "roles/pubsub.serviceAgent"
+          },
+          {
+            "members": [
+              "serviceAccount:br-reader@PROJECT.iam.gserviceaccount.com"
+            ],
+            "role": "roles/reader"
+          },
+          {
+            "members": [
+              "serviceAccount:br-e2cond@PROJECT.iam.gserviceaccount.com"
+            ],
+            "role": "roles/reader"
+          },
+          {
+            "members": [
+              "serviceAccount:service-PROJECT_NUMBER@serverless-robot-prod.iam.gserviceaccount.com"
+            ],
+            "role": "roles/run.serviceAgent"
+          },
+          {
+            "members": [
+              "serviceAccount:br-viewer@PROJECT.iam.gserviceaccount.com"
+            ],
+            "role": "roles/viewer"
+          },
+          {
+            "members": [
+              "serviceAccount:br-writer@PROJECT.iam.gserviceaccount.com"
+            ],
+            "role": "roles/writer"
+          },
+          {
+            "members": [
+              "serviceAccount:br-e2cond@PROJECT.iam.gserviceaccount.com"
+            ],
+            "role": "roles/writer"
+          },
+          {
+            "members": [
+              "serviceAccount:br-e4cond@PROJECT.iam.gserviceaccount.com"
+            ],
+            "role": "roles/writer"
+          }
+        ],
+        "etag": "BwZfDCbB3UI="
+      },
+      "serviceData": {
+        "@type": "type.googleapis.com/google.iam.v1.logging.AuditData",
+        "policyDelta": {
+          "bindingDeltas": [
+            {
+              "action": "ADD",
+              "condition": {
+                "expression": "request.time < timestamp('2026-10-30T10:27:52Z')",
+                "title": "e4-expiry"
+              },
+              "member": "serviceAccount:br-e4cond@PROJECT.iam.gserviceaccount.com",
+              "role": "roles/writer"
+            }
+          ]
+        }
+      },
+      "serviceName": "cloudresourcemanager.googleapis.com",
+      "status": {}
+    },
+    "receiveTimestamp": "2026-10-30T10:20:55.391443609Z",
+    "resource": {
+      "labels": {
+        "project_id": "PROJECT"
+      },
+      "type": "project"
+    },
+    "severity": "NOTICE",
+    "timestamp": "2026-10-30T10:20:54.148034Z"
+  },
+  {
+    "insertId": "jrfrt6e1o2d2",
+    "logName": "projects/PROJECT/logs/cloudaudit.googleapis.com%2Factivity",
+    "protoPayload": {
+      "@type": "type.googleapis.com/google.cloud.audit.AuditLog",
+      "authenticationInfo": {
+        "oauthInfo": {
+          "oauthClientId": "32555940559.apps.googleusercontent.com"
+        },
+        "principalEmail": "user@example.com",
+        "principalSubject": "user:user@example.com"
+      },
+      "authorizationInfo": [
+        {
+          "granted": true,
+          "permission": "resourcemanager.projects.setIamPolicy",
+          "permissionType": "ADMIN_WRITE",
+          "resource": "projects/PROJECT",
+          "resourceAttributes": {
+            "name": "projects/PROJECT",
+            "service": "cloudresourcemanager.googleapis.com",
+            "type": "cloudresourcemanager.googleapis.com/Project"
+          }
+        },
+        {
+          "granted": true,
+          "permission": "resourcemanager.projects.setIamPolicy",
+          "permissionType": "ADMIN_WRITE",
+          "resource": "projects/PROJECT",
+          "resourceAttributes": {
+            "name": "projects/PROJECT",
+            "service": "cloudresourcemanager.googleapis.com",
+            "type": "cloudresourcemanager.googleapis.com/Project"
+          }
+        }
+      ],
+      "methodName": "SetIamPolicy",
+      "request": {
+        "@type": "type.googleapis.com/google.iam.v1.SetIamPolicyRequest",
+        "policy": {
+          "bindings": [
+            {
+              "members": [
+                "serviceAccount:br-admin@PROJECT.iam.gserviceaccount.com"
+              ],
+              "role": "roles/admin"
+            },
+            {
+              "members": [
+                "serviceAccount:br-e2cond@PROJECT.iam.gserviceaccount.com"
+              ],
+              "role": "roles/admin"
+            },
+            {
+              "members": [
+                "serviceAccount:PROJECT_NUMBER@cloudservices.gserviceaccount.com"
+              ],
+              "role": "roles/compute.instanceGroupManagerServiceAgent"
+            },
+            {
+              "members": [
+                "serviceAccount:service-PROJECT_NUMBER@compute-system.iam.gserviceaccount.com"
+              ],
+              "role": "roles/compute.serviceAgent"
+            },
+            {
+              "members": [
+                "serviceAccount:service-PROJECT_NUMBER@containerregistry.iam.gserviceaccount.com"
+              ],
+              "role": "roles/containerregistry.ServiceAgent"
+            },
+            {
+              "members": [
+                "serviceAccount:PROJECT_NUMBER-compute@developer.gserviceaccount.com",
+                "serviceAccount:br-e5swap@PROJECT.iam.gserviceaccount.com",
+                "serviceAccount:br-editor@PROJECT.iam.gserviceaccount.com"
+              ],
+              "role": "roles/editor"
+            },
+            {
+              "members": [
+                "serviceAccount:br-owner@PROJECT.iam.gserviceaccount.com",
+                "user:user@example.com"
+              ],
+              "role": "roles/owner"
+            },
+            {
+              "members": [
+                "serviceAccount:service-PROJECT_NUMBER@gcp-sa-pubsub.iam.gserviceaccount.com"
+              ],
+              "role": "roles/pubsub.serviceAgent"
+            },
+            {
+              "members": [
+                "serviceAccount:br-reader@PROJECT.iam.gserviceaccount.com"
+              ],
+              "role": "roles/reader"
+            },
+            {
+              "members": [
+                "serviceAccount:br-e2cond@PROJECT.iam.gserviceaccount.com"
+              ],
+              "role": "roles/reader"
+            },
+            {
+              "members": [
+                "serviceAccount:service-PROJECT_NUMBER@serverless-robot-prod.iam.gserviceaccount.com"
+              ],
+              "role": "roles/run.serviceAgent"
+            },
+            {
+              "members": [
+                "serviceAccount:br-viewer@PROJECT.iam.gserviceaccount.com"
+              ],
+              "role": "roles/viewer"
+            },
+            {
+              "members": [
+                "serviceAccount:br-writer@PROJECT.iam.gserviceaccount.com"
+              ],
+              "role": "roles/writer"
+            },
+            {
+              "members": [
+                "serviceAccount:br-e2cond@PROJECT.iam.gserviceaccount.com"
+              ],
+              "role": "roles/writer"
+            }
+          ],
+          "etag": "BwZfDCT8Rbc="
+        },
+        "resource": "PROJECT"
+      },
+      "requestMetadata": {
+        "callerIp": "REDACTED",
+        "callerSuppliedUserAgent": "Python-urllib/3.9,gzip(gfe)",
+        "destinationAttributes": {},
+        "requestAttributes": {}
+      },
+      "resourceName": "projects/PROJECT",
+      "response": {
+        "@type": "type.googleapis.com/google.iam.v1.Policy",
+        "bindings": [
+          {
+            "members": [
+              "serviceAccount:br-admin@PROJECT.iam.gserviceaccount.com"
+            ],
+            "role": "roles/admin"
+          },
+          {
+            "members": [
+              "serviceAccount:br-e2cond@PROJECT.iam.gserviceaccount.com"
+            ],
+            "role": "roles/admin"
+          },
+          {
+            "members": [
+              "serviceAccount:PROJECT_NUMBER@cloudservices.gserviceaccount.com"
+            ],
+            "role": "roles/compute.instanceGroupManagerServiceAgent"
+          },
+          {
+            "members": [
+              "serviceAccount:service-PROJECT_NUMBER@compute-system.iam.gserviceaccount.com"
+            ],
+            "role": "roles/compute.serviceAgent"
+          },
+          {
+            "members": [
+              "serviceAccount:service-PROJECT_NUMBER@containerregistry.iam.gserviceaccount.com"
+            ],
+            "role": "roles/containerregistry.ServiceAgent"
+          },
+          {
+            "members": [
+              "serviceAccount:PROJECT_NUMBER-compute@developer.gserviceaccount.com",
+              "serviceAccount:br-e5swap@PROJECT.iam.gserviceaccount.com",
+              "serviceAccount:br-editor@PROJECT.iam.gserviceaccount.com"
+            ],
+            "role": "roles/editor"
+          },
+          {
+            "members": [
+              "serviceAccount:br-owner@PROJECT.iam.gserviceaccount.com",
+              "user:user@example.com"
+            ],
+            "role": "roles/owner"
+          },
+          {
+            "members": [
+              "serviceAccount:service-PROJECT_NUMBER@gcp-sa-pubsub.iam.gserviceaccount.com"
+            ],
+            "role": "roles/pubsub.serviceAgent"
+          },
+          {
+            "members": [
+              "serviceAccount:br-reader@PROJECT.iam.gserviceaccount.com"
+            ],
+            "role": "roles/reader"
+          },
+          {
+            "members": [
+              "serviceAccount:br-e2cond@PROJECT.iam.gserviceaccount.com"
+            ],
+            "role": "roles/reader"
+          },
+          {
+            "members": [
+              "serviceAccount:service-PROJECT_NUMBER@serverless-robot-prod.iam.gserviceaccount.com"
+            ],
+            "role": "roles/run.serviceAgent"
+          },
+          {
+            "members": [
+              "serviceAccount:br-viewer@PROJECT.iam.gserviceaccount.com"
+            ],
+            "role": "roles/viewer"
+          },
+          {
+            "members": [
+              "serviceAccount:br-writer@PROJECT.iam.gserviceaccount.com"
+            ],
+            "role": "roles/writer"
+          },
+          {
+            "members": [
+              "serviceAccount:br-e2cond@PROJECT.iam.gserviceaccount.com"
+            ],
+            "role": "roles/writer"
+          }
+        ],
+        "etag": "BwZfDCY9jsE="
+      },
+      "serviceData": {
+        "@type": "type.googleapis.com/google.iam.v1.logging.AuditData",
+        "policyDelta": {
+          "bindingDeltas": [
+            {
+              "action": "REMOVE",
+              "condition": {
+                "expression": "request.time < timestamp('2026-10-30T10:17:06Z')",
+                "title": "e4-expiry"
+              },
+              "member": "serviceAccount:br-e4cond@PROJECT.iam.gserviceaccount.com",
+              "role": "roles/writer"
+            }
+          ]
+        }
+      },
+      "serviceName": "cloudresourcemanager.googleapis.com",
+      "status": {}
+    },
+    "receiveTimestamp": "2026-10-30T10:20:46.553814407Z",
+    "resource": {
+      "labels": {
+        "project_id": "PROJECT"
+      },
+      "type": "project"
+    },
+    "severity": "NOTICE",
+    "timestamp": "2026-10-30T10:20:45.395550Z"
+  },
+  {
+    "insertId": "mit9owdti82",
+    "logName": "projects/PROJECT/logs/cloudaudit.googleapis.com%2Factivity",
+    "protoPayload": {
+      "@type": "type.googleapis.com/google.cloud.audit.AuditLog",
+      "authenticationInfo": {
+        "oauthInfo": {
+          "oauthClientId": "32555940559.apps.googleusercontent.com"
+        },
+        "principalEmail": "user@example.com",
+        "principalSubject": "user:user@example.com"
+      },
+      "authorizationInfo": [
+        {
+          "granted": true,
+          "permission": "resourcemanager.projects.setIamPolicy",
+          "permissionType": "ADMIN_WRITE",
+          "resource": "projects/PROJECT",
+          "resourceAttributes": {
+            "name": "projects/PROJECT",
+            "service": "cloudresourcemanager.googleapis.com",
+            "type": "cloudresourcemanager.googleapis.com/Project"
+          }
+        },
+        {
+          "granted": true,
+          "permission": "resourcemanager.projects.setIamPolicy",
+          "permissionType": "ADMIN_WRITE",
+          "resource": "projects/PROJECT",
+          "resourceAttributes": {
+            "name": "projects/PROJECT",
+            "service": "cloudresourcemanager.googleapis.com",
+            "type": "cloudresourcemanager.googleapis.com/Project"
+          }
+        }
+      ],
+      "methodName": "SetIamPolicy",
+      "request": {
+        "@type": "type.googleapis.com/google.iam.v1.SetIamPolicyRequest",
+        "policy": {
+          "bindings": [
+            {
+              "members": [
+                "serviceAccount:br-admin@PROJECT.iam.gserviceaccount.com"
+              ],
+              "role": "roles/admin"
+            },
+            {
+              "members": [
+                "serviceAccount:br-e2cond@PROJECT.iam.gserviceaccount.com"
+              ],
+              "role": "roles/admin"
+            },
+            {
+              "members": [
+                "serviceAccount:PROJECT_NUMBER@cloudservices.gserviceaccount.com"
+              ],
+              "role": "roles/compute.instanceGroupManagerServiceAgent"
+            },
+            {
+              "members": [
+                "serviceAccount:service-PROJECT_NUMBER@compute-system.iam.gserviceaccount.com"
+              ],
+              "role": "roles/compute.serviceAgent"
+            },
+            {
+              "members": [
+                "serviceAccount:service-PROJECT_NUMBER@containerregistry.iam.gserviceaccount.com"
+              ],
+              "role": "roles/containerregistry.ServiceAgent"
+            },
+            {
+              "members": [
+                "serviceAccount:PROJECT_NUMBER-compute@developer.gserviceaccount.com",
+                "serviceAccount:br-e5swap@PROJECT.iam.gserviceaccount.com",
+                "serviceAccount:br-editor@PROJECT.iam.gserviceaccount.com"
+              ],
+              "role": "roles/editor"
+            },
+            {
+              "members": [
+                "serviceAccount:br-owner@PROJECT.iam.gserviceaccount.com",
+                "user:user@example.com"
+              ],
+              "role": "roles/owner"
+            },
+            {
+              "members": [
+                "serviceAccount:service-PROJECT_NUMBER@gcp-sa-pubsub.iam.gserviceaccount.com"
+              ],
+              "role": "roles/pubsub.serviceAgent"
+            },
+            {
+              "members": [
+                "serviceAccount:br-reader@PROJECT.iam.gserviceaccount.com"
+              ],
+              "role": "roles/reader"
+            },
+            {
+              "members": [
+                "serviceAccount:br-e2cond@PROJECT.iam.gserviceaccount.com"
+              ],
+              "role": "roles/reader"
+            },
+            {
+              "members": [
+                "serviceAccount:service-PROJECT_NUMBER@serverless-robot-prod.iam.gserviceaccount.com"
+              ],
+              "role": "roles/run.serviceAgent"
+            },
+            {
+              "members": [
+                "serviceAccount:br-viewer@PROJECT.iam.gserviceaccount.com"
+              ],
+              "role": "roles/viewer"
+            },
+            {
+              "members": [
+                "serviceAccount:br-writer@PROJECT.iam.gserviceaccount.com"
+              ],
+              "role": "roles/writer"
+            },
+            {
+              "members": [
+                "serviceAccount:br-e2cond@PROJECT.iam.gserviceaccount.com"
+              ],
+              "role": "roles/writer"
+            },
+            {
+              "members": [
+                "serviceAccount:br-e4cond@PROJECT.iam.gserviceaccount.com"
+              ],
+              "role": "roles/writer"
+            }
+          ],
+          "etag": "BwZfDCTierM="
+        },
+        "resource": "PROJECT"
+      },
+      "requestMetadata": {
+        "callerIp": "REDACTED",
+        "callerSuppliedUserAgent": "Python-urllib/3.9,gzip(gfe)",
+        "destinationAttributes": {},
+        "requestAttributes": {}
+      },
+      "resourceName": "projects/PROJECT",
+      "response": {
+        "@type": "type.googleapis.com/google.iam.v1.Policy",
+        "bindings": [
+          {
+            "members": [
+              "serviceAccount:br-admin@PROJECT.iam.gserviceaccount.com"
+            ],
+            "role": "roles/admin"
+          },
+          {
+            "members": [
+              "serviceAccount:br-e2cond@PROJECT.iam.gserviceaccount.com"
+            ],
+            "role": "roles/admin"
+          },
+          {
+            "members": [
+              "serviceAccount:PROJECT_NUMBER@cloudservices.gserviceaccount.com"
+            ],
+            "role": "roles/compute.instanceGroupManagerServiceAgent"
+          },
+          {
+            "members": [
+              "serviceAccount:service-PROJECT_NUMBER@compute-system.iam.gserviceaccount.com"
+            ],
+            "role": "roles/compute.serviceAgent"
+          },
+          {
+            "members": [
+              "serviceAccount:service-PROJECT_NUMBER@containerregistry.iam.gserviceaccount.com"
+            ],
+            "role": "roles/containerregistry.ServiceAgent"
+          },
+          {
+            "members": [
+              "serviceAccount:PROJECT_NUMBER-compute@developer.gserviceaccount.com",
+              "serviceAccount:br-e5swap@PROJECT.iam.gserviceaccount.com",
+              "serviceAccount:br-editor@PROJECT.iam.gserviceaccount.com"
+            ],
+            "role": "roles/editor"
+          },
+          {
+            "members": [
+              "serviceAccount:br-owner@PROJECT.iam.gserviceaccount.com",
+              "user:user@example.com"
+            ],
+            "role": "roles/owner"
+          },
+          {
+            "members": [
+              "serviceAccount:service-PROJECT_NUMBER@gcp-sa-pubsub.iam.gserviceaccount.com"
+            ],
+            "role": "roles/pubsub.serviceAgent"
+          },
+          {
+            "members": [
+              "serviceAccount:br-reader@PROJECT.iam.gserviceaccount.com"
+            ],
+            "role": "roles/reader"
+          },
+          {
+            "members": [
+              "serviceAccount:br-e2cond@PROJECT.iam.gserviceaccount.com"
+            ],
+            "role": "roles/reader"
+          },
+          {
+            "members": [
+              "serviceAccount:service-PROJECT_NUMBER@serverless-robot-prod.iam.gserviceaccount.com"
+            ],
+            "role": "roles/run.serviceAgent"
+          },
+          {
+            "members": [
+              "serviceAccount:br-viewer@PROJECT.iam.gserviceaccount.com"
+            ],
+            "role": "roles/viewer"
+          },
+          {
+            "members": [
+              "serviceAccount:br-writer@PROJECT.iam.gserviceaccount.com"
+            ],
+            "role": "roles/writer"
+          },
+          {
+            "members": [
+              "serviceAccount:br-e2cond@PROJECT.iam.gserviceaccount.com"
+            ],
+            "role": "roles/writer"
+          },
+          {
+            "members": [
+              "serviceAccount:br-e4cond@PROJECT.iam.gserviceaccount.com"
+            ],
+            "role": "roles/writer"
+          }
+        ],
+        "etag": "BwZfDCT8Rbc="
+      },
+      "serviceData": {
+        "@type": "type.googleapis.com/google.iam.v1.logging.AuditData",
+        "policyDelta": {
+          "bindingDeltas": [
+            {
+              "action": "REMOVE",
+              "member": "serviceAccount:br-e5swap@PROJECT.iam.gserviceaccount.com",
+              "role": "roles/writer"
+            }
+          ]
+        }
+      },
+      "serviceName": "cloudresourcemanager.googleapis.com",
+      "status": {}
+    },
+    "receiveTimestamp": "2026-10-30T10:20:25.741819351Z",
+    "resource": {
+      "labels": {
+        "project_id": "PROJECT"
+      },
+      "type": "project"
+    },
+    "severity": "NOTICE",
+    "timestamp": "2026-10-30T10:20:24.423781Z"
+  },
+  {
+    "insertId": "lnnb9ie1t45y",
+    "logName": "projects/PROJECT/logs/cloudaudit.googleapis.com%2Factivity",
+    "protoPayload": {
+      "@type": "type.googleapis.com/google.cloud.audit.AuditLog",
+      "authenticationInfo": {
+        "oauthInfo": {
+          "oauthClientId": "32555940559.apps.googleusercontent.com"
+        },
+        "principalEmail": "user@example.com",
+        "principalSubject": "user:user@example.com"
+      },
+      "authorizationInfo": [
+        {
+          "granted": true,
+          "permission": "resourcemanager.projects.setIamPolicy",
+          "permissionType": "ADMIN_WRITE",
+          "resource": "projects/PROJECT",
+          "resourceAttributes": {
+            "name": "projects/PROJECT",
+            "service": "cloudresourcemanager.googleapis.com",
+            "type": "cloudresourcemanager.googleapis.com/Project"
+          }
+        },
+        {
+          "granted": true,
+          "permission": "resourcemanager.projects.setIamPolicy",
+          "permissionType": "ADMIN_WRITE",
+          "resource": "projects/PROJECT",
+          "resourceAttributes": {
+            "name": "projects/PROJECT",
+            "service": "cloudresourcemanager.googleapis.com",
+            "type": "cloudresourcemanager.googleapis.com/Project"
+          }
+        }
+      ],
+      "methodName": "SetIamPolicy",
+      "request": {
+        "@type": "type.googleapis.com/google.iam.v1.SetIamPolicyRequest",
+        "policy": {
+          "bindings": [
+            {
+              "members": [
+                "serviceAccount:br-admin@PROJECT.iam.gserviceaccount.com"
+              ],
+              "role": "roles/admin"
+            },
+            {
+              "members": [
+                "serviceAccount:br-e2cond@PROJECT.iam.gserviceaccount.com"
+              ],
+              "role": "roles/admin"
+            },
+            {
+              "members": [
+                "serviceAccount:PROJECT_NUMBER@cloudservices.gserviceaccount.com"
+              ],
+              "role": "roles/compute.instanceGroupManagerServiceAgent"
+            },
+            {
+              "members": [
+                "serviceAccount:service-PROJECT_NUMBER@compute-system.iam.gserviceaccount.com"
+              ],
+              "role": "roles/compute.serviceAgent"
+            },
+            {
+              "members": [
+                "serviceAccount:service-PROJECT_NUMBER@containerregistry.iam.gserviceaccount.com"
+              ],
+              "role": "roles/containerregistry.ServiceAgent"
+            },
+            {
+              "members": [
+                "serviceAccount:PROJECT_NUMBER-compute@developer.gserviceaccount.com",
+                "serviceAccount:br-e5swap@PROJECT.iam.gserviceaccount.com",
+                "serviceAccount:br-editor@PROJECT.iam.gserviceaccount.com"
+              ],
+              "role": "roles/editor"
+            },
+            {
+              "members": [
+                "serviceAccount:br-owner@PROJECT.iam.gserviceaccount.com",
+                "user:user@example.com"
+              ],
+              "role": "roles/owner"
+            },
+            {
+              "members": [
+                "serviceAccount:service-PROJECT_NUMBER@gcp-sa-pubsub.iam.gserviceaccount.com"
+              ],
+              "role": "roles/pubsub.serviceAgent"
+            },
+            {
+              "members": [
+                "serviceAccount:br-reader@PROJECT.iam.gserviceaccount.com"
+              ],
+              "role": "roles/reader"
+            },
+            {
+              "members": [
+                "serviceAccount:br-e2cond@PROJECT.iam.gserviceaccount.com"
+              ],
+              "role": "roles/reader"
+            },
+            {
+              "members": [
+                "serviceAccount:service-PROJECT_NUMBER@serverless-robot-prod.iam.gserviceaccount.com"
+              ],
+              "role": "roles/run.serviceAgent"
+            },
+            {
+              "members": [
+                "serviceAccount:br-viewer@PROJECT.iam.gserviceaccount.com"
+              ],
+              "role": "roles/viewer"
+            },
+            {
+              "members": [
+                "serviceAccount:br-writer@PROJECT.iam.gserviceaccount.com"
+              ],
+              "role": "roles/writer"
+            },
+            {
+              "members": [
+                "serviceAccount:br-e2cond@PROJECT.iam.gserviceaccount.com"
+              ],
+              "role": "roles/writer"
+            },
+            {
+              "members": [
+                "serviceAccount:br-e4cond@PROJECT.iam.gserviceaccount.com"
+              ],
+              "role": "roles/writer"
+            },
+            {
+              "members": [
+                "serviceAccount:br-e5swap@PROJECT.iam.gserviceaccount.com"
+              ],
+              "role": "roles/writer"
+            }
+          ],
+          "etag": "BwZfDCKGTu0="
+        },
+        "resource": "PROJECT"
+      },
+      "requestMetadata": {
+        "callerIp": "REDACTED",
+        "callerSuppliedUserAgent": "Python-urllib/3.9,gzip(gfe)",
+        "destinationAttributes": {},
+        "requestAttributes": {}
+      },
+      "resourceName": "projects/PROJECT",
+      "response": {
+        "@type": "type.googleapis.com/google.iam.v1.Policy",
+        "bindings": [
+          {
+            "members": [
+              "serviceAccount:br-admin@PROJECT.iam.gserviceaccount.com"
+            ],
+            "role": "roles/admin"
+          },
+          {
+            "members": [
+              "serviceAccount:br-e2cond@PROJECT.iam.gserviceaccount.com"
+            ],
+            "role": "roles/admin"
+          },
+          {
+            "members": [
+              "serviceAccount:PROJECT_NUMBER@cloudservices.gserviceaccount.com"
+            ],
+            "role": "roles/compute.instanceGroupManagerServiceAgent"
+          },
+          {
+            "members": [
+              "serviceAccount:service-PROJECT_NUMBER@compute-system.iam.gserviceaccount.com"
+            ],
+            "role": "roles/compute.serviceAgent"
+          },
+          {
+            "members": [
+              "serviceAccount:service-PROJECT_NUMBER@containerregistry.iam.gserviceaccount.com"
+            ],
+            "role": "roles/containerregistry.ServiceAgent"
+          },
+          {
+            "members": [
+              "serviceAccount:PROJECT_NUMBER-compute@developer.gserviceaccount.com",
+              "serviceAccount:br-e5swap@PROJECT.iam.gserviceaccount.com",
+              "serviceAccount:br-editor@PROJECT.iam.gserviceaccount.com"
+            ],
+            "role": "roles/editor"
+          },
+          {
+            "members": [
+              "serviceAccount:br-owner@PROJECT.iam.gserviceaccount.com",
+              "user:user@example.com"
+            ],
+            "role": "roles/owner"
+          },
+          {
+            "members": [
+              "serviceAccount:service-PROJECT_NUMBER@gcp-sa-pubsub.iam.gserviceaccount.com"
+            ],
+            "role": "roles/pubsub.serviceAgent"
+          },
+          {
+            "members": [
+              "serviceAccount:br-reader@PROJECT.iam.gserviceaccount.com"
+            ],
+            "role": "roles/reader"
+          },
+          {
+            "members": [
+              "serviceAccount:br-e2cond@PROJECT.iam.gserviceaccount.com"
+            ],
+            "role": "roles/reader"
+          },
+          {
+            "members": [
+              "serviceAccount:service-PROJECT_NUMBER@serverless-robot-prod.iam.gserviceaccount.com"
+            ],
+            "role": "roles/run.serviceAgent"
+          },
+          {
+            "members": [
+              "serviceAccount:br-viewer@PROJECT.iam.gserviceaccount.com"
+            ],
+            "role": "roles/viewer"
+          },
+          {
+            "members": [
+              "serviceAccount:br-e5swap@PROJECT.iam.gserviceaccount.com",
+              "serviceAccount:br-writer@PROJECT.iam.gserviceaccount.com"
+            ],
+            "role": "roles/writer"
+          },
+          {
+            "members": [
+              "serviceAccount:br-e2cond@PROJECT.iam.gserviceaccount.com"
+            ],
+            "role": "roles/writer"
+          },
+          {
+            "members": [
+              "serviceAccount:br-e4cond@PROJECT.iam.gserviceaccount.com"
+            ],
+            "role": "roles/writer"
+          }
+        ],
+        "etag": "BwZfDCOG5pw="
+      },
+      "serviceData": {
+        "@type": "type.googleapis.com/google.iam.v1.logging.AuditData",
+        "policyDelta": {
+          "bindingDeltas": [
+            {
+              "action": "ADD",
+              "member": "serviceAccount:br-e5swap@PROJECT.iam.gserviceaccount.com",
+              "role": "roles/writer"
+            }
+          ]
+        }
+      },
+      "serviceName": "cloudresourcemanager.googleapis.com",
+      "status": {}
+    },
+    "receiveTimestamp": "2026-10-30T10:20:01.579337035Z",
+    "resource": {
+      "labels": {
+        "project_id": "PROJECT"
+      },
+      "type": "project"
+    },
+    "severity": "NOTICE",
+    "timestamp": "2026-10-30T10:19:59.830913Z"
+  }
+]

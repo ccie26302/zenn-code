@@ -1,0 +1,39 @@
+{
+  "acl": [
+    {
+      "email": "user@example.com",
+      "entity": "user@example.com",
+      "role": "OWNER"
+    },
+    {
+      "entity": "project-owners-PROJECT_NUMBER",
+      "projectTeam": {
+        "projectNumber": "PROJECT_NUMBER",
+        "team": "owners"
+      },
+      "role": "OWNER"
+    }
+  ],
+  "creation_time": "2026-10-30T08:36:57+0000",
+  "default_acl": [
+    {
+      "email": "user@example.com",
+      "entity": "user@example.com",
+      "role": "OWNER"
+    }
+  ],
+  "default_storage_class": "STANDARD",
+  "generation": 1793349416969730257,
+  "location": "ASIA-NORTHEAST1",
+  "location_type": "region",
+  "metageneration": 12,
+  "name": "PROJECT-rfg",
+  "public_access_prevention": "inherited",
+  "soft_delete_policy": {
+    "effectiveTime": "2026-10-30T08:36:57.339000+00:00",
+    "retentionDurationSeconds": "604800"
+  },
+  "storage_url": "gs://PROJECT-rfg/",
+  "uniform_bucket_level_access": false,
+  "update_time": "2026-10-30T08:38:09+0000"
+}

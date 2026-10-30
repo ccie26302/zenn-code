@@ -1,0 +1,40 @@
+none: ok after 10 calls, 17s
+viewer: ok after 10 calls, 15s
+reader: ok after 10 calls, 15s
+editor: ok after 10 calls, 16s
+writer: ok after 10 calls, 15s
+owner: ok after 10 calls, 16s
+admin: ok after 10 calls, 17s
+PROBE_DONE
+768 trials
+25/768
+50/768
+75/768
+100/768
+125/768
+150/768
+175/768
+200/768
+225/768
+250/768
+275/768
+300/768
+325/768
+350/768
+375/768
+400/768
+425/768
+450/768
+475/768
+500/768
+525/768
+550/768
+575/768
+600/768
+625/768
+650/768
+675/768
+700/768
+725/768
+750/768
+E3_DONE

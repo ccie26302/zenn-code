@@ -1,0 +1,10 @@
+# 2026-10-30T15:07:04Z Asset Inventory: 全バケット・データセット と projectViewer を持つものの差
+all=       6 with_projectViewer=       3
+## diff
+//bigquery.googleapis.com/projects/PROJECT/datasets/br_restr
+//storage.googleapis.com/PROJECT-rfg
+//storage.googleapis.com/PROJECT-rubla
+## projectEditor diff
+//bigquery.googleapis.com/projects/PROJECT/datasets/br_restr
+//storage.googleapis.com/PROJECT-rfg
+//storage.googleapis.com/PROJECT-rubla

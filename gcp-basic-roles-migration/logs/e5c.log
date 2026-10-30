@@ -1,0 +1,21 @@
+{"role": "roles/editor", "rep": 1, "grant_pubsub": 0.66, "grant_compute": 0.66, "remove_pubsub": 63.52, "remove_compute": 62.32}
+{"role": "roles/editor", "rep": 2, "grant_pubsub": 0.73, "grant_compute": 0.73, "remove_pubsub": 0.76, "remove_compute": 0.76}
+{"role": "roles/editor", "rep": 3, "grant_pubsub": 0.79, "grant_compute": 0.79, "remove_pubsub": 0.71, "remove_compute": 0.71}
+{"role": "roles/editor", "rep": 4, "grant_pubsub": 0.63, "grant_compute": 0.63, "remove_pubsub": 0.71, "remove_compute": 0.71}
+{"role": "roles/editor", "rep": 5, "grant_pubsub": 0.53, "grant_compute": 0.53, "remove_pubsub": 0.75, "remove_compute": 0.75}
+{"role": "roles/editor", "rep": 6, "grant_pubsub": 0.61, "grant_compute": 0.61, "remove_pubsub": 83.62, "remove_compute": 84.99}
+{"role": "roles/editor", "rep": 7, "grant_pubsub": 0.8, "grant_compute": 0.8, "remove_pubsub": 0.77, "remove_compute": 0.77}
+{"role": "roles/editor", "rep": 8, "grant_pubsub": 0.7, "grant_compute": 0.7, "remove_pubsub": 0.52, "remove_compute": 1.8}
+{"role": "roles/editor", "rep": 9, "grant_pubsub": 0.77, "grant_compute": 0.77, "remove_pubsub": 0.7, "remove_compute": 0.7}
+{"role": "roles/editor", "rep": 10, "grant_pubsub": 0.77, "grant_compute": 0.77, "remove_pubsub": 0.72, "remove_compute": 0.72}
+{"role": "roles/writer", "rep": 1, "grant_pubsub": 0.73, "grant_compute": 0.73, "remove_pubsub": 0.72, "remove_compute": 0.72}
+{"role": "roles/writer", "rep": 2, "grant_pubsub": 0.78, "grant_compute": 0.78, "remove_pubsub": 0.83, "remove_compute": 0.83}
+{"role": "roles/writer", "rep": 3, "grant_pubsub": 0.84, "grant_compute": 0.84, "remove_pubsub": 0.93, "remove_compute": 0.93}
+{"role": "roles/writer", "rep": 4, "grant_pubsub": 0.63, "grant_compute": 0.63, "remove_pubsub": 78.59, "remove_compute": 78.59}
+{"role": "roles/writer", "rep": 5, "grant_pubsub": 0.53, "grant_compute": 0.53, "remove_pubsub": 1.53, "remove_compute": 1.53}
+{"role": "roles/writer", "rep": 6, "grant_pubsub": 0.72, "grant_compute": 0.72, "remove_pubsub": 0.78, "remove_compute": 0.78}
+{"role": "roles/writer", "rep": 7, "grant_pubsub": 0.75, "grant_compute": 0.75, "remove_pubsub": 80.33, "remove_compute": 79.02}
+{"role": "roles/writer", "rep": 8, "grant_pubsub": 0.85, "grant_compute": 0.85, "remove_pubsub": 0.74, "remove_compute": 0.74}
+{"role": "roles/writer", "rep": 9, "grant_pubsub": 0.71, "grant_compute": 0.71, "remove_pubsub": 0.79, "remove_compute": 0.79}
+{"role": "roles/writer", "rep": 10, "grant_pubsub": 0.57, "grant_compute": 0.57, "remove_pubsub": 7.67, "remove_compute": 7.67}
+E5C_DONE

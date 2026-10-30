@@ -1,0 +1,69 @@
+[
+  {
+    "assetType": "cloudresourcemanager.googleapis.com/Project",
+    "policy": {
+      "bindings": [
+        {
+          "members": [
+            "serviceAccount:br-admin@PROJECT.iam.gserviceaccount.com"
+          ],
+          "role": "roles/admin"
+        },
+        {
+          "condition": {
+            "expression": "request.time < timestamp('2026-10-30T09:12:30Z')",
+            "title": "e2-expiry"
+          },
+          "members": [
+            "serviceAccount:br-e2cond@PROJECT.iam.gserviceaccount.com"
+          ],
+          "role": "roles/admin"
+        },
+        {
+          "members": [
+            "serviceAccount:br-reader@PROJECT.iam.gserviceaccount.com"
+          ],
+          "role": "roles/reader"
+        },
+        {
+          "condition": {
+            "expression": "request.time < timestamp('2026-10-30T09:12:30Z')",
+            "title": "e2-expiry"
+          },
+          "members": [
+            "serviceAccount:br-e2cond@PROJECT.iam.gserviceaccount.com"
+          ],
+          "role": "roles/reader"
+        },
+        {
+          "members": [
+            "serviceAccount:br-writer@PROJECT.iam.gserviceaccount.com"
+          ],
+          "role": "roles/writer"
+        },
+        {
+          "condition": {
+            "expression": "request.time < timestamp('2026-10-30T09:12:30Z')",
+            "title": "e2-expiry"
+          },
+          "members": [
+            "serviceAccount:br-e2cond@PROJECT.iam.gserviceaccount.com"
+          ],
+          "role": "roles/writer"
+        },
+        {
+          "condition": {
+            "expression": "request.time < timestamp('2026-10-30T10:27:52Z')",
+            "title": "e4-expiry"
+          },
+          "members": [
+            "serviceAccount:br-e4cond@PROJECT.iam.gserviceaccount.com"
+          ],
+          "role": "roles/writer"
+        }
+      ]
+    },
+    "project": "projects/PROJECT_NUMBER",
+    "resource": "//cloudresourcemanager.googleapis.com/projects/PROJECT"
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "bucket": "PROJECT-ubla",
+  "content_type": "text/plain",
+  "crc32c_hash": "NT3Yvg==",
+  "creation_time": "2026-10-30T08:37:02+0000",
+  "etag": "CPebi5qr4ZcDEAE=",
+  "generation": "1793349422075383",
+  "md5_hash": "sZRqySSS0jR8YjW00mERhA==",
+  "metageneration": 1,
+  "name": "seed.txt",
+  "size": 6,
+  "storage_class": "STANDARD",
+  "storage_class_update_time": "2026-10-30T08:37:02+0000",
+  "storage_url": "gs://PROJECT-ubla/seed.txt#1793349422075383",
+  "update_time": "2026-10-30T08:37:02+0000"
+}

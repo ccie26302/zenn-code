@@ -1,0 +1,4 @@
+data/raw_secret*
+*.key
+.venv/
+data/e6_plant_*.json

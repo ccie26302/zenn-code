@@ -1,0 +1,207 @@
+{"exp": "names", "variant": "strict", "rep": 1, "test": "gcs_match_read", "status": 200, "class": "success", "detail": "hello\n", "effective": true}
+{"exp": "names", "variant": "strict", "rep": 1, "test": "gcs_nomatch_read", "status": 403, "class": "denied", "detail": "br-e4cond@PROJECT.iam.gserviceaccount.com does not have storage.objects.get access to the Google Cloud Storage object. Permission &#39;storage.objects.get&#39; denied on resource &#39;//sto", "effective": true}
+{"exp": "names", "variant": "strict", "rep": 1, "test": "gcs_match_list", "status": 200, "class": "success", "detail": "||", "effective": true}
+{"exp": "names", "variant": "strict", "rep": 1, "test": "secret_match", "status": 403, "class": "denied", "detail": "PERMISSION_DENIED|IAM_PERMISSION_DENIED|Permission 'secretmanager.versions.access' denied on resource (or it may not exist). Remediate access with this Troubleshooter URL or share it with your administrator - https://console.cloud.google.co", "effective": true}
+{"exp": "names", "variant": "strict", "rep": 1, "test": "secret_nomatch", "status": 403, "class": "denied", "detail": "PERMISSION_DENIED|IAM_PERMISSION_DENIED|Permission 'secretmanager.versions.access' denied on resource (or it may not exist). Remediate access with this Troubleshooter URL or share it with your administrator - https://console.cloud.google.co", "effective": true}
+{"exp": "names", "variant": "strict", "rep": 1, "test": "bq_match_read", "status": 200, "class": "success", "detail": "||", "effective": true}
+{"exp": "names", "variant": "strict", "rep": 1, "test": "bq_nomatch_read", "status": 403, "class": "denied", "detail": "PERMISSION_DENIED|accessDenied|Access Denied: Table PROJECT:br_default.t1: Permission bigquery.tables.getData denied on table PROJECT:br_default.t1 (or it may not exist).", "effective": true}
+{"exp": "names", "variant": "strict", "rep": 1, "test": "pubsub_match_pub", "status": 403, "class": "denied", "detail": "PERMISSION_DENIED|IAM_PERMISSION_DENIED|User not authorized to perform this action.", "effective": true}
+{"exp": "names", "variant": "strict", "rep": 1, "test": "pubsub_nomatch_pub", "status": 403, "class": "denied", "detail": "PERMISSION_DENIED|IAM_PERMISSION_DENIED|User not authorized to perform this action.", "effective": true}
+{"exp": "names", "variant": "strict", "rep": 1, "test": "compute_list", "status": 403, "class": "denied", "detail": "|forbidden|Required 'compute.instances.list' permission for 'projects/PROJECT'", "effective": true}
+{"exp": "names", "variant": "strict", "rep": 1, "test": "bucket_list", "status": 403, "class": "denied", "detail": "|forbidden|br-e4cond@PROJECT.iam.gserviceaccount.com does not have storage.buckets.list access to the Google Cloud project. Permission 'storage.buckets.list' denied on resource (or it may not exist).", "effective": true}
+{"exp": "names", "variant": "strict", "rep": 2, "test": "gcs_match_read", "status": 200, "class": "success", "detail": "hello\n", "effective": true}
+{"exp": "names", "variant": "strict", "rep": 2, "test": "gcs_nomatch_read", "status": 403, "class": "denied", "detail": "br-e4cond@PROJECT.iam.gserviceaccount.com does not have storage.objects.get access to the Google Cloud Storage object. Permission &#39;storage.objects.get&#39; denied on resource &#39;//sto", "effective": true}
+{"exp": "names", "variant": "strict", "rep": 2, "test": "gcs_match_list", "status": 200, "class": "success", "detail": "||", "effective": true}
+{"exp": "names", "variant": "strict", "rep": 2, "test": "secret_match", "status": 403, "class": "denied", "detail": "PERMISSION_DENIED|IAM_PERMISSION_DENIED|Permission 'secretmanager.versions.access' denied on resource (or it may not exist). Remediate access with this Troubleshooter URL or share it with your administrator - https://console.cloud.google.co", "effective": true}
+{"exp": "names", "variant": "strict", "rep": 2, "test": "secret_nomatch", "status": 403, "class": "denied", "detail": "PERMISSION_DENIED|IAM_PERMISSION_DENIED|Permission 'secretmanager.versions.access' denied on resource (or it may not exist). Remediate access with this Troubleshooter URL or share it with your administrator - https://console.cloud.google.co", "effective": true}
+{"exp": "names", "variant": "strict", "rep": 2, "test": "bq_match_read", "status": 200, "class": "success", "detail": "||", "effective": true}
+{"exp": "names", "variant": "strict", "rep": 2, "test": "bq_nomatch_read", "status": 403, "class": "denied", "detail": "PERMISSION_DENIED|accessDenied|Access Denied: Table PROJECT:br_default.t1: Permission bigquery.tables.getData denied on table PROJECT:br_default.t1 (or it may not exist).", "effective": true}
+{"exp": "names", "variant": "strict", "rep": 2, "test": "pubsub_match_pub", "status": 403, "class": "denied", "detail": "PERMISSION_DENIED|IAM_PERMISSION_DENIED|User not authorized to perform this action.", "effective": true}
+{"exp": "names", "variant": "strict", "rep": 2, "test": "pubsub_nomatch_pub", "status": 403, "class": "denied", "detail": "PERMISSION_DENIED|IAM_PERMISSION_DENIED|User not authorized to perform this action.", "effective": true}
+{"exp": "names", "variant": "strict", "rep": 2, "test": "compute_list", "status": 403, "class": "denied", "detail": "|forbidden|Required 'compute.instances.list' permission for 'projects/PROJECT'", "effective": true}
+{"exp": "names", "variant": "strict", "rep": 2, "test": "bucket_list", "status": 403, "class": "denied", "detail": "|forbidden|br-e4cond@PROJECT.iam.gserviceaccount.com does not have storage.buckets.list access to the Google Cloud project. Permission 'storage.buckets.list' denied on resource (or it may not exist).", "effective": true}
+{"exp": "names", "variant": "strict", "rep": 3, "test": "gcs_match_read", "status": 200, "class": "success", "detail": "hello\n", "effective": true}
+{"exp": "names", "variant": "strict", "rep": 3, "test": "gcs_nomatch_read", "status": 403, "class": "denied", "detail": "br-e4cond@PROJECT.iam.gserviceaccount.com does not have storage.objects.get access to the Google Cloud Storage object. Permission &#39;storage.objects.get&#39; denied on resource &#39;//sto", "effective": true}
+{"exp": "names", "variant": "strict", "rep": 3, "test": "gcs_match_list", "status": 200, "class": "success", "detail": "||", "effective": true}
+{"exp": "names", "variant": "strict", "rep": 3, "test": "secret_match", "status": 403, "class": "denied", "detail": "PERMISSION_DENIED|IAM_PERMISSION_DENIED|Permission 'secretmanager.versions.access' denied on resource (or it may not exist). Remediate access with this Troubleshooter URL or share it with your administrator - https://console.cloud.google.co", "effective": true}
+{"exp": "names", "variant": "strict", "rep": 3, "test": "secret_nomatch", "status": 403, "class": "denied", "detail": "PERMISSION_DENIED|IAM_PERMISSION_DENIED|Permission 'secretmanager.versions.access' denied on resource (or it may not exist). Remediate access with this Troubleshooter URL or share it with your administrator - https://console.cloud.google.co", "effective": true}
+{"exp": "names", "variant": "strict", "rep": 3, "test": "bq_match_read", "status": 200, "class": "success", "detail": "||", "effective": true}
+{"exp": "names", "variant": "strict", "rep": 3, "test": "bq_nomatch_read", "status": 403, "class": "denied", "detail": "PERMISSION_DENIED|accessDenied|Access Denied: Table PROJECT:br_default.t1: Permission bigquery.tables.getData denied on table PROJECT:br_default.t1 (or it may not exist).", "effective": true}
+{"exp": "names", "variant": "strict", "rep": 3, "test": "pubsub_match_pub", "status": 403, "class": "denied", "detail": "PERMISSION_DENIED|IAM_PERMISSION_DENIED|User not authorized to perform this action.", "effective": true}
+{"exp": "names", "variant": "strict", "rep": 3, "test": "pubsub_nomatch_pub", "status": 403, "class": "denied", "detail": "PERMISSION_DENIED|IAM_PERMISSION_DENIED|User not authorized to perform this action.", "effective": true}
+{"exp": "names", "variant": "strict", "rep": 3, "test": "compute_list", "status": 403, "class": "denied", "detail": "|forbidden|Required 'compute.instances.list' permission for 'projects/PROJECT'", "effective": true}
+{"exp": "names", "variant": "strict", "rep": 3, "test": "bucket_list", "status": 403, "class": "denied", "detail": "|forbidden|br-e4cond@PROJECT.iam.gserviceaccount.com does not have storage.buckets.list access to the Google Cloud project. Permission 'storage.buckets.list' denied on resource (or it may not exist).", "effective": true}
+{"exp": "names", "variant": "escape", "rep": 1, "test": "gcs_match_read", "status": 200, "class": "success", "detail": "hello\n", "effective": true}
+{"exp": "names", "variant": "escape", "rep": 1, "test": "gcs_nomatch_read", "status": 200, "class": "success", "detail": "hello\n", "effective": true}
+{"exp": "names", "variant": "escape", "rep": 1, "test": "gcs_match_list", "status": 200, "class": "success", "detail": "||", "effective": true}
+{"exp": "names", "variant": "escape", "rep": 1, "test": "secret_match", "status": 403, "class": "denied", "detail": "PERMISSION_DENIED|IAM_PERMISSION_DENIED|Permission 'secretmanager.versions.access' denied on resource (or it may not exist). Remediate access with this Troubleshooter URL or share it with your administrator - https://console.cloud.google.co", "effective": true}
+{"exp": "names", "variant": "escape", "rep": 1, "test": "secret_nomatch", "status": 403, "class": "denied", "detail": "PERMISSION_DENIED|IAM_PERMISSION_DENIED|Permission 'secretmanager.versions.access' denied on resource (or it may not exist). Remediate access with this Troubleshooter URL or share it with your administrator - https://console.cloud.google.co", "effective": true}
+{"exp": "names", "variant": "escape", "rep": 1, "test": "bq_match_read", "status": 200, "class": "success", "detail": "||", "effective": true}
+{"exp": "names", "variant": "escape", "rep": 1, "test": "bq_nomatch_read", "status": 200, "class": "success", "detail": "||", "effective": true}
+{"exp": "names", "variant": "escape", "rep": 1, "test": "pubsub_match_pub", "status": 200, "class": "success", "detail": "||", "effective": true}
+{"exp": "names", "variant": "escape", "rep": 1, "test": "pubsub_nomatch_pub", "status": 200, "class": "success", "detail": "||", "effective": true}
+{"exp": "names", "variant": "escape", "rep": 1, "test": "compute_list", "status": 200, "class": "success", "detail": "||", "effective": true}
+{"exp": "names", "variant": "escape", "rep": 1, "test": "bucket_list", "status": 200, "class": "success", "detail": "||", "effective": true}
+{"exp": "names", "variant": "escape", "rep": 2, "test": "gcs_match_read", "status": 200, "class": "success", "detail": "hello\n", "effective": true}
+{"exp": "names", "variant": "escape", "rep": 2, "test": "gcs_nomatch_read", "status": 200, "class": "success", "detail": "hello\n", "effective": true}
+{"exp": "names", "variant": "escape", "rep": 2, "test": "gcs_match_list", "status": 200, "class": "success", "detail": "||", "effective": true}
+{"exp": "names", "variant": "escape", "rep": 2, "test": "secret_match", "status": 403, "class": "denied", "detail": "PERMISSION_DENIED|IAM_PERMISSION_DENIED|Permission 'secretmanager.versions.access' denied on resource (or it may not exist). Remediate access with this Troubleshooter URL or share it with your administrator - https://console.cloud.google.co", "effective": true}
+{"exp": "names", "variant": "escape", "rep": 2, "test": "secret_nomatch", "status": 403, "class": "denied", "detail": "PERMISSION_DENIED|IAM_PERMISSION_DENIED|Permission 'secretmanager.versions.access' denied on resource (or it may not exist). Remediate access with this Troubleshooter URL or share it with your administrator - https://console.cloud.google.co", "effective": true}
+{"exp": "names", "variant": "escape", "rep": 2, "test": "bq_match_read", "status": 200, "class": "success", "detail": "||", "effective": true}
+{"exp": "names", "variant": "escape", "rep": 2, "test": "bq_nomatch_read", "status": 200, "class": "success", "detail": "||", "effective": true}
+{"exp": "names", "variant": "escape", "rep": 2, "test": "pubsub_match_pub", "status": 200, "class": "success", "detail": "||", "effective": true}
+{"exp": "names", "variant": "escape", "rep": 2, "test": "pubsub_nomatch_pub", "status": 200, "class": "success", "detail": "||", "effective": true}
+{"exp": "names", "variant": "escape", "rep": 2, "test": "compute_list", "status": 200, "class": "success", "detail": "||", "effective": true}
+{"exp": "names", "variant": "escape", "rep": 2, "test": "bucket_list", "status": 200, "class": "success", "detail": "||", "effective": true}
+{"exp": "names", "variant": "escape", "rep": 3, "test": "gcs_match_read", "status": 200, "class": "success", "detail": "hello\n", "effective": true}
+{"exp": "names", "variant": "escape", "rep": 3, "test": "gcs_nomatch_read", "status": 200, "class": "success", "detail": "hello\n", "effective": true}
+{"exp": "names", "variant": "escape", "rep": 3, "test": "gcs_match_list", "status": 200, "class": "success", "detail": "||", "effective": true}
+{"exp": "names", "variant": "escape", "rep": 3, "test": "secret_match", "status": 403, "class": "denied", "detail": "PERMISSION_DENIED|IAM_PERMISSION_DENIED|Permission 'secretmanager.versions.access' denied on resource (or it may not exist). Remediate access with this Troubleshooter URL or share it with your administrator - https://console.cloud.google.co", "effective": true}
+{"exp": "names", "variant": "escape", "rep": 3, "test": "secret_nomatch", "status": 403, "class": "denied", "detail": "PERMISSION_DENIED|IAM_PERMISSION_DENIED|Permission 'secretmanager.versions.access' denied on resource (or it may not exist). Remediate access with this Troubleshooter URL or share it with your administrator - https://console.cloud.google.co", "effective": true}
+{"exp": "names", "variant": "escape", "rep": 3, "test": "bq_match_read", "status": 200, "class": "success", "detail": "||", "effective": true}
+{"exp": "names", "variant": "escape", "rep": 3, "test": "bq_nomatch_read", "status": 200, "class": "success", "detail": "||", "effective": true}
+{"exp": "names", "variant": "escape", "rep": 3, "test": "pubsub_match_pub", "status": 200, "class": "success", "detail": "||", "effective": true}
+{"exp": "names", "variant": "escape", "rep": 3, "test": "pubsub_nomatch_pub", "status": 200, "class": "success", "detail": "||", "effective": true}
+{"exp": "names", "variant": "escape", "rep": 3, "test": "compute_list", "status": 200, "class": "success", "detail": "||", "effective": true}
+{"exp": "names", "variant": "escape", "rep": 3, "test": "bucket_list", "status": 200, "class": "success", "detail": "||", "effective": true}
+{"exp": "names", "variant": "unconditional", "rep": 1, "test": "gcs_match_read", "status": 200, "class": "success", "detail": "hello\n", "effective": true}
+{"exp": "names", "variant": "unconditional", "rep": 1, "test": "gcs_nomatch_read", "status": 200, "class": "success", "detail": "hello\n", "effective": true}
+{"exp": "names", "variant": "unconditional", "rep": 1, "test": "gcs_match_list", "status": 200, "class": "success", "detail": "||", "effective": true}
+{"exp": "names", "variant": "unconditional", "rep": 1, "test": "secret_match", "status": 403, "class": "denied", "detail": "PERMISSION_DENIED|IAM_PERMISSION_DENIED|Permission 'secretmanager.versions.access' denied on resource (or it may not exist). Remediate access with this Troubleshooter URL or share it with your administrator - https://console.cloud.google.co", "effective": true}
+{"exp": "names", "variant": "unconditional", "rep": 1, "test": "secret_nomatch", "status": 403, "class": "denied", "detail": "PERMISSION_DENIED|IAM_PERMISSION_DENIED|Permission 'secretmanager.versions.access' denied on resource (or it may not exist). Remediate access with this Troubleshooter URL or share it with your administrator - https://console.cloud.google.co", "effective": true}
+{"exp": "names", "variant": "unconditional", "rep": 1, "test": "bq_match_read", "status": 200, "class": "success", "detail": "||", "effective": true}
+{"exp": "names", "variant": "unconditional", "rep": 1, "test": "bq_nomatch_read", "status": 200, "class": "success", "detail": "||", "effective": true}
+{"exp": "names", "variant": "unconditional", "rep": 1, "test": "pubsub_match_pub", "status": 200, "class": "success", "detail": "||", "effective": true}
+{"exp": "names", "variant": "unconditional", "rep": 1, "test": "pubsub_nomatch_pub", "status": 200, "class": "success", "detail": "||", "effective": true}
+{"exp": "names", "variant": "unconditional", "rep": 1, "test": "compute_list", "status": 200, "class": "success", "detail": "||", "effective": true}
+{"exp": "names", "variant": "unconditional", "rep": 1, "test": "bucket_list", "status": 200, "class": "success", "detail": "||", "effective": true}
+{"exp": "names", "variant": "unconditional", "rep": 2, "test": "gcs_match_read", "status": 200, "class": "success", "detail": "hello\n", "effective": true}
+{"exp": "names", "variant": "unconditional", "rep": 2, "test": "gcs_nomatch_read", "status": 200, "class": "success", "detail": "hello\n", "effective": true}
+{"exp": "names", "variant": "unconditional", "rep": 2, "test": "gcs_match_list", "status": 200, "class": "success", "detail": "||", "effective": true}
+{"exp": "names", "variant": "unconditional", "rep": 2, "test": "secret_match", "status": 403, "class": "denied", "detail": "PERMISSION_DENIED|IAM_PERMISSION_DENIED|Permission 'secretmanager.versions.access' denied on resource (or it may not exist). Remediate access with this Troubleshooter URL or share it with your administrator - https://console.cloud.google.co", "effective": true}
+{"exp": "names", "variant": "unconditional", "rep": 2, "test": "secret_nomatch", "status": 403, "class": "denied", "detail": "PERMISSION_DENIED|IAM_PERMISSION_DENIED|Permission 'secretmanager.versions.access' denied on resource (or it may not exist). Remediate access with this Troubleshooter URL or share it with your administrator - https://console.cloud.google.co", "effective": true}
+{"exp": "names", "variant": "unconditional", "rep": 2, "test": "bq_match_read", "status": 200, "class": "success", "detail": "||", "effective": true}
+{"exp": "names", "variant": "unconditional", "rep": 2, "test": "bq_nomatch_read", "status": 200, "class": "success", "detail": "||", "effective": true}
+{"exp": "names", "variant": "unconditional", "rep": 2, "test": "pubsub_match_pub", "status": 200, "class": "success", "detail": "||", "effective": true}
+{"exp": "names", "variant": "unconditional", "rep": 2, "test": "pubsub_nomatch_pub", "status": 200, "class": "success", "detail": "||", "effective": true}
+{"exp": "names", "variant": "unconditional", "rep": 2, "test": "compute_list", "status": 200, "class": "success", "detail": "||", "effective": true}
+{"exp": "names", "variant": "unconditional", "rep": 2, "test": "bucket_list", "status": 200, "class": "success", "detail": "||", "effective": true}
+{"exp": "names", "variant": "unconditional", "rep": 3, "test": "gcs_match_read", "status": 200, "class": "success", "detail": "hello\n", "effective": true}
+{"exp": "names", "variant": "unconditional", "rep": 3, "test": "gcs_nomatch_read", "status": 200, "class": "success", "detail": "hello\n", "effective": true}
+{"exp": "names", "variant": "unconditional", "rep": 3, "test": "gcs_match_list", "status": 200, "class": "success", "detail": "||", "effective": true}
+{"exp": "names", "variant": "unconditional", "rep": 3, "test": "secret_match", "status": 403, "class": "denied", "detail": "PERMISSION_DENIED|IAM_PERMISSION_DENIED|Permission 'secretmanager.versions.access' denied on resource (or it may not exist). Remediate access with this Troubleshooter URL or share it with your administrator - https://console.cloud.google.co", "effective": true}
+{"exp": "names", "variant": "unconditional", "rep": 3, "test": "secret_nomatch", "status": 403, "class": "denied", "detail": "PERMISSION_DENIED|IAM_PERMISSION_DENIED|Permission 'secretmanager.versions.access' denied on resource (or it may not exist). Remediate access with this Troubleshooter URL or share it with your administrator - https://console.cloud.google.co", "effective": true}
+{"exp": "names", "variant": "unconditional", "rep": 3, "test": "bq_match_read", "status": 200, "class": "success", "detail": "||", "effective": true}
+{"exp": "names", "variant": "unconditional", "rep": 3, "test": "bq_nomatch_read", "status": 200, "class": "success", "detail": "||", "effective": true}
+{"exp": "names", "variant": "unconditional", "rep": 3, "test": "pubsub_match_pub", "status": 200, "class": "success", "detail": "||", "effective": true}
+{"exp": "names", "variant": "unconditional", "rep": 3, "test": "pubsub_nomatch_pub", "status": 200, "class": "success", "detail": "||", "effective": true}
+{"exp": "names", "variant": "unconditional", "rep": 3, "test": "compute_list", "status": 200, "class": "success", "detail": "||", "effective": true}
+{"exp": "names", "variant": "unconditional", "rep": 3, "test": "bucket_list", "status": 200, "class": "success", "detail": "||", "effective": true}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": -119.572, "server_date": "Fri, 30 Oct 2026 10:15:06 GMT", "class": "success", "status": 200}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": -117.486, "server_date": "Fri, 30 Oct 2026 10:15:08 GMT", "class": "success", "status": 200}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": -115.273, "server_date": "Fri, 30 Oct 2026 10:15:10 GMT", "class": "success", "status": 200}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": -113.184, "server_date": "Fri, 30 Oct 2026 10:15:12 GMT", "class": "success", "status": 200}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": -111.057, "server_date": "Fri, 30 Oct 2026 10:15:15 GMT", "class": "success", "status": 200}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": -108.958, "server_date": "Fri, 30 Oct 2026 10:15:17 GMT", "class": "success", "status": 200}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": -106.844, "server_date": "Fri, 30 Oct 2026 10:15:19 GMT", "class": "success", "status": 200}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": -104.738, "server_date": "Fri, 30 Oct 2026 10:15:21 GMT", "class": "success", "status": 200}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": -102.651, "server_date": "Fri, 30 Oct 2026 10:15:23 GMT", "class": "success", "status": 200}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": -100.552, "server_date": "Fri, 30 Oct 2026 10:15:25 GMT", "class": "success", "status": 200}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": -98.471, "server_date": "Fri, 30 Oct 2026 10:15:27 GMT", "class": "success", "status": 200}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": -96.386, "server_date": "Fri, 30 Oct 2026 10:15:29 GMT", "class": "success", "status": 200}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": -94.309, "server_date": "Fri, 30 Oct 2026 10:15:31 GMT", "class": "success", "status": 200}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": -92.201, "server_date": "Fri, 30 Oct 2026 10:15:33 GMT", "class": "success", "status": 200}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": -90.105, "server_date": "Fri, 30 Oct 2026 10:15:36 GMT", "class": "success", "status": 200}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": -88.02, "server_date": "Fri, 30 Oct 2026 10:15:38 GMT", "class": "success", "status": 200}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": -85.937, "server_date": "Fri, 30 Oct 2026 10:15:40 GMT", "class": "success", "status": 200}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": -81.292, "server_date": "Fri, 30 Oct 2026 10:15:44 GMT", "class": "success", "status": 200}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": -79.196, "server_date": "Fri, 30 Oct 2026 10:15:46 GMT", "class": "success", "status": 200}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": -77.085, "server_date": "Fri, 30 Oct 2026 10:15:49 GMT", "class": "success", "status": 200}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": -74.993, "server_date": "Fri, 30 Oct 2026 10:15:51 GMT", "class": "success", "status": 200}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": -72.899, "server_date": "Fri, 30 Oct 2026 10:15:53 GMT", "class": "success", "status": 200}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": -70.823, "server_date": "Fri, 30 Oct 2026 10:15:55 GMT", "class": "success", "status": 200}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": -68.747, "server_date": "Fri, 30 Oct 2026 10:15:57 GMT", "class": "success", "status": 200}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": -66.671, "server_date": "Fri, 30 Oct 2026 10:15:59 GMT", "class": "success", "status": 200}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": -64.588, "server_date": "Fri, 30 Oct 2026 10:16:01 GMT", "class": "success", "status": 200}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": -62.5, "server_date": "Fri, 30 Oct 2026 10:16:03 GMT", "class": "success", "status": 200}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": -60.415, "server_date": "Fri, 30 Oct 2026 10:16:05 GMT", "class": "success", "status": 200}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": -58.312, "server_date": "Fri, 30 Oct 2026 10:16:07 GMT", "class": "success", "status": 200}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": -56.213, "server_date": "Fri, 30 Oct 2026 10:16:09 GMT", "class": "success", "status": 200}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": -54.129, "server_date": "Fri, 30 Oct 2026 10:16:12 GMT", "class": "success", "status": 200}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": -52.016, "server_date": "Fri, 30 Oct 2026 10:16:14 GMT", "class": "success", "status": 200}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": -49.896, "server_date": "Fri, 30 Oct 2026 10:16:16 GMT", "class": "success", "status": 200}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": -47.789, "server_date": "Fri, 30 Oct 2026 10:16:18 GMT", "class": "success", "status": 200}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": -45.703, "server_date": "Fri, 30 Oct 2026 10:16:20 GMT", "class": "success", "status": 200}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": -43.587, "server_date": "Fri, 30 Oct 2026 10:16:22 GMT", "class": "success", "status": 200}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": -41.509, "server_date": "Fri, 30 Oct 2026 10:16:24 GMT", "class": "success", "status": 200}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": -39.411, "server_date": "Fri, 30 Oct 2026 10:16:26 GMT", "class": "success", "status": 200}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": -37.324, "server_date": "Fri, 30 Oct 2026 10:16:28 GMT", "class": "success", "status": 200}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": -35.217, "server_date": "Fri, 30 Oct 2026 10:16:30 GMT", "class": "success", "status": 200}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": -33.135, "server_date": "Fri, 30 Oct 2026 10:16:33 GMT", "class": "success", "status": 200}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": -31.037, "server_date": "Fri, 30 Oct 2026 10:16:35 GMT", "class": "success", "status": 200}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": -28.948, "server_date": "Fri, 30 Oct 2026 10:16:37 GMT", "class": "success", "status": 200}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": -26.862, "server_date": "Fri, 30 Oct 2026 10:16:39 GMT", "class": "success", "status": 200}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": -24.789, "server_date": "Fri, 30 Oct 2026 10:16:41 GMT", "class": "success", "status": 200}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": -22.707, "server_date": "Fri, 30 Oct 2026 10:16:43 GMT", "class": "success", "status": 200}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": -20.632, "server_date": "Fri, 30 Oct 2026 10:16:45 GMT", "class": "success", "status": 200}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": -18.557, "server_date": "Fri, 30 Oct 2026 10:16:47 GMT", "class": "success", "status": 200}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": -16.477, "server_date": "Fri, 30 Oct 2026 10:16:49 GMT", "class": "success", "status": 200}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": -14.352, "server_date": "Fri, 30 Oct 2026 10:16:51 GMT", "class": "success", "status": 200}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": -12.257, "server_date": "Fri, 30 Oct 2026 10:16:53 GMT", "class": "success", "status": 200}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": -10.16, "server_date": "Fri, 30 Oct 2026 10:16:55 GMT", "class": "success", "status": 200}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": -8.066, "server_date": "Fri, 30 Oct 2026 10:16:58 GMT", "class": "success", "status": 200}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": -5.99, "server_date": "Fri, 30 Oct 2026 10:17:00 GMT", "class": "success", "status": 200}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": -3.863, "server_date": "Fri, 30 Oct 2026 10:17:02 GMT", "class": "success", "status": 200}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": -1.78, "server_date": "Fri, 30 Oct 2026 10:17:04 GMT", "class": "success", "status": 200}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": 0.55, "server_date": "Fri, 30 Oct 2026 10:17:06 GMT", "class": "denied", "status": 403}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": 2.851, "server_date": "Fri, 30 Oct 2026 10:17:08 GMT", "class": "denied", "status": 403}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": 5.165, "server_date": "Fri, 30 Oct 2026 10:17:11 GMT", "class": "denied", "status": 403}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": 7.45, "server_date": "Fri, 30 Oct 2026 10:17:13 GMT", "class": "denied", "status": 403}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": 9.747, "server_date": "Fri, 30 Oct 2026 10:17:15 GMT", "class": "denied", "status": 403}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": 12.05, "server_date": "Fri, 30 Oct 2026 10:17:18 GMT", "class": "denied", "status": 403}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": 14.361, "server_date": "Fri, 30 Oct 2026 10:17:20 GMT", "class": "denied", "status": 403}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": 16.65, "server_date": "Fri, 30 Oct 2026 10:17:22 GMT", "class": "denied", "status": 403}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": 18.947, "server_date": "Fri, 30 Oct 2026 10:17:25 GMT", "class": "denied", "status": 403}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": 21.25, "server_date": "Fri, 30 Oct 2026 10:17:27 GMT", "class": "denied", "status": 403}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": 23.55, "server_date": "Fri, 30 Oct 2026 10:17:29 GMT", "class": "denied", "status": 403}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": 25.866, "server_date": "Fri, 30 Oct 2026 10:17:31 GMT", "class": "denied", "status": 403}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": 28.162, "server_date": "Fri, 30 Oct 2026 10:17:34 GMT", "class": "denied", "status": 403}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": 30.451, "server_date": "Fri, 30 Oct 2026 10:17:36 GMT", "class": "denied", "status": 403}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": 32.754, "server_date": "Fri, 30 Oct 2026 10:17:38 GMT", "class": "denied", "status": 403}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": 35.05, "server_date": "Fri, 30 Oct 2026 10:17:41 GMT", "class": "denied", "status": 403}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": 37.348, "server_date": "Fri, 30 Oct 2026 10:17:43 GMT", "class": "denied", "status": 403}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": 39.649, "server_date": "Fri, 30 Oct 2026 10:17:45 GMT", "class": "denied", "status": 403}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": 41.952, "server_date": "Fri, 30 Oct 2026 10:17:48 GMT", "class": "denied", "status": 403}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": 44.303, "server_date": "Fri, 30 Oct 2026 10:17:50 GMT", "class": "denied", "status": 403}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": 46.551, "server_date": "Fri, 30 Oct 2026 10:17:52 GMT", "class": "denied", "status": 403}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": 48.849, "server_date": "Fri, 30 Oct 2026 10:17:54 GMT", "class": "denied", "status": 403}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": 51.15, "server_date": "Fri, 30 Oct 2026 10:17:57 GMT", "class": "denied", "status": 403}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": 53.453, "server_date": "Fri, 30 Oct 2026 10:17:59 GMT", "class": "denied", "status": 403}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": 55.747, "server_date": "Fri, 30 Oct 2026 10:18:01 GMT", "class": "denied", "status": 403}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": 58.143, "server_date": "Fri, 30 Oct 2026 10:18:04 GMT", "class": "denied", "status": 403}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": 60.447, "server_date": "Fri, 30 Oct 2026 10:18:06 GMT", "class": "denied", "status": 403}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": 62.751, "server_date": "Fri, 30 Oct 2026 10:18:08 GMT", "class": "denied", "status": 403}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": 65.056, "server_date": "Fri, 30 Oct 2026 10:18:11 GMT", "class": "denied", "status": 403}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": 67.351, "server_date": "Fri, 30 Oct 2026 10:18:13 GMT", "class": "denied", "status": 403}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": 69.646, "server_date": "Fri, 30 Oct 2026 10:18:15 GMT", "class": "denied", "status": 403}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": 71.952, "server_date": "Fri, 30 Oct 2026 10:18:18 GMT", "class": "denied", "status": 403}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": 74.251, "server_date": "Fri, 30 Oct 2026 10:18:20 GMT", "class": "denied", "status": 403}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": 76.551, "server_date": "Fri, 30 Oct 2026 10:18:22 GMT", "class": "denied", "status": 403}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": 78.846, "server_date": "Fri, 30 Oct 2026 10:18:24 GMT", "class": "denied", "status": 403}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": 81.151, "server_date": "Fri, 30 Oct 2026 10:18:27 GMT", "class": "denied", "status": 403}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": 83.447, "server_date": "Fri, 30 Oct 2026 10:18:29 GMT", "class": "denied", "status": 403}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": 85.746, "server_date": "Fri, 30 Oct 2026 10:18:31 GMT", "class": "denied", "status": 403}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": 88.05, "server_date": "Fri, 30 Oct 2026 10:18:34 GMT", "class": "denied", "status": 403}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": 90.351, "server_date": "Fri, 30 Oct 2026 10:18:36 GMT", "class": "denied", "status": 403}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": 92.647, "server_date": "Fri, 30 Oct 2026 10:18:38 GMT", "class": "denied", "status": 403}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": 94.95, "server_date": "Fri, 30 Oct 2026 10:18:41 GMT", "class": "denied", "status": 403}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": 97.349, "server_date": "Fri, 30 Oct 2026 10:18:43 GMT", "class": "denied", "status": 403}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": 99.646, "server_date": "Fri, 30 Oct 2026 10:18:45 GMT", "class": "denied", "status": 403}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": 102.067, "server_date": "Fri, 30 Oct 2026 10:18:48 GMT", "class": "denied", "status": 403}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": 104.415, "server_date": "Fri, 30 Oct 2026 10:18:50 GMT", "class": "denied", "status": 403}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": 106.647, "server_date": "Fri, 30 Oct 2026 10:18:52 GMT", "class": "denied", "status": 403}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": 108.948, "server_date": "Fri, 30 Oct 2026 10:18:55 GMT", "class": "denied", "status": 403}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": 111.249, "server_date": "Fri, 30 Oct 2026 10:18:57 GMT", "class": "denied", "status": 403}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": 113.549, "server_date": "Fri, 30 Oct 2026 10:18:59 GMT", "class": "denied", "status": 403}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": 115.851, "server_date": "Fri, 30 Oct 2026 10:19:01 GMT", "class": "denied", "status": 403}
+{"exp": "expiry", "rep": 1, "T": "2026-10-30T10:17:06Z", "dt_local": 118.157, "server_date": "Fri, 30 Oct 2026 10:19:04 GMT", "class": "denied", "status": 403}
