@@ -1,6 +1,6 @@
 # 基本ロール Owner/Editor/Viewer → Admin/Writer/Reader の移行の検証
 
-記事: 「ViewerをReaderに替えると締め出しが外れる」(Zenn)
+記事: 「Editorはもう古い。新ロールへ安全に移る768試行」(Zenn)
 
 - `PLAN.md` 検証計画(測定前に登録し、変更は末尾の変更履歴に記録)
 - `REPRODUCE.md` 再現手順
