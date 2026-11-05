@@ -1,0 +1,42 @@
+"""Write data/timeline.csv: events around the quarters where Google's share of the 3-company YoY revenue increase rose.
+gc_share values are read from data/derived.csv (Azure basis). Usage: python3 -I scripts/build_timeline.py <project_dir>"""
+import csv, os, sys
+
+ROOT = sys.argv[1] if len(sys.argv) > 1 else os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+SEC = "https://www.sec.gov/Archives/edgar/data/1652044/"
+Q10 = {"2025Q3": SEC + "000165204425000091/goog-20250930.htm", "2025Q4": SEC + "000165204426000018/goog-20251231.htm",
+       "2026Q1": SEC + "000165204426000048/goog-20260331.htm", "2026Q2": SEC + "000165204426000071/goog-20260630.htm",
+       "2026Q3": SEC + "000165204426000084/goog-20260930.htm"}
+der = {r["calendar_quarter"]: r for r in csv.DictReader(open(os.path.join(ROOT, "data", "derived.csv"), encoding="utf-8"))}
+
+# date, calendar_quarter, category, event, value, source_type, source_url, note
+E = [
+    ("2025-09-30", "2025Q3", "受注残", "Alphabet の受注残 1,577億ドル(前期1,082億ドル)", "157.7", "一次(10-Q)", Q10["2025Q3"], "受注残の定義は旧定義(1年以内の契約を除く)"),
+    ("2025-10-23", "2025Q4", "契約", "Anthropic が Google Cloud の TPU を最大100万個、数百億ドル規模で使う拡大契約を発表。2026年に1GW超が稼働予定", "", "一次(Anthropic発表)", "https://www.anthropic.com/news/expanding-our-use-of-google-cloud-tpus-and-services", "Google Cloud 経由の利用契約(TPU販売ではない)。Google側の開示に契約額は出てこない"),
+    ("2025-11-25", "2025Q4", "報道", "Meta が自社DCで2027年から TPU を使う交渉中と報道", "", "第三者報道のみ(The Information の転載)", "https://dataconomy.com/2025/11/25/google-is-in-talks-to-sell-custom-ai-chips-to-meta", "両社とも未確認"),
+    ("2025-12-31", "2025Q4", "受注残", "Alphabet の受注残 2,428億ドル(前期比+54%)", "242.8", "一次(10-K)", Q10["2025Q4"], "旧定義"),
+    ("2025-12-31", "2025Q4", "在庫", "在庫 24.39億ドル(年末残高)", "2.439", "一次(2026Q2・Q3の10-Qの比較欄)", Q10["2026Q2"], "10-K本体では在庫を独立表示していない"),
+    ("2026-02-26", "2026Q1", "報道", "Meta が Google Cloud 経由の TPU 借用で複数年・数十億ドルの契約を結んだと報道", "", "第三者報道のみ", "https://dataconomy.com/2026/02/27/meta-signs-multibillion-dollar-deal-to-rent-google-tpus-for-ai-training/", "両社とも未確認。自社DCへの購入は別交渉で未成立と報道"),
+    ("2026-03-11", "2026Q1", "買収", "Wiz の買収完了(295億ドル)。以後 Google Cloud セグメントに連結", "29.5", "一次(10-Q)", Q10["2026Q1"], "Wiz の売上寄与額は非開示。増収額の一部は買収による(オーガニックではない)"),
+    ("2026-03-31", "2026Q1", "受注残", "Google Cloud の受注残 4,623億ドル(全体4,676億ドル)。前期のほぼ2倍", "462.3", "一次(10-Q)", Q10["2026Q1"], "2026Q1から1年以内の契約も含む定義に変更→前期と不連続"),
+    ("2026-03-31", "2026Q1", "TPU販売", "10-Q で『数GW規模の TPU ハードを顧客に供給する限られた数の契約』を開示。売上計上は2026年後半から、大半は2027年と記載", "", "一次(10-Q)", Q10["2026Q1"], "顧客名・金額は非開示"),
+    ("2026-04-06", "2026Q2", "契約", "Anthropic・Google・Broadcom が次世代 TPU の数GW分の契約を発表(2027年から稼働)。Broadcom の8-Kは Anthropic が2027年から Broadcom 経由で約3.5GW を使うと記載", "3.5GW", "一次(Anthropic発表・Broadcom 8-K)", "https://www.anthropic.com/news/google-broadcom-partnership-compute ; https://www.sec.gov/Archives/edgar/data/1730168/000119312526144028/d87999d8k.htm", "8-K は利用量が『Anthropic の継続的な商業的成功次第』と明記"),
+    ("2026-05", "2026Q2", "JV", "Blackstone と DC 合弁(後の Crux AI)の契約。Blackstone が最大50億ドル出資、Google が最大100億ドルのバックストップを約束", "", "一次(10-Q)", Q10["2026Q3"], "持分法の関連当事者"),
+    ("2026-06-30", "2026Q2", "TPU販売", "TPU システムの売上計上を開始(Q2)。金額は非開示", "", "一次(10-Q)", Q10["2026Q2"], "2026Q2 の説明会では『今年は一部、大半は2027年』(第三者経由の発言引用)"),
+    ("2026-06-30", "2026Q2", "在庫", "在庫 99.91億ドル(年初から+75億ドル)", "9.991", "一次(10-Q)", Q10["2026Q2"], "在庫は主に TPU システムのハード(10-Qの会計方針)"),
+    ("2026-06-30", "2026Q2", "受注残", "Google Cloud の受注残 5,139億ドル", "513.9", "一次(10-Q)", Q10["2026Q2"], ""),
+    ("2026-09-17", "2026Q3", "報道", "Crux AI が銀行10行から TPU 購入資金220億ドルの融資を調達と報道", "22", "第三者報道のみ", "https://pulse2.com/crux-ai-lines-up-22-billion-chip-loan-from-10-banks-to-buy-google-tpus/", "実行は未確認"),
+    ("2026-09-30", "2026Q3", "JV", "Crux AI と複数年の商業契約。受注残に168億ドルを含む(関連当事者取引)", "16.8", "一次(10-Q)", Q10["2026Q3"], ""),
+    ("2026-09-30", "2026Q3", "在庫", "在庫 133.08億ドル(年初から+109億ドル)", "13.308", "一次(10-Q)", Q10["2026Q3"], "売上原価の増加要因に TPU システム関連の在庫・費用が挙がっている"),
+    ("2026-09-30", "2026Q3", "TPU販売", "Google Cloud の増収156億ドルの主因に『GCP と TPU system sales』と記載。説明会では『meaningful contributor』", "", "一次(10-Q)+ 説明会(第三者の書き起こし)", Q10["2026Q3"] + " ; https://www.fool.com/earnings/call-transcripts/2026/10/29/alphabet-googl-q3-2026-earnings-call-transcript/", "TPU を除いた成長率の数値は非開示"),
+    ("2026-09-30", "2026Q3", "受注残", "Google Cloud の受注残 5,608億ドル", "560.8", "一次(10-Q)", Q10["2026Q3"], ""),
+    ("2026-10-27", "2026Q4", "契約", "Oracle と Google が OCI で TPU(第8世代)を提供と発表。容量は2027年から", "", "第三者報道(Oracle AI World での共同発表を報道)", "https://datacenterdynamics.com/en/news/oracle-will-offer-googles-tpu-ai-chip-via-oci", "2026Q3 の決算後。Alphabet の Q3 説明会で Kurian が Crux AI と Oracle との TPU 提携に言及"),
+]
+cols = ["date", "calendar_quarter", "gc_share_of_incr_azure_basis_pct", "gc_incr_bn", "category", "event", "value_usd_bn_or_unit", "source_type", "source_url", "note"]
+with open(os.path.join(ROOT, "data", "timeline.csv"), "w", newline="", encoding="utf-8") as fo:
+    w = csv.writer(fo)
+    w.writerow(cols)
+    for d, q, c, e, v, st, u, n in E:
+        r = der.get(q, {})
+        w.writerow([d, q, r.get("gc_share_of_incr_azure_basis_pct", ""), r.get("gc_incr_bn", ""), c, e, v, st, u, n])
+print("wrote data/timeline.csv", len(E))
